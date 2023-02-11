@@ -1,7 +1,7 @@
-import {FlatList, StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
-import React from 'react';
-import {handleHeight, handleWidth} from '../../utils/responsive';
-import {AppColors} from '../../themes';
+import { FlatList, StyleProp, StyleSheet, View, ViewStyle } from "react-native";
+import React from "react";
+import { handleHeight, handleWidth } from "../../utils/responsive";
+import { AppColors } from "../../themes";
 
 interface ComponentProps {
   numberOfItems?: number;
@@ -11,7 +11,7 @@ interface ComponentProps {
 
 const renderIndicatorItem = (
   activeIndex: number,
-  indicatorItem: {item: number; index: number},
+  indicatorItem: { item: number; index: number }
 ) => {
   return (
     <View

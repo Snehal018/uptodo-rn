@@ -1,7 +1,12 @@
 import {Image, StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import {globalStyles} from '../../styles';
-import {ActiveIndicator, AppButton, BaseText} from '../../components';
+import {
+  ActiveIndicator,
+  AppButton,
+  BaseText,
+  CustomStatusBar
+} from '../../components';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {handleHeight, handleWidth} from '../../utils/responsive';
 import {AppStrings} from '../../constants';
@@ -69,20 +74,32 @@ const Onboarding = () => {
     <SafeAreaView
       style={[
         globalStyles.darkContainerPadding,
-        globalStyles.horizontalCenter,
+        globalStyles.horizontalCenter
       ]}>
+      <CustomStatusBar barType="dark" />
       <AppButton
+        onPress={() => navigation.navigate('GetStarted')}
         title={AppStrings.skip}
         buttonType="none"
         style={styles.skipButtonStyle}
       />
-      <View style={{height: handleHeight(325)}}>
-        <Image source={image} style={styles.imageStyle} resizeMode="contain" />
-      </View>
-      <ActiveIndicator activeIndex={currentPageIndex} />
-      <View style={styles.textContainer}>
-        <BaseText style={styles.manageTaskText}>{title}</BaseText>
-        <BaseText style={styles.manageTaskSubText}>{subTitle}</BaseText>
+      <View
+        style={{
+          alignItems: 'center',
+          marginTop: 'auto'
+        }}>
+        <View style={{height: handleHeight(325)}}>
+          <Image
+            source={image}
+            style={styles.imageStyle}
+            resizeMode="contain"
+          />
+        </View>
+        <ActiveIndicator activeIndex={currentPageIndex} />
+        <View style={styles.textContainer}>
+          <BaseText style={styles.manageTaskText}>{title}</BaseText>
+          <BaseText style={styles.manageTaskSubText}>{subTitle}</BaseText>
+        </View>
       </View>
       {currentPageIndex === 0 ? (
         <AppButton
@@ -115,22 +132,22 @@ export default Onboarding;
 const styles = StyleSheet.create({
   skipButtonStyle: {
     opacity: 0.44,
-    alignSelf: 'flex-start',
+    alignSelf: 'flex-start'
   },
   imageStyle: {
     height: handleHeight(277),
-    width: handleWidth(211),
+    width: handleWidth(211)
   },
   manageTaskText: {
     fontSize: fontSize.header,
     marginTop: handleHeight(50),
     marginBottom: handleHeight(40),
-    fontWeight: fontWeight.semi,
+    fontWeight: fontWeight.semi
   },
   manageTaskSubText: {
     fontSize: fontSize.medium,
     textAlign: 'center',
-    opacity: 0.87,
+    opacity: 0.87
   },
   textContainer: {alignItems: 'center', maxWidth: '95%'},
   footerButtonContainer: {
@@ -138,12 +155,12 @@ const styles = StyleSheet.create({
     marginTop: 'auto',
     marginBottom: handleHeight(28),
     justifyContent: 'space-between',
-    width: '100%',
+    width: '100%'
   },
   backButtonTitle: {opacity: 0.44},
   nextButtonStyle: {
     marginTop: 'auto',
     marginBottom: handleHeight(28),
-    alignSelf: 'flex-end',
-  },
+    alignSelf: 'flex-end'
+  }
 });

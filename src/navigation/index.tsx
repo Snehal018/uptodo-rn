@@ -1,11 +1,15 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from './stack';
+import {AppContextProvider} from '../context';
+import {navigationRef} from '../utils/navigationService';
 
 const AppNavigation = () => {
   return (
-    <NavigationContainer>
-      <StackNavigator />
+    <NavigationContainer ref={navigationRef}>
+      <AppContextProvider>
+        <StackNavigator />
+      </AppContextProvider>
     </NavigationContainer>
   );
 };
