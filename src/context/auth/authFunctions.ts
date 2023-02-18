@@ -11,7 +11,7 @@ const onLoginPressHandler = ({userName, password}: LoginFormType) => {
     .unwrap()
     .then(res => {
       if (res?.status === 200) {
-        navigate('Home');
+        navigate('BottomTab');
       }
     })
     .catch(err => {

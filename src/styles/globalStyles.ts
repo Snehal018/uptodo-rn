@@ -4,37 +4,41 @@ import AppPadding from './spacing';
 
 const globalStyles = StyleSheet.create({
   fullSpace: {
-    flex: 1,
+    flex: 1
   },
   container: {
     flex: 1,
-    backgroundColor: AppColors.white,
+    backgroundColor: AppColors.white
   },
   containerPadding: {
     flex: 1,
     backgroundColor: AppColors.white,
-    paddingHorizontal: AppPadding.baseHorizontal,
+    paddingHorizontal: AppPadding.baseHorizontal
   },
   darkContainer: {
     flex: 1,
-    backgroundColor: AppColors.primaryDark,
+    backgroundColor: AppColors.primaryDark
   },
   darkContainerPadding: {
     flex: 1,
     backgroundColor: AppColors.primaryDark,
-    paddingHorizontal: AppPadding.baseHorizontal,
+    paddingHorizontal: AppPadding.baseHorizontal
   },
   rowContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   centerContainer: {
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   horizontalCenter: {
-    alignItems: 'center',
+    alignItems: 'center'
   },
+  fillParent: {
+    height: '100%',
+    width: '100%'
+  }
 });
 
 export default globalStyles;

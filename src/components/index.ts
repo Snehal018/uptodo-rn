@@ -5,6 +5,12 @@ import BackHeader from './UI/BackHeader';
 import CustomInput from './UI/CustomInput';
 import CustomStatusBar from './UI/CustomStatusBar';
 import AppLoader from './UI/AppLoader';
+import BottomTabComponent from './BottomTab';
+import VectorIcon from './UI/VectorIcon';
+import Header from './UI/Header';
+import ImageView from './UI/ImageView';
+import TaskIndexHeader from './TaskIndex/TaskIndexHeader';
+import EmptyTaskIndex from './TaskIndex/EmptyTaskIndex';
 
 export {
   BaseText,
@@ -13,5 +19,11 @@ export {
   BackHeader,
   CustomInput,
   CustomStatusBar,
-  AppLoader
+  AppLoader,
+  BottomTabComponent,
+  VectorIcon,
+  Header,
+  ImageView,
+  TaskIndexHeader,
+  EmptyTaskIndex
 };

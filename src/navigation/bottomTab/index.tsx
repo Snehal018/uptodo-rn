@@ -1,20 +1,29 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {
+  CalendarScreen,
+  FocusScreen,
+  ProfileScreen,
+  TaskIndexScreen
+} from '../../screens';
+import {BottomTabComponent} from '../../components';
 
 const BottomTabNavigation = createBottomTabNavigator();
 
 const BottomTab = () => {
   return (
-    <BottomTabNavigation.Navigator>
-      <BottomTabNavigation.Screen name={'index'} component={} />
-      <BottomTabNavigation.Screen name={'calendar'} />
-      <BottomTabNavigation.Screen name={'focus'} />
-      <BottomTabNavigation.Screen name={'profile'} />
+    <BottomTabNavigation.Navigator
+      tabBar={props => <BottomTabComponent {...props} />}
+      screenOptions={{headerShown: false}}>
+      <BottomTabNavigation.Screen name={'index'} component={TaskIndexScreen} />
+      <BottomTabNavigation.Screen
+        name={'calendar'}
+        component={CalendarScreen}
+      />
+      <BottomTabNavigation.Screen name={'focus'} component={FocusScreen} />
+      <BottomTabNavigation.Screen name={'profile'} component={ProfileScreen} />
     </BottomTabNavigation.Navigator>
   );
 };
 
 export default BottomTab;
-
-const styles = StyleSheet.create({});

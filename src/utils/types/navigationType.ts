@@ -5,6 +5,7 @@ type RootStackParams = {
   Login: undefined;
   Registration: undefined;
   Home: undefined;
+  BottomTab: undefined;
 };
 
 export default RootStackParams;

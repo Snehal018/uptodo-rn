@@ -59,7 +59,11 @@ const AppStrings = {
   index: 'Index',
   calendar: 'Calendar',
   focus: 'Focus',
-  profile: 'Profile'
+  profile: 'Profile',
+
+  // Task Index
+  whatYouWantToDoToday: 'What do you want to do today?',
+  tapToAddTasks: 'Tap + to add your tasks'
 };
 
 export default AppStrings;

@@ -11,5 +11,8 @@ export const AppImages = {
   imgTabHome: require('./tabImages/home.png'),
   imgTabCalendar: require('./tabImages/calendar.png'),
   imgTabFocus: require('./tabImages/clock.png'),
-  imgTabProfile: require('./tabImages/user.png')
+  imgTabProfile: require('./tabImages/user.png'),
+
+  // Task Index Screen
+  emptyTaskIndex: require('./emptyTaskIndex.png')
 };
