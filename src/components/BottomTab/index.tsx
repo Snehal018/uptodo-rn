@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {Pressable, View} from 'react-native';
 import React from 'react';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import styles from './styles';
@@ -8,9 +8,13 @@ import {AppStrings} from '../../constants';
 import VectorIcon from '../UI/VectorIcon';
 import {handleWidth} from '../../utils/responsive';
 import {AppColors} from '../../themes';
+import {globalStyles} from '../../styles';
+import {useAppDispatch} from '../../../hooks/reduxHooks';
+import {openAddTaskSheet} from '../../redux/features/task/taskSlice';
 
 const BottomTabComponent = (props: BottomTabBarProps) => {
   const {navigation, state} = props;
+  const dispatch = useAppDispatch();
 
   const getTabItemProps = (tabIndex: number): TabItemProps => {
     let icon = -1;
@@ -60,6 +64,10 @@ const BottomTabComponent = (props: BottomTabBarProps) => {
     };
   };
 
+  const onAddTaskHandler = () => {
+    dispatch(openAddTaskSheet());
+  };
+
   return (
     <View style={styles.tabContainer}>
       <View style={styles.tabItemsContainer}>
@@ -70,14 +78,19 @@ const BottomTabComponent = (props: BottomTabBarProps) => {
         <TabItem {...getTabItemProps(2)} />
         <TabItem {...getTabItemProps(3)} />
       </View>
-      <View style={styles.tabAddTaskButton}>
+      <Pressable
+        onPress={onAddTaskHandler}
+        style={({pressed}) => [
+          styles.tabAddTaskButton,
+          pressed && globalStyles.pressed
+        ]}>
         <VectorIcon
           iconType="AntDesign"
           name="plus"
           size={handleWidth(28)}
           color={AppColors.white}
         />
-      </View>
+      </Pressable>
     </View>
   );
 };

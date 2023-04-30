@@ -19,6 +19,8 @@ const onLoginPressHandler = ({userName, password}: LoginFormType) => {
         Alert.alert(AppStrings.error, AppStrings.incorrectUsernameOrPassword);
       } else if (err.status === 404) {
         Alert.alert(AppStrings.error, AppStrings.noUserFound);
+      } else {
+        Alert.alert(AppStrings.error, AppStrings.somethingWentWrong);
       }
     });
 };

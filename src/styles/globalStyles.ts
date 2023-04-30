@@ -38,6 +38,9 @@ const globalStyles = StyleSheet.create({
   fillParent: {
     height: '100%',
     width: '100%'
+  },
+  pressed: {
+    opacity: 0.7
   }
 });
 

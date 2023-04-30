@@ -63,7 +63,12 @@ const AppStrings = {
 
   // Task Index
   whatYouWantToDoToday: 'What do you want to do today?',
-  tapToAddTasks: 'Tap + to add your tasks'
+  tapToAddTasks: 'Tap + to add your tasks',
+
+  // Add task
+  addTask: 'Add Task',
+  title: 'Title',
+  description: 'Description'
 };
 
 export default AppStrings;

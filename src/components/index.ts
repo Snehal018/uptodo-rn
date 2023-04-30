@@ -11,6 +11,8 @@ import Header from './UI/Header';
 import ImageView from './UI/ImageView';
 import TaskIndexHeader from './TaskIndex/TaskIndexHeader';
 import EmptyTaskIndex from './TaskIndex/EmptyTaskIndex';
+import AddTaskBottomSheet from './TaskIndex/AddTask/AddTaskBottomSheet';
+import AppBottomsheet from './Bottomsheet/AppBottomsheet';
 
 export {
   BaseText,
@@ -25,5 +27,7 @@ export {
   Header,
   ImageView,
   TaskIndexHeader,
-  EmptyTaskIndex
+  EmptyTaskIndex,
+  AddTaskBottomSheet,
+  AppBottomsheet
 };
