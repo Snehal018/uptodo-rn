@@ -1,31 +1,29 @@
 import {StyleSheet} from 'react-native';
 import {AppColors} from '../../themes';
-import {handleHeight, handleWidth} from '../../utils/responsive';
-import {AppPadding, globalStyles} from '../../styles';
+import {globalStyles} from '../../styles';
 import {screenWidth} from '../../themes';
+import {scale, verticalScale} from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
   tabContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    height: handleHeight(100),
+    ...globalStyles.rowSpaceBetweenCenter,
+    height: verticalScale(80),
     backgroundColor: AppColors.tabBarDark,
-    paddingVertical: handleHeight(12),
-    paddingHorizontal: handleWidth(AppPadding.baseHorizontal)
+    paddingVertical: verticalScale(12)
   },
   tabAddTaskButton: {
     ...globalStyles.centerContainer,
     position: 'absolute',
-    height: handleWidth(64),
-    width: handleWidth(64),
-    borderRadius: handleWidth(32),
-    top: -handleHeight(32),
-    left: (screenWidth - handleWidth(64)) / 2,
+    height: scale(56),
+    width: scale(56),
+    borderRadius: scale(28),
+    top: -verticalScale(28),
+    left: (screenWidth - scale(56)) / 2,
     backgroundColor: AppColors.primary
   },
   taskAddIcon: {
-    height: handleWidth(28),
-    width: handleWidth(28)
+    height: scale(24),
+    width: scale(24)
   },
   tabItemsContainer: {
     flexDirection: 'row',

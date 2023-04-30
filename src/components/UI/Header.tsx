@@ -1,9 +1,9 @@
 import {StyleSheet, TextStyle, View} from 'react-native';
 import React from 'react';
 import BaseText from './Basetext';
-import {handleHeight} from '../../utils/responsive';
 import {globalStyles} from '../../styles';
 import {AppColors, fontSize} from '../../themes';
+import {verticalScale} from 'react-native-size-matters';
 
 interface ComponentProps {
   rightContent?: () => JSX.Element;
@@ -42,7 +42,7 @@ export default Header;
 const styles = StyleSheet.create({
   container: {
     ...globalStyles.rowContainer,
-    paddingVertical: handleHeight(8),
+    paddingVertical: verticalScale(8),
     justifyContent: 'space-between'
   },
   baseTitleStyle: {

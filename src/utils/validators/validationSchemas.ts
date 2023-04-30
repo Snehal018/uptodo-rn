@@ -17,7 +17,7 @@ const registrationValidationSchema = Yup.object().shape({
     .trim(),
   confirmPassword: Yup.string()
     .required(AppStrings.pleaseEnterPassword)
-    .oneOf([Yup.ref('password')], 'Your passwords do not match.')
+    .oneOf([Yup.ref('password')], AppStrings.passwordsDoNotMatch)
     .min(6, AppStrings.passwordLongError)
     .trim()
 });

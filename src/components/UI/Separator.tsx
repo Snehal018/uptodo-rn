@@ -1,15 +1,15 @@
-import { StyleSheet, View, ViewStyle } from "react-native";
-import React from "react";
-import { handleHeight, handleWidth } from "../../utils/responsive";
-import { AppColors } from "../../themes";
-import BaseText from "./Basetext";
+import {StyleSheet, View, ViewStyle} from 'react-native';
+import React from 'react';
+import {AppColors} from '../../themes';
+import BaseText from './Basetext';
+import {scale, verticalScale} from 'react-native-size-matters';
 
 interface ComponentProps {
   lineStyle?: ViewStyle;
   centerText?: string;
 }
 
-const Separator = ({ centerText, lineStyle }: ComponentProps) => {
+const Separator = ({centerText, lineStyle}: ComponentProps) => {
   return (
     <View>
       <View style={[styles.breakLine, lineStyle]} />
@@ -26,23 +26,23 @@ export default Separator;
 
 const styles = StyleSheet.create({
   breakLine: {
-    height: handleHeight(1),
+    height: verticalScale(1),
     backgroundColor: AppColors.gray,
-    marginVertical: handleHeight(15),
+    marginVertical: verticalScale(15)
   },
   centerTextStyle: {
-    marginTop: "auto",
-    marginBottom: "auto",
-    marginLeft: "auto",
-    marginRight: "auto",
-    paddingHorizontal: handleWidth(5),
-    backgroundColor: AppColors.primaryDark,
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingHorizontal: scale(5),
+    backgroundColor: AppColors.primaryDark
   },
   centerTextContainer: {
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     bottom: 0,
     right: 0,
-    left: 0,
-  },
+    left: 0
+  }
 });

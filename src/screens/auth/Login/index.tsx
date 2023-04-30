@@ -9,14 +9,14 @@ import {
   CustomInput
 } from '../../../components';
 import {AppStrings} from '../../../constants';
-import {handleHeight} from '../../../utils/responsive';
 import Separator from '../../../components/UI/Separator';
 import {AppImages} from '../../../assets/images';
-import {normalizeFormikError} from '../../../utils/helperfunctions';
+import {isAndroid, normalizeFormikError} from '../../../utils/helperfunctions';
 import {styles} from './styles';
 import {AuthContext} from '../../../context/auth/authContext';
 import {useCustomNavigation} from '../../../hooks';
 import {useAppSelector} from '../../../hooks/reduxHooks';
+import {moderateVerticalScale, verticalScale} from 'react-native-size-matters';
 
 const Login = () => {
   let {formik: loginFormik} = useContext(AuthContext).login;
@@ -31,7 +31,11 @@ const Login = () => {
   return (
     <SafeAreaView style={globalStyles.darkContainerPadding}>
       {isLoading && <AppLoader />}
-      <BackHeader />
+      <BackHeader
+        headerContainerStyle={{
+          marginTop: moderateVerticalScale(isAndroid ? 16 : 0, 0.35)
+        }}
+      />
       <BaseText style={styles.loginTitle}>{AppStrings.loginSmall}</BaseText>
       <CustomInput
         placeholder={AppStrings.enterUsername}
@@ -48,9 +52,6 @@ const Login = () => {
         onChangeText={handleChange('password')}
         onBlur={handleBlur('password')}
         secureTextEntry={true}
-        style={{
-          letterSpacing: password ? 5 : undefined
-        }}
         error={normalizeFormikError(errors.password, touched.password)}
       />
       <AppButton
@@ -60,9 +61,7 @@ const Login = () => {
       />
       <Separator
         centerText={AppStrings.or}
-        lineStyle={{
-          marginVertical: handleHeight(40)
-        }}
+        lineStyle={{marginVertical: moderateVerticalScale(36, 0.35)}}
       />
 
       <AppButton

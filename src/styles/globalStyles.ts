@@ -28,6 +28,11 @@ const globalStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
+  rowSpaceBetweenCenter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
   centerContainer: {
     justifyContent: 'center',
     alignItems: 'center'

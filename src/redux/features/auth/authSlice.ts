@@ -6,18 +6,24 @@ interface InitialStateType {
   isLoading: boolean;
   authToken: string | null;
   userprofile: UserProfile | null;
+  isVisitedOnboarding: boolean;
 }
 
 const initialState: InitialStateType = {
   isLoading: false,
   authToken: null,
-  userprofile: null
+  userprofile: null,
+  isVisitedOnboarding: false
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    visitedOnboarding: state => {
+      state.isVisitedOnboarding = true;
+    }
+  },
   extraReducers: builder => {
     builder.addCase(signupUser.pending, state => {
       state.isLoading = true;
@@ -42,4 +48,5 @@ const authSlice = createSlice({
   }
 });
 
+export const authSliceActions = authSlice.actions;
 export default authSlice.reducer;

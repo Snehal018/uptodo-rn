@@ -8,12 +8,12 @@ import React, {useState} from 'react';
 import {BottomSheetTextInput} from '@gorhom/bottom-sheet';
 import {BottomSheetTextInputProps} from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheetTextInput';
 import {AppColors, fontSize} from '../../themes';
-import {handleWidth, scaleHeight} from '../../utils/responsive';
+import {scale, verticalScale} from 'react-native-size-matters';
 
 const BottomSheetInput = (props: BottomSheetTextInputProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
-  const inputBorderWidth = !isFocused ? 0 : handleWidth(0.8);
+  const inputBorderWidth = !isFocused ? 0 : scale(0.8);
 
   const extraInputStyle: TextInputProps['style'] = {
     borderWidth: inputBorderWidth
@@ -45,10 +45,10 @@ export default BottomSheetInput;
 const styles = StyleSheet.create({
   inputStyle: {
     borderColor: AppColors.gray,
-    borderRadius: handleWidth(4),
+    borderRadius: scale(4),
     paddingVertical: 0,
     fontSize: fontSize.medium,
-    height: scaleHeight(40),
+    height: verticalScale(40),
     backgroundColor: AppColors.tabBarDark,
     paddingHorizontal: '3%',
     color: AppColors.white

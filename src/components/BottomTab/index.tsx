@@ -6,11 +6,11 @@ import {AppImages} from '../../assets/images';
 import TabItem, {TabItemProps} from './TabItem';
 import {AppStrings} from '../../constants';
 import VectorIcon from '../UI/VectorIcon';
-import {handleWidth} from '../../utils/responsive';
 import {AppColors} from '../../themes';
 import {globalStyles} from '../../styles';
 import {useAppDispatch} from '../../hooks/reduxHooks';
 import {openAddTaskSheet} from '../../redux/features/task/taskSlice';
+import {scale} from 'react-native-size-matters';
 
 const BottomTabComponent = (props: BottomTabBarProps) => {
   const {navigation, state} = props;
@@ -87,7 +87,7 @@ const BottomTabComponent = (props: BottomTabBarProps) => {
         <VectorIcon
           iconType="AntDesign"
           name="plus"
-          size={handleWidth(28)}
+          size={scale(28)}
           color={AppColors.white}
         />
       </Pressable>

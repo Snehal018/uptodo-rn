@@ -15,13 +15,7 @@ const onLoginPressHandler = ({userName, password}: LoginFormType) => {
       }
     })
     .catch(err => {
-      if (err?.status === 400) {
-        Alert.alert(AppStrings.error, AppStrings.incorrectUsernameOrPassword);
-      } else if (err.status === 404) {
-        Alert.alert(AppStrings.error, AppStrings.noUserFound);
-      } else {
-        Alert.alert(AppStrings.error, AppStrings.somethingWentWrong);
-      }
+      Alert.alert(AppStrings.error, err.error);
     });
 };
 
@@ -36,20 +30,12 @@ const onRegisterPressHandler = ({
     .then(res => {
       if (res?.status === 201) {
         Alert.alert(AppStrings.success, AppStrings.userCreateSuccess, [
-          {
-            onPress: () => {
-              navigate('Login');
-            }
-          }
+          {onPress: navigate.bind(this, 'Login')}
         ]);
       }
     })
     .catch(err => {
-      if (err?.status === 400) {
-        Alert.alert(AppStrings.error, AppStrings.usernameAlreadyExists);
-      } else {
-        Alert.alert(AppStrings.error, AppStrings.failedToCreateUser);
-      }
+      Alert.alert(AppStrings.error, err.error);
     });
 };
 

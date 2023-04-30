@@ -4,31 +4,31 @@ import {
   Pressable,
   StyleSheet,
   TextStyle,
-  TouchableOpacityProps,
-} from "react-native";
-import React from "react";
-import BaseText from "./Basetext";
-import { handleHeight, handleWidth } from "../../utils/responsive";
-import { AppColors, fontSize } from "../../themes";
+  TouchableOpacityProps
+} from 'react-native';
+import React from 'react';
+import BaseText from './Basetext';
+import {AppColors, fontSize} from '../../themes';
+import {verticalScale, scale} from 'react-native-size-matters';
 
 interface ComponentProps {
   title: string;
   onPress?: () => void;
-  buttonType?: "solid" | "outline" | "none";
-  style?: TouchableOpacityProps["style"];
+  buttonType?: 'solid' | 'outline' | 'none';
+  style?: TouchableOpacityProps['style'];
   titleStyle?: TextStyle;
   disabled?: boolean;
-  leadingIcon?: ImageProps["source"];
-  leadingIconStyle?: ImageProps["style"];
+  leadingIcon?: ImageProps['source'];
+  leadingIconStyle?: ImageProps['style'];
 }
 
 const handleButtonStyle = (type: string) => {
-  let _buttonStyle: TouchableOpacityProps["style"] = styles.basePressable;
+  let _buttonStyle: TouchableOpacityProps['style'] = styles.basePressable;
   switch (type) {
-    case "solid":
+    case 'solid':
       _buttonStyle = styles.baseSolid;
       break;
-    case "outline":
+    case 'outline':
       _buttonStyle = styles.baseOutline;
       break;
     default:
@@ -41,11 +41,11 @@ const handleButtonStyle = (type: string) => {
 const AppButton = ({
   title,
   onPress = () => {},
-  buttonType = "solid",
+  buttonType = 'solid',
   style,
   titleStyle,
   disabled,
-  leadingIcon,
+  leadingIcon
 }: ComponentProps) => {
   const buttonStyle = handleButtonStyle(buttonType);
 
@@ -53,14 +53,13 @@ const AppButton = ({
     <Pressable
       disabled={disabled}
       onPress={onPress}
-      style={({ pressed }) => [
+      style={({pressed}) => [
         styles.basePressable,
         buttonStyle,
         style,
         pressed && styles.pressed,
-        disabled && styles.buttonDisabled,
-      ]}
-    >
+        disabled && styles.buttonDisabled
+      ]}>
       {leadingIcon ? (
         <Image
           source={leadingIcon}
@@ -77,38 +76,38 @@ export default AppButton;
 
 const styles = StyleSheet.create({
   basePressable: {
-    paddingVertical: handleHeight(12),
-    paddingHorizontal: handleWidth(24),
-    borderRadius: handleWidth(4),
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    paddingVertical: verticalScale(12),
+    paddingHorizontal: scale(24),
+    borderRadius: scale(4),
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   baseTitle: {
     fontSize: fontSize.medium,
-    textAlign: "center",
+    textAlign: 'center'
   },
   pressed: {
-    opacity: 0.35,
+    opacity: 0.35
   },
   baseOutline: {
     borderWidth: 2,
-    borderColor: AppColors.primary,
+    borderColor: AppColors.primary
   },
   baseSolid: {
-    backgroundColor: AppColors.primary,
+    backgroundColor: AppColors.primary
   },
   baseNone: {
     paddingHorizontal: 0,
-    borderRadius: 0,
+    borderRadius: 0
   },
   buttonDisabled: {
     backgroundColor: AppColors.primaryDisabled,
-    opacity: 0.5,
+    opacity: 0.5
   },
   leadingIcon: {
-    height: handleWidth(24),
-    width: handleWidth(24),
-    marginRight: handleWidth(8),
-  },
+    height: scale(24),
+    width: scale(24),
+    marginRight: scale(8)
+  }
 });

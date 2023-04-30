@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import React from 'react';
 import BaseText from '../UI/Basetext';
-import {handleHeight, handleWidth} from '../../utils/responsive';
 import {AppColors, fontSize} from '../../themes';
+import {scale, verticalScale} from 'react-native-size-matters';
 
 interface ComponentProps {
   image: ImageSourcePropType;
@@ -48,14 +48,14 @@ export default EmptyTaskIndex;
 
 const styles = StyleSheet.create({
   baseImage: {
-    height: handleWidth(227),
-    width: handleWidth(227),
+    height: scale(227),
+    width: scale(227),
     alignSelf: 'center'
   },
   baseText: {
     color: AppColors.white,
     textAlign: 'center',
-    marginTop: handleHeight(16)
+    marginTop: verticalScale(16)
   },
   baseTitle: {
     fontSize: fontSize.large

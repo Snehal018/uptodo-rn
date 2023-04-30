@@ -10,8 +10,8 @@ import {
 } from '../../components';
 import {AppStrings} from '../../constants';
 import {fontSize, fontWeight} from '../../themes';
-import {handleHeight} from '../../utils/responsive';
 import {useCustomNavigation} from '../../hooks';
+import {verticalScale} from 'react-native-size-matters';
 
 const GetStarted = () => {
   const {navigation} = useCustomNavigation('Login');
@@ -26,7 +26,7 @@ const GetStarted = () => {
 
   return (
     <SafeAreaView style={globalStyles.darkContainerPadding}>
-      <BackHeader />
+      {/* <BackHeader /> */}
       <CustomStatusBar barType="dark" />
       <View style={[globalStyles.fullSpace, globalStyles.horizontalCenter]}>
         <BaseText style={styles.welcomeHeader}>
@@ -59,16 +59,16 @@ const styles = StyleSheet.create({
   welcomeHeader: {
     fontSize: fontSize.header,
     fontWeight: fontWeight.bold,
-    marginTop: handleHeight(42)
+    marginTop: verticalScale(80)
   },
   welcomeSubText: {
     fontSize: fontSize.medium,
     textAlign: 'center',
     opacity: 0.67,
-    marginTop: handleHeight(30)
+    marginTop: verticalScale(30)
   },
-  loginButton: {marginBottom: handleHeight(20)},
+  loginButton: {marginBottom: verticalScale(20)},
   signupButton: {
-    marginBottom: handleHeight(35)
+    marginBottom: verticalScale(35)
   }
 });

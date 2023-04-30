@@ -1,9 +1,9 @@
 import {Image, Pressable, StyleSheet} from 'react-native';
 import React from 'react';
 import BaseText from '../UI/Basetext';
-import {handleHeight, handleWidth} from '../../utils/responsive';
 import {AppColors, fontSize} from '../../themes';
 import {globalStyles} from '../../styles';
+import {scale, verticalScale} from 'react-native-size-matters';
 
 export interface TabItemProps {
   icon: number;
@@ -29,16 +29,16 @@ export default TabItem;
 const styles = StyleSheet.create({
   container: {
     ...globalStyles.horizontalCenter,
-    paddingTop: handleHeight(4),
+    paddingTop: verticalScale(4),
     width: '45%'
   },
   tabIcon: {
-    height: handleWidth(24),
-    width: handleWidth(24)
+    height: scale(24),
+    width: scale(24)
   },
   tabTitle: {
     fontSize: fontSize.small,
     color: AppColors.white,
-    marginTop: handleHeight(8)
+    marginTop: verticalScale(8)
   }
 });

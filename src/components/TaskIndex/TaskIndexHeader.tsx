@@ -3,8 +3,8 @@ import Header from '../UI/Header';
 import {AppStrings} from '../../constants';
 import ImageView from '../UI/ImageView';
 import VectorIcon from '../UI/VectorIcon';
-import {handleWidth} from '../../utils/responsive';
 import {AppColors} from '../../themes';
+import {scale} from 'react-native-size-matters';
 
 const TaskIndexHeader = () => {
   return (
@@ -23,7 +23,7 @@ const TaskIndexHeader = () => {
           iconType="Ionicons"
           name="filter"
           color={AppColors.white}
-          size={handleWidth(24)}
+          size={scale(24)}
         />
       )}
     />

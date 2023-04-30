@@ -38,9 +38,6 @@ const AppStrings = {
   // Register Screen
   confirmPassword: 'Confirm Password',
   alreadyHaveAccount: 'Already have an account?',
-  failedToCreateUser: 'Failed To Create User',
-  usernameAlreadyExists:
-    'Username Already Exists! Please Choose a different one',
   userCreateSuccess: 'User Created Successfully! Please Login with the user',
 
   // Error Messages
@@ -52,8 +49,7 @@ const AppStrings = {
   warning: 'Warning',
   success: 'Success',
   somethingWentWrong: 'Something Went Wrong',
-  incorrectUsernameOrPassword: 'Incorrect Username or Password',
-  noUserFound: 'No User Found! Please Register First',
+  passwordsDoNotMatch: 'Passwords do not match.',
 
   // Tab
   index: 'Index',

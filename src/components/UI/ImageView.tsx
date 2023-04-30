@@ -1,16 +1,16 @@
 import {Image, StyleSheet, View, ViewStyle} from 'react-native';
 import React from 'react';
 import FastImage, {FastImageProps} from 'react-native-fast-image';
-import {handleHeight} from '../../utils/responsive';
 import {globalStyles} from '../../styles';
+import {verticalScale} from 'react-native-size-matters';
 
 interface ComponentProps extends FastImageProps {
-  containerSize: number;
-  containerStyle: ViewStyle;
+  containerSize?: number;
+  containerStyle?: ViewStyle;
 }
 
 const ImageView = ({
-  containerSize = handleHeight(42),
+  containerSize = verticalScale(42),
   containerStyle = {},
   ...imageProps
 }: ComponentProps) => {

@@ -1,11 +1,11 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import BaseText from '../../UI/Basetext';
-import {AppPadding, globalStyles} from '../../../styles';
+import {AppPadding} from '../../../styles';
 import {AppStrings} from '../../../constants';
 import {fontSize, fontTypes} from '../../../themes';
-import {handleHeight, handleWidth} from '../../../utils/responsive';
 import BottomSheetInput from '../../Bottomsheet/BottomSheetInput';
+import {scale, verticalScale} from 'react-native-size-matters';
 
 const AddTaskForm = () => {
   return (
@@ -27,14 +27,14 @@ export default AddTaskForm;
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: handleWidth(AppPadding.baseHorizontal),
-    paddingVertical: handleHeight(12)
+    paddingHorizontal: scale(AppPadding.baseHorizontal),
+    paddingVertical: verticalScale(12)
   },
   addTaskHeader: {
     fontSize: fontSize.large,
     fontFamily: fontTypes.bold
   },
   inputStyle: {
-    marginTop: handleHeight(8)
+    marginTop: verticalScale(8)
   }
 });

@@ -8,9 +8,9 @@ import {
 import React from 'react';
 import {globalStyles} from '../../styles';
 import {AppImages} from '../../assets/images';
-import {handleHeight, handleWidth} from '../../utils/responsive';
 import {useNavigation} from '@react-navigation/native';
 import {isAndroid} from '../../utils/helperfunctions';
+import {scale, verticalScale} from 'react-native-size-matters';
 
 interface ComponentProps {
   headerContainerStyle?: ViewStyle;
@@ -50,10 +50,10 @@ export default BackHeader;
 
 const styles = StyleSheet.create({
   backStyle: {
-    height: handleHeight(17.34),
-    width: handleWidth(8.59)
+    height: verticalScale(17.34),
+    width: scale(8.59)
   },
   baseContainerStyle: {
-    paddingVertical: handleHeight(isAndroid ? 4 : 17)
+    paddingVertical: verticalScale(isAndroid ? 4 : 17)
   }
 });

@@ -1,5 +1,5 @@
 import {Image, StyleSheet, View} from 'react-native';
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {globalStyles} from '../../styles';
 import {
   ActiveIndicator,
@@ -8,11 +8,13 @@ import {
   CustomStatusBar
 } from '../../components';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {handleHeight, handleWidth} from '../../utils/responsive';
 import {AppStrings} from '../../constants';
 import {AppImages} from '../../assets/images';
 import {fontSize, fontWeight} from '../../themes';
 import {useCustomNavigation} from '../../hooks';
+import {scale, verticalScale} from 'react-native-size-matters';
+import {useAppDispatch} from '../../hooks/reduxHooks';
+import {authSliceActions} from '../../redux/features/auth/authSlice';
 
 const onboardingContentHandler = (currentIndex: number) => {
   let image, title, subTitle;
@@ -42,8 +44,8 @@ const onboardingContentHandler = (currentIndex: number) => {
 const Onboarding = () => {
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
   const {image, subTitle, title} = onboardingContentHandler(currentPageIndex);
-
   const {navigation} = useCustomNavigation('Onboarding');
+  const dispatch = useAppDispatch();
 
   const onBackPressHandler = () => {
     if (currentPageIndex === 1) {
@@ -51,6 +53,11 @@ const Onboarding = () => {
     } else {
       setCurrentPageIndex(1);
     }
+  };
+
+  const onSkipPressHandler = () => {
+    dispatch(authSliceActions.visitedOnboarding());
+    navigation.navigate('GetStarted');
   };
 
   const onNextPressHandler = () => {
@@ -62,13 +69,17 @@ const Onboarding = () => {
         setCurrentPageIndex(2);
         break;
       case 2:
-        navigation.navigate('GetStarted');
+        onSkipPressHandler();
         break;
-
       default:
         break;
     }
   };
+
+  const nextButtonTitle = useMemo(
+    () => (currentPageIndex === 2 ? AppStrings.getStarted : AppStrings.next),
+    [currentPageIndex]
+  );
 
   return (
     <SafeAreaView
@@ -78,17 +89,13 @@ const Onboarding = () => {
       ]}>
       <CustomStatusBar barType="dark" />
       <AppButton
-        onPress={() => navigation.navigate('GetStarted')}
+        onPress={onSkipPressHandler}
         title={AppStrings.skip}
         buttonType="none"
         style={styles.skipButtonStyle}
       />
-      <View
-        style={{
-          alignItems: 'center',
-          marginTop: 'auto'
-        }}>
-        <View style={{height: handleHeight(325)}}>
+      <View style={styles.mainContentContainer}>
+        <View style={{height: verticalScale(325)}}>
           <Image
             source={image}
             style={styles.imageStyle}
@@ -115,12 +122,7 @@ const Onboarding = () => {
             buttonType="none"
             titleStyle={styles.backButtonTitle}
           />
-          <AppButton
-            onPress={onNextPressHandler}
-            title={
-              currentPageIndex === 2 ? AppStrings.getStarted : AppStrings.next
-            }
-          />
+          <AppButton onPress={onNextPressHandler} title={nextButtonTitle} />
         </View>
       )}
     </SafeAreaView>
@@ -132,16 +134,17 @@ export default Onboarding;
 const styles = StyleSheet.create({
   skipButtonStyle: {
     opacity: 0.44,
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    marginTop: verticalScale(8)
   },
   imageStyle: {
-    height: handleHeight(277),
-    width: handleWidth(211)
+    height: verticalScale(277),
+    width: scale(211)
   },
   manageTaskText: {
     fontSize: fontSize.header,
-    marginTop: handleHeight(50),
-    marginBottom: handleHeight(40),
+    marginTop: verticalScale(32),
+    marginBottom: verticalScale(24),
     fontWeight: fontWeight.semi
   },
   manageTaskSubText: {
@@ -153,14 +156,18 @@ const styles = StyleSheet.create({
   footerButtonContainer: {
     flexDirection: 'row',
     marginTop: 'auto',
-    marginBottom: handleHeight(28),
+    marginBottom: verticalScale(28),
     justifyContent: 'space-between',
     width: '100%'
   },
   backButtonTitle: {opacity: 0.44},
   nextButtonStyle: {
     marginTop: 'auto',
-    marginBottom: handleHeight(28),
+    marginBottom: verticalScale(28),
     alignSelf: 'flex-end'
+  },
+  mainContentContainer: {
+    alignItems: 'center',
+    marginTop: 'auto'
   }
 });

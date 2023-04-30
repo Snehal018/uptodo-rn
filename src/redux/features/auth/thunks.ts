@@ -1,7 +1,6 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import axiosClient from '../../../api';
 import {ApiConstants} from '../../../api/apiConstants';
-import {AppStrings} from '../../../constants';
 import {parseThunkError} from '../../../utils/helperfunctions';
 import {LoginFormType, RegisterFormType} from '../../../utils/types';
 
@@ -17,8 +16,10 @@ const signupUser = createAsyncThunk(
         password,
         confirmPassword
       });
+      console.log('Signup Success:', JSON.stringify(response));
       return response;
     } catch (error) {
+      console.log('Signup Error:', JSON.stringify(error));
       return rejectWithValue(parseThunkError(error));
     }
   }

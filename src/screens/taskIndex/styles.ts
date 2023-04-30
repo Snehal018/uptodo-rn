@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {handleHeight} from '../../utils/responsive';
+import {verticalScale} from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
   emptyIndexContainerStyle: {
-    marginTop: handleHeight(72)
+    marginTop: verticalScale(72)
   }
 });
 

@@ -1,7 +1,7 @@
-import { FlatList, StyleProp, StyleSheet, View, ViewStyle } from "react-native";
-import React from "react";
-import { handleHeight, handleWidth } from "../../utils/responsive";
-import { AppColors } from "../../themes";
+import {FlatList, StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
+import React from 'react';
+import {AppColors} from '../../themes';
+import {scale, verticalScale} from 'react-native-size-matters';
 
 interface ComponentProps {
   numberOfItems?: number;
@@ -11,13 +11,13 @@ interface ComponentProps {
 
 const renderIndicatorItem = (
   activeIndex: number,
-  indicatorItem: { item: number; index: number }
+  indicatorItem: {item: number; index: number}
 ) => {
   return (
     <View
       style={[
         styles.baseIndicator,
-        indicatorItem.index === activeIndex && styles.activeIndicator,
+        indicatorItem.index === activeIndex && styles.activeIndicator
       ]}
     />
   );
@@ -26,7 +26,7 @@ const renderIndicatorItem = (
 const ActiveIndicator = ({
   activeIndex = 0,
   numberOfItems = 3,
-  style,
+  style
 }: ComponentProps) => {
   return (
     <FlatList
@@ -44,16 +44,16 @@ export default ActiveIndicator;
 
 const styles = StyleSheet.create({
   baseIndicator: {
-    height: handleHeight(4),
-    width: handleWidth(26),
+    height: verticalScale(4),
+    width: scale(26),
     backgroundColor: AppColors.lightGray,
-    borderRadius: handleWidth(20),
-    marginHorizontal: handleWidth(4),
+    borderRadius: scale(20),
+    marginHorizontal: scale(4)
   },
   activeIndicator: {
-    backgroundColor: AppColors.white,
+    backgroundColor: AppColors.white
   },
   baseFlatlist: {
-    flexGrow: 0,
-  },
+    flexGrow: 0
+  }
 });
