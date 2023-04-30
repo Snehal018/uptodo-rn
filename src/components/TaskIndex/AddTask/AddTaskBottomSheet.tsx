@@ -1,6 +1,6 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
-import {useAppDispatch, useAppSelector} from '../../../../hooks/reduxHooks';
+import {useAppDispatch, useAppSelector} from '../../../hooks/reduxHooks';
 import {closeAddTaskSheet} from '../../../redux/features/task/taskSlice';
 import AppBottomsheet from '../../Bottomsheet/AppBottomsheet';
 import AddTaskForm from './AddTaskForm';

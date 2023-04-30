@@ -16,7 +16,7 @@ import {scaleHeight} from '../../../utils/responsive';
 import {AuthContext} from '../../../context/auth/authContext';
 import {normalizeFormikError} from '../../../utils/helperfunctions';
 import {useCustomNavigation} from '../../../hooks';
-import {useAppSelector} from '../../../../hooks/reduxHooks';
+import {useAppSelector} from '../../../hooks/reduxHooks';
 
 const Registration = () => {
   const {formik: registerFormik} = useContext(AuthContext).register;

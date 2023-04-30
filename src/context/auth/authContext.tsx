@@ -3,7 +3,7 @@ import {useFormik} from 'formik';
 import {
   loginValidationSchema,
   registrationValidationSchema
-} from '../../utils/validationSchemas';
+} from '../../utils/validators/validationSchemas';
 import {
   AuthContextType,
   LoginFormType,

@@ -1,14 +1,14 @@
 import {configureStore} from '@reduxjs/toolkit';
 import authSlice from './features/auth/authSlice';
 import logger from 'redux-logger';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {combineReducers} from 'redux';
 import {persistReducer, persistStore} from 'redux-persist';
 import taskSlice from './features/task/taskSlice';
+import {reduxMmkvStorage} from '../utils/storage/reduxMmkvStorage';
 
 const persistConfig = {
   key: 'root',
-  storage: AsyncStorage
+  storage: reduxMmkvStorage
 };
 
 const rootReducer = combineReducers({auth: authSlice, task: taskSlice});

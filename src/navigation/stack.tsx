@@ -9,7 +9,7 @@ import {
 } from '../screens';
 import RootStackParams from '../utils/types/navigationType';
 import BottomTab from './bottomTab';
-import {useAppSelector} from '../../hooks/reduxHooks';
+import {useAppSelector} from '../hooks/reduxHooks';
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 

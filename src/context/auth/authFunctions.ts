@@ -2,7 +2,7 @@ import {Alert} from 'react-native';
 import {AppStrings} from '../../constants';
 import {login, signupUser} from '../../redux/features/auth/thunks';
 import store from '../../redux/store';
-import {navigate} from '../../utils/navigationService';
+import {navigate} from '../../navigation/helper/navigationService';
 import {LoginFormType, RegisterFormType} from '../../utils/types';
 
 const onLoginPressHandler = ({userName, password}: LoginFormType) => {

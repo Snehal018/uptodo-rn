@@ -9,7 +9,7 @@ import VectorIcon from '../UI/VectorIcon';
 import {handleWidth} from '../../utils/responsive';
 import {AppColors} from '../../themes';
 import {globalStyles} from '../../styles';
-import {useAppDispatch} from '../../../hooks/reduxHooks';
+import {useAppDispatch} from '../../hooks/reduxHooks';
 import {openAddTaskSheet} from '../../redux/features/task/taskSlice';
 
 const BottomTabComponent = (props: BottomTabBarProps) => {

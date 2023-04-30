@@ -16,7 +16,7 @@ import {normalizeFormikError} from '../../../utils/helperfunctions';
 import {styles} from './styles';
 import {AuthContext} from '../../../context/auth/authContext';
 import {useCustomNavigation} from '../../../hooks';
-import {useAppSelector} from '../../../../hooks/reduxHooks';
+import {useAppSelector} from '../../../hooks/reduxHooks';
 
 const Login = () => {
   let {formik: loginFormik} = useContext(AuthContext).login;
