@@ -1,6 +1,8 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 import {UserProfile} from '../../../utils/types/user';
 import {login, signupUser} from './thunks';
+import {Alert} from 'react-native';
+import {AppStrings} from '../../../constants';
 
 interface InitialStateType {
   isLoading: boolean;
@@ -31,9 +33,13 @@ const authSlice = createSlice({
     builder.addCase(signupUser.fulfilled, state => {
       state.isLoading = false;
     });
-    builder.addCase(signupUser.rejected, state => {
-      state.isLoading = false;
-    });
+    builder.addCase(
+      signupUser.rejected,
+      (state, action: PayloadAction<any>) => {
+        state.isLoading = false;
+        Alert.alert(AppStrings.error, action.payload?.error);
+      }
+    );
     builder.addCase(login.pending, state => {
       state.isLoading = true;
     });
@@ -42,8 +48,9 @@ const authSlice = createSlice({
       state.authToken = action.payload?.data?.authToken;
       state.userprofile = action.payload?.data?.userProfile;
     });
-    builder.addCase(login.rejected, state => {
+    builder.addCase(login.rejected, (state, action: PayloadAction<any>) => {
       state.isLoading = false;
+      Alert.alert(AppStrings.error, action.payload?.error);
     });
   }
 });

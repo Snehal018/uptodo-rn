@@ -16,10 +16,8 @@ const signupUser = createAsyncThunk(
         password,
         confirmPassword
       });
-      console.log('Signup Success:', JSON.stringify(response));
       return response;
     } catch (error) {
-      console.log('Signup Error:', JSON.stringify(error));
       return rejectWithValue(parseThunkError(error));
     }
   }

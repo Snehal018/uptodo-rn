@@ -13,9 +13,6 @@ const onLoginPressHandler = ({userName, password}: LoginFormType) => {
       if (res?.status === 200) {
         navigate('BottomTab');
       }
-    })
-    .catch(err => {
-      Alert.alert(AppStrings.error, err.error);
     });
 };
 
@@ -33,9 +30,6 @@ const onRegisterPressHandler = ({
           {onPress: navigate.bind(this, 'Login')}
         ]);
       }
-    })
-    .catch(err => {
-      Alert.alert(AppStrings.error, err.error);
     });
 };
 

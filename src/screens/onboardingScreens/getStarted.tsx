@@ -2,12 +2,7 @@ import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {globalStyles} from '../../styles';
-import {
-  AppButton,
-  BackHeader,
-  BaseText,
-  CustomStatusBar
-} from '../../components';
+import {AppButton, BaseText, CustomStatusBar} from '../../components';
 import {AppStrings} from '../../constants';
 import {fontSize, fontWeight} from '../../themes';
 import {useCustomNavigation} from '../../hooks';
@@ -26,7 +21,6 @@ const GetStarted = () => {
 
   return (
     <SafeAreaView style={globalStyles.darkContainerPadding}>
-      {/* <BackHeader /> */}
       <CustomStatusBar barType="dark" />
       <View style={[globalStyles.fullSpace, globalStyles.horizontalCenter]}>
         <BaseText style={styles.welcomeHeader}>

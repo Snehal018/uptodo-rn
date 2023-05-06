@@ -1,23 +1,37 @@
-import BaseText from './UI/Basetext';
-import AppButton from './UI/Appbutton';
-import ActiveIndicator from './Onboarding/ActiveIndicator';
-import BackHeader from './UI/BackHeader';
-import CustomInput from './UI/CustomInput';
-import CustomStatusBar from './UI/CustomStatusBar';
-import AppLoader from './UI/AppLoader';
-import BottomTabComponent from './BottomTab';
-import VectorIcon from './UI/VectorIcon';
-import Header from './UI/Header';
-import ImageView from './UI/ImageView';
-import TaskIndexHeader from './TaskIndex/TaskIndexHeader';
-import EmptyTaskIndex from './TaskIndex/EmptyTaskIndex';
-import AddTaskBottomSheet from './TaskIndex/AddTask/AddTaskBottomSheet';
-import AppBottomsheet from './Bottomsheet/AppBottomsheet';
-import CalendarModal from './CalendarModal/CalendarModal';
-import BaseModal from './UI/BaseModal';
-import Separator from './UI/Separator';
+import {
+  ActiveIndicator,
+  AppBottomsheet,
+  AppButton,
+  AppKeyboardScrollWrapper,
+  AppLoader,
+  BackHeader,
+  BaseModal,
+  BaseText,
+  BottomSheetInput,
+  CustomInput,
+  CustomStatusBar,
+  Header,
+  ImageView,
+  Separator,
+  VectorIcon
+} from './atoms';
+import {
+  AddTaskActionButtons,
+  PriorityItem,
+  TabItem,
+  TaskIndexHeader
+} from './molecules';
+import {
+  AddTaskBottomSheet,
+  AddTaskForm,
+  BottomTab,
+  CalendarModal,
+  EmptyTaskIndex,
+  PriorityModal
+} from './organisms';
 
 export {
+  // Atoms
   BaseText,
   AppButton,
   ActiveIndicator,
@@ -25,15 +39,26 @@ export {
   CustomInput,
   CustomStatusBar,
   AppLoader,
-  BottomTabComponent,
   VectorIcon,
   Header,
   ImageView,
+  BaseModal,
+  Separator,
+  AppBottomsheet,
+  AppKeyboardScrollWrapper,
+  BottomSheetInput,
+
+  // Molecules
   TaskIndexHeader,
+  AddTaskActionButtons,
+  PriorityItem,
+  TabItem,
+
+  // Organisms
   EmptyTaskIndex,
   AddTaskBottomSheet,
-  AppBottomsheet,
+  BottomTab,
   CalendarModal,
-  BaseModal,
-  Separator
+  AddTaskForm,
+  PriorityModal
 };

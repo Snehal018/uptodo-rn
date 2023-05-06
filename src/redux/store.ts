@@ -2,7 +2,7 @@ import {configureStore} from '@reduxjs/toolkit';
 import authSlice from './features/auth/authSlice';
 import logger from 'redux-logger';
 import {combineReducers} from 'redux';
-import {PersistConfig, persistReducer, persistStore} from 'redux-persist';
+import {persistReducer, persistStore} from 'redux-persist';
 import taskSlice from './features/task/taskSlice';
 import {reduxMmkvStorage} from '../utils/storage/reduxMmkvStorage';
 

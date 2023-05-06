@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 
 interface InitialStateType {
   isLoading: boolean;
@@ -14,15 +14,15 @@ const taskSlice = createSlice({
   name: 'task',
   initialState: initialState,
   reducers: {
-    openAddTaskSheet: state => {
-      state.isAddTaskSheetOpen = true;
-    },
-    closeAddTaskSheet: state => {
-      state.isAddTaskSheetOpen = false;
+    updateAddTaskSheetVisibleStatus: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.isAddTaskSheetOpen = action.payload;
     }
   },
   extraReducers: builder => {}
 });
 
 export default taskSlice.reducer;
-export const {closeAddTaskSheet, openAddTaskSheet} = taskSlice.actions;
+export const {updateAddTaskSheetVisibleStatus} = taskSlice.actions;

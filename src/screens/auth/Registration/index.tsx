@@ -2,22 +2,22 @@ import React, {useContext, useEffect, useState} from 'react';
 import {globalStyles} from '../../../styles';
 import {
   AppButton,
+  AppKeyboardScrollWrapper,
   AppLoader,
   BackHeader,
   BaseText,
-  CustomInput
+  CustomInput,
+  Separator
 } from '../../../components';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {AppStrings} from '../../../constants';
 import styles from './styles';
-import Separator from '../../../components/UI/Separator';
 import {AppImages} from '../../../assets/images';
 import {AuthContext} from '../../../context/auth/authContext';
 import {normalizeFormikError} from '../../../utils/helperfunctions';
 import {useCustomNavigation} from '../../../hooks';
 import {useAppSelector} from '../../../hooks/reduxHooks';
 import {verticalScale} from 'react-native-size-matters';
-import AppKeyboardScrollWrapper from '../../../components/UI/AppKeyboardScrollWrapper';
 
 const Registration = () => {
   const {formik: registerFormik} = useContext(AuthContext).register;

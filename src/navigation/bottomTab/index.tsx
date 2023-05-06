@@ -6,14 +6,14 @@ import {
   ProfileScreen,
   TaskIndexScreen
 } from '../../screens';
-import {BottomTabComponent} from '../../components';
+import {BottomTab} from '../../components';
 
 const BottomTabNavigation = createBottomTabNavigator();
 
-const BottomTab = () => {
+const BottomTabNavigator = () => {
   return (
     <BottomTabNavigation.Navigator
-      tabBar={props => <BottomTabComponent {...props} />}
+      tabBar={props => <BottomTab {...props} />}
       screenOptions={{headerShown: false}}>
       <BottomTabNavigation.Screen name={'index'} component={TaskIndexScreen} />
       <BottomTabNavigation.Screen
@@ -26,4 +26,4 @@ const BottomTab = () => {
   );
 };
 
-export default BottomTab;
+export default BottomTabNavigator;

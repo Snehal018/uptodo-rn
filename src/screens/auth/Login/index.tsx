@@ -6,10 +6,10 @@ import {
   AppLoader,
   BackHeader,
   BaseText,
-  CustomInput
+  CustomInput,
+  Separator
 } from '../../../components';
 import {AppStrings} from '../../../constants';
-import Separator from '../../../components/UI/Separator';
 import {AppImages} from '../../../assets/images';
 import {isAndroid, normalizeFormikError} from '../../../utils/helperfunctions';
 import {styles} from './styles';
