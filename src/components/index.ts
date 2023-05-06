@@ -13,6 +13,9 @@ import TaskIndexHeader from './TaskIndex/TaskIndexHeader';
 import EmptyTaskIndex from './TaskIndex/EmptyTaskIndex';
 import AddTaskBottomSheet from './TaskIndex/AddTask/AddTaskBottomSheet';
 import AppBottomsheet from './Bottomsheet/AppBottomsheet';
+import CalendarModal from './CalendarModal/CalendarModal';
+import BaseModal from './UI/BaseModal';
+import Separator from './UI/Separator';
 
 export {
   BaseText,
@@ -29,5 +32,8 @@ export {
   TaskIndexHeader,
   EmptyTaskIndex,
   AddTaskBottomSheet,
-  AppBottomsheet
+  AppBottomsheet,
+  CalendarModal,
+  BaseModal,
+  Separator
 };

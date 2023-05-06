@@ -64,7 +64,10 @@ const AppStrings = {
   // Add task
   addTask: 'Add Task',
   title: 'Title',
-  description: 'Description'
+  description: 'Description',
+  cancel: 'Cancel',
+  chooseTime: 'Choose Time',
+  save: 'Save'
 };
 
 export default AppStrings;

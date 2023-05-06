@@ -7,6 +7,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {globalStyles} from './src/styles';
 import {AddTaskBottomSheet} from './src/components';
+import AddTaskContextProvider from './src/context/task/addTaskContext';
 
 const App = () => {
   return (
@@ -16,7 +17,9 @@ const App = () => {
         <PersistGate persistor={persistor} loading={null}>
           <GestureHandlerRootView style={globalStyles.fullSpace}>
             <AppNavigation />
-            <AddTaskBottomSheet />
+            <AddTaskContextProvider>
+              <AddTaskBottomSheet />
+            </AddTaskContextProvider>
           </GestureHandlerRootView>
         </PersistGate>
       </Provider>

@@ -57,7 +57,7 @@ const Onboarding = () => {
 
   const onSkipPressHandler = () => {
     dispatch(authSliceActions.visitedOnboarding());
-    navigation.navigate('GetStarted');
+    navigation.reset({index: 0, routes: [{name: 'GetStarted'}]});
   };
 
   const onNextPressHandler = () => {

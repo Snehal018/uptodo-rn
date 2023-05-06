@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React, {PropsWithChildren, createContext} from 'react';
 import {useFormik} from 'formik';
 import {
   loginValidationSchema,
@@ -13,7 +13,7 @@ import {onLoginPressHandler, onRegisterPressHandler} from './authFunctions';
 
 export const AuthContext = createContext({} as AuthContextType);
 
-const AuthContextProvider = ({children}: {children: React.ReactNode}) => {
+const AuthContextProvider = ({children}: PropsWithChildren) => {
   const loginFormik = useFormik<LoginFormType>({
     initialValues: {
       userName: '',

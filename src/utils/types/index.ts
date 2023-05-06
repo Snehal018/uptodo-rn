@@ -1,4 +1,5 @@
 import {FormikProps} from 'formik';
+import {Dispatch, SetStateAction} from 'react';
 
 interface LoginFormType {
   userName: string;
@@ -20,4 +21,16 @@ interface AuthContextType {
   };
 }
 
-export type {LoginFormType, RegisterFormType, AuthContextType};
+interface AddTaskContextType {
+  isCalendarModalVisible: boolean;
+  setIsCalendarModalVisible: Dispatch<SetStateAction<boolean>>;
+  isPriorityModalVisible: boolean;
+  setIsPriorityModalVisible: Dispatch<SetStateAction<boolean>>;
+}
+
+export type {
+  LoginFormType,
+  RegisterFormType,
+  AuthContextType,
+  AddTaskContextType
+};

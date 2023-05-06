@@ -9,7 +9,7 @@ import {
 import React from 'react';
 import BaseText from './Basetext';
 import {AppColors, fontSize} from '../../themes';
-import {verticalScale, scale} from 'react-native-size-matters';
+import {scale, moderateVerticalScale} from 'react-native-size-matters';
 
 interface ComponentProps {
   title: string;
@@ -76,7 +76,7 @@ export default AppButton;
 
 const styles = StyleSheet.create({
   basePressable: {
-    paddingVertical: verticalScale(12),
+    paddingVertical: moderateVerticalScale(12, 0),
     paddingHorizontal: scale(24),
     borderRadius: scale(4),
     flexDirection: 'row',

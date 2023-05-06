@@ -39,6 +39,7 @@ const AppBottomsheet = ({
       ref={bottomSheetRef}
       backgroundStyle={{backgroundColor: AppColors.tabBarDark}}
       backdropComponent={renderBackdrop}
+      keyboardBlurBehavior="restore"
       {...bottomSheetProps}
       snapPoints={bottomSheetProps.snapPoints ?? ['25%']}>
       {bottomSheetProps.children}

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {AppColors} from '../themes';
+import {AppColors, fontSize, fontWeight} from '../themes';
 import AppPadding from './spacing';
 
 const globalStyles = StyleSheet.create({
@@ -46,6 +46,11 @@ const globalStyles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.7
+  },
+  mediumWhiteBoldText: {
+    fontSize: fontSize.medium,
+    color: AppColors.white,
+    fontWeight: fontWeight.bold
   }
 });
 

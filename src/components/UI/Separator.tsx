@@ -2,7 +2,11 @@ import {StyleSheet, View, ViewStyle} from 'react-native';
 import React from 'react';
 import {AppColors} from '../../themes';
 import BaseText from './Basetext';
-import {scale, verticalScale} from 'react-native-size-matters';
+import {
+  moderateVerticalScale,
+  scale,
+  verticalScale
+} from 'react-native-size-matters';
 
 interface ComponentProps {
   lineStyle?: ViewStyle;
@@ -28,7 +32,7 @@ const styles = StyleSheet.create({
   breakLine: {
     height: verticalScale(1),
     backgroundColor: AppColors.gray,
-    marginVertical: verticalScale(15)
+    marginVertical: moderateVerticalScale(14, 0)
   },
   centerTextStyle: {
     marginTop: 'auto',
