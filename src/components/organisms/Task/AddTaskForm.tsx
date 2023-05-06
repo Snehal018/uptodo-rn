@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {Alert, StyleSheet, View} from 'react-native';
 import React, {FC, useContext} from 'react';
 import BaseText from '../../atoms/Text/Basetext';
 import {AppPadding} from '../../../styles';
@@ -12,10 +12,21 @@ import {
 } from 'react-native-size-matters';
 import AddTaskActionButtons from '../../molecules/Task/AddTaskActionButtons';
 import {AddTaskContext} from '../../../context/task/addTaskContext';
+import {useAppDispatch, useAppSelector} from '../../../hooks';
+import {
+  resetCreateTaskDetails,
+  updateAddTaskSheetVisibleStatus,
+  updateCreateTaskDetails
+} from '../../../redux/features/task/taskSlice';
+import {addTask} from '../../../redux/features/task/thunks';
 
 const AddTaskForm: FC = () => {
   const {setIsCalendarModalVisible, setIsPriorityModalVisible} =
     useContext(AddTaskContext);
+  const dispatch = useAppDispatch();
+  const {title, description, category, date, priority} = useAppSelector(
+    state => state.task.createTaskDetails
+  );
 
   const onPressSelectTimeHandler = () => {
     setIsCalendarModalVisible(true);
@@ -27,7 +38,35 @@ const AddTaskForm: FC = () => {
     setIsPriorityModalVisible(true);
   };
 
-  const onPressAddTodoHandler = () => {};
+  const onPressAddTodoHandler = () => {
+    dispatch(
+      addTask({
+        params: {
+          title,
+          description,
+          time: date,
+          category: undefined,
+          priority: priority ?? 1
+        }
+      })
+    )
+      .unwrap()
+      .then(res => {
+        if (res.status === 201) {
+          Alert.alert(AppStrings.success, res.data?.message);
+          dispatch(resetCreateTaskDetails());
+          updateAddTaskSheetVisibleStatus(false);
+        }
+      });
+  };
+
+  const onChangeTitle = (titleValue: string) => {
+    dispatch(updateCreateTaskDetails({title: titleValue}));
+  };
+
+  const onChangeDescription = (descriptionValue: string) => {
+    dispatch(updateCreateTaskDetails({description: descriptionValue}));
+  };
 
   return (
     <View style={styles.container}>
@@ -35,10 +74,14 @@ const AddTaskForm: FC = () => {
       <BottomSheetInput
         placeholder={AppStrings.title}
         style={styles.inputStyle}
+        onChangeText={onChangeTitle}
+        value={title}
       />
       <BottomSheetInput
         placeholder={AppStrings.description}
         style={styles.inputStyle}
+        onChangeText={onChangeDescription}
+        value={description}
       />
       <AddTaskActionButtons
         containerStyle={{marginTop: moderateVerticalScale(12, 0)}}

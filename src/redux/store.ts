@@ -21,7 +21,7 @@ const store = configureStore({
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: ['persist/PERSIST']
+        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE']
       }
     }).concat(logger);
   }

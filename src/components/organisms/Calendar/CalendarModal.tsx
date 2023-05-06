@@ -3,7 +3,10 @@ import React, {Dispatch, FC, SetStateAction} from 'react';
 import {AppColors} from '../../../themes';
 import {Calendar, CalendarProps} from 'react-native-calendars';
 import {scale, verticalScale} from 'react-native-size-matters';
-import {DateTimePickerAndroid} from '@react-native-community/datetimepicker';
+import {
+  DateTimePickerAndroid,
+  DateTimePickerEvent
+} from '@react-native-community/datetimepicker';
 import {AppStrings} from '../../../constants';
 import BaseModal from '../../atoms/Modal/BaseModal';
 import {RowButtons} from '../../molecules';
@@ -13,7 +16,7 @@ const calendarTheme: CalendarProps['theme'] = {
   calendarBackground: AppColors.tabBarDark,
   dayTextColor: AppColors.white,
   monthTextColor: AppColors.white,
-  selectedDayTextColor: AppColors.primary,
+  selectedDayTextColor: AppColors.white,
   arrowColor: AppColors.primary,
   selectedDayBackgroundColor: AppColors.primary,
   todayTextColor: AppColors.primary
@@ -22,14 +25,27 @@ const calendarTheme: CalendarProps['theme'] = {
 interface ComponentProps {
   visible: boolean;
   setVisible: Dispatch<SetStateAction<boolean>>;
+  onSelectDate: CalendarProps['onDayPress'];
+  selectedDate: string;
+  onSelectTime: (event: DateTimePickerEvent, date?: Date | undefined) => void;
 }
 
 const CalendarModal: FC<ComponentProps> = ({
   visible = false,
-  setVisible = () => {}
+  setVisible = () => {},
+  onSelectDate,
+  selectedDate,
+  onSelectTime
 }) => {
   const onPressChooseTimeHandler = () => {
-    DateTimePickerAndroid.open({value: new Date(), mode: 'time'});
+    DateTimePickerAndroid.open({
+      value: new Date(),
+      mode: 'time',
+      onChange: (e, date) => {
+        onSelectTime(e, date);
+        setVisible(false);
+      }
+    });
   };
 
   return (
@@ -37,8 +53,11 @@ const CalendarModal: FC<ComponentProps> = ({
       <View style={styles.container}>
         <Calendar
           theme={calendarTheme}
-          onDayPress={day => {}}
+          onDayPress={onSelectDate}
           style={styles.calendar}
+          markedDates={{
+            [selectedDate]: {selected: true}
+          }}
         />
         <RowButtons
           acceptButtonTitle={AppStrings.chooseTime}
@@ -59,8 +78,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: AppColors.tabBarDark,
     borderRadius: scale(8),
-    overflow: 'hidden',
-    margin: scale(8)
+    overflow: 'hidden'
   },
   calendar: {
     width: '95%',

@@ -23,13 +23,15 @@ import {RowButtons} from '../../molecules';
 interface ComponentProps {
   visible: boolean;
   setVisible: Dispatch<SetStateAction<boolean>>;
+  onConfirmPriority: (priority: number | null) => void;
 }
 
 const priorityData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const PriorityModal: FC<ComponentProps> = ({
   visible = false,
-  setVisible = () => {}
+  setVisible = () => {},
+  onConfirmPriority = () => {}
 }) => {
   const [selectedPriority, setSelectedPriority] = useState<number | null>(null);
 
@@ -39,6 +41,7 @@ const PriorityModal: FC<ComponentProps> = ({
 
   const onConfirmPriorityHandler = () => {
     setVisible(false);
+    onConfirmPriority(selectedPriority);
   };
 
   const onCancelPriorityHandler = () => {
@@ -54,11 +57,14 @@ const PriorityModal: FC<ComponentProps> = ({
         isSelected={selectedPriority === item}
       />
     ),
-    []
+    [selectedPriority]
   );
 
   return (
-    <BaseModal isVisible={visible} setIsVisible={setVisible}>
+    <BaseModal
+      isVisible={visible}
+      setIsVisible={setVisible}
+      onModalHide={setSelectedPriority.bind(this, null)}>
       <View style={styles.container}>
         <BaseText style={styles.title}>{AppStrings.taskPriority}</BaseText>
         <Separator />
