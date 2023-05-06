@@ -1,5 +1,5 @@
 import {Image, Pressable, StyleSheet} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 import BaseText from '../../atoms/Text/Basetext';
 import {AppColors, fontSize} from '../../../themes';
 import {globalStyles} from '../../../styles';
@@ -12,7 +12,7 @@ export interface TabItemProps {
   isFocused: boolean;
 }
 
-const TabItem = ({icon, title, onPressTab, isFocused}: TabItemProps) => {
+const TabItem: FC<TabItemProps> = ({icon, title, onPressTab, isFocused}) => {
   return (
     <Pressable style={styles.container} onPress={onPressTab}>
       <Image

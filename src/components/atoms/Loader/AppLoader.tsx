@@ -1,8 +1,8 @@
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 import {AppColors} from '../../../themes';
 
-const AppLoader = () => {
+const AppLoader: FC = () => {
   return (
     <View style={styles.loaderStyle}>
       <ActivityIndicator color={AppColors.primary} size={'large'} />

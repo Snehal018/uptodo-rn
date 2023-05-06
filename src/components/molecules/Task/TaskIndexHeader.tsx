@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Header from '../../atoms/Header/Header';
 import {AppStrings} from '../../../constants';
 import ImageView from '../../atoms/Image/ImageView';
@@ -6,7 +6,7 @@ import VectorIcon from '../../atoms/Icons/VectorIcon';
 import {AppColors} from '../../../themes';
 import {scale} from 'react-native-size-matters';
 
-const TaskIndexHeader = () => {
+const TaskIndexHeader: FC = () => {
   return (
     <Header
       title={AppStrings.index}

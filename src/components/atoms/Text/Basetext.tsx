@@ -1,8 +1,8 @@
 import {StyleSheet, Text, TextProps} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 import {AppColors, fontTypes} from '../../../themes';
 
-const BaseText = (props: TextProps) => {
+const BaseText: FC<TextProps> = props => {
   return (
     <Text {...props} style={[styles.baseText, props.style]}>
       {props.children}

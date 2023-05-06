@@ -1,5 +1,11 @@
 import {FlatList, StyleSheet, View} from 'react-native';
-import React, {Dispatch, FC, SetStateAction} from 'react';
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useCallback,
+  useState
+} from 'react';
 import BaseModal from '../../atoms/Modal/BaseModal';
 import {AppColors} from '../../../themes';
 import {
@@ -11,48 +17,66 @@ import BaseText from '../../atoms/Text/Basetext';
 import {globalStyles} from '../../../styles';
 import Separator from '../../atoms/UI/Separator';
 import PriorityItem from '../../molecules/Priority/PriorityItem';
-import AppButton from '../../atoms/Button/Appbutton';
 import {AppStrings} from '../../../constants';
+import {RowButtons} from '../../molecules';
 
 interface ComponentProps {
   visible: boolean;
   setVisible: Dispatch<SetStateAction<boolean>>;
 }
 
+const priorityData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 const PriorityModal: FC<ComponentProps> = ({
   visible = false,
   setVisible = () => {}
 }) => {
+  const [selectedPriority, setSelectedPriority] = useState<number | null>(null);
+
+  const onSelectPriorityHandler = (selectedPriorityItem: number) => {
+    setSelectedPriority(selectedPriorityItem);
+  };
+
+  const onConfirmPriorityHandler = () => {
+    setVisible(false);
+  };
+
+  const onCancelPriorityHandler = () => {
+    setVisible(false);
+  };
+
+  const RenderPriorityItem = useCallback(
+    ({item}: {item: number}) => (
+      <PriorityItem
+        title={item.toString()}
+        containerStyle={styles.priorityItemContainer}
+        onPress={onSelectPriorityHandler.bind(this, item)}
+        isSelected={selectedPriority === item}
+      />
+    ),
+    []
+  );
+
   return (
     <BaseModal isVisible={visible} setIsVisible={setVisible}>
       <View style={styles.container}>
-        <BaseText style={styles.title}>Task Priority</BaseText>
+        <BaseText style={styles.title}>{AppStrings.taskPriority}</BaseText>
         <Separator />
         <FlatList
           numColumns={4}
-          data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-          renderItem={({item}) => (
-            <PriorityItem
-              title={item.toString()}
-              containerStyle={styles.priorityItemContainer}
-            />
-          )}
+          data={priorityData}
+          renderItem={({item}) => <RenderPriorityItem item={item} />}
           keyExtractor={(_, index) => index.toString()}
           bounces={false}
           contentContainerStyle={styles.priorityListContentContainer}
         />
-        <View style={styles.footerButtonsContainer}>
-          <View style={globalStyles.fullSpace}>
-            <AppButton
-              title={AppStrings.cancel}
-              buttonType="none"
-              titleStyle={{color: AppColors.primary}}
-            />
-          </View>
-          <View style={globalStyles.fullSpace}>
-            <AppButton title={AppStrings.save} />
-          </View>
-        </View>
+        <RowButtons
+          acceptButtonTitle={AppStrings.save}
+          declineButtonTitle={AppStrings.cancel}
+          containerStyle={styles.footerButtonsContainer}
+          onPressAcceptButton={onConfirmPriorityHandler}
+          onPressDeclineButton={onCancelPriorityHandler}
+        />
       </View>
     </BaseModal>
   );
@@ -77,7 +101,6 @@ const styles = StyleSheet.create({
   },
   priorityListContentContainer: {alignItems: 'center'},
   footerButtonsContainer: {
-    ...globalStyles.rowSpaceBetweenCenter,
     marginHorizontal: scale(8),
     marginTop: moderateVerticalScale(32, 0)
   }

@@ -1,5 +1,5 @@
 import {Pressable, View} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import styles from './styles';
 import {AppImages} from '../../../assets/images';
@@ -12,7 +12,7 @@ import {useAppDispatch} from '../../../hooks/reduxHooks';
 import {updateAddTaskSheetVisibleStatus} from '../../../redux/features/task/taskSlice';
 import {scale} from 'react-native-size-matters';
 
-const BottomTab = (props: BottomTabBarProps) => {
+const BottomTab: FC<BottomTabBarProps> = props => {
   const {navigation, state} = props;
   const dispatch = useAppDispatch();
 

@@ -3,11 +3,10 @@ import React, {Dispatch, FC, SetStateAction} from 'react';
 import {AppColors} from '../../../themes';
 import {Calendar, CalendarProps} from 'react-native-calendars';
 import {scale, verticalScale} from 'react-native-size-matters';
-import {globalStyles} from '../../../styles';
-import AppButton from '../../atoms/Button/Appbutton';
 import {DateTimePickerAndroid} from '@react-native-community/datetimepicker';
 import {AppStrings} from '../../../constants';
 import BaseModal from '../../atoms/Modal/BaseModal';
+import {RowButtons} from '../../molecules';
 
 const calendarTheme: CalendarProps['theme'] = {
   backgroundColor: AppColors.tabBarDark,
@@ -41,22 +40,13 @@ const CalendarModal: FC<ComponentProps> = ({
           onDayPress={day => {}}
           style={styles.calendar}
         />
-        <View style={styles.bottomRow}>
-          <AppButton
-            title={AppStrings.cancel}
-            buttonType="none"
-            titleStyle={{color: AppColors.primary}}
-            style={globalStyles.fullSpace}
-            onPress={setVisible.bind(this, false)}
-          />
-          <View style={globalStyles.fullSpace}>
-            <AppButton
-              title={AppStrings.chooseTime}
-              style={{alignSelf: 'center'}}
-              onPress={onPressChooseTimeHandler}
-            />
-          </View>
-        </View>
+        <RowButtons
+          acceptButtonTitle={AppStrings.chooseTime}
+          declineButtonTitle={AppStrings.cancel}
+          onPressAcceptButton={onPressChooseTimeHandler}
+          onPressDeclineButton={setVisible.bind(this, false)}
+          containerStyle={styles.rowButtonsContainer}
+        />
       </View>
     </BaseModal>
   );
@@ -78,8 +68,7 @@ const styles = StyleSheet.create({
     borderRadius: scale(8),
     backgroundColor: AppColors.tabBarDark
   },
-  bottomRow: {
-    ...globalStyles.rowContainer,
+  rowButtonsContainer: {
     marginVertical: verticalScale(16),
     marginHorizontal: scale(8)
   }

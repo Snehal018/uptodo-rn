@@ -1,5 +1,5 @@
 import {StyleSheet, View} from 'react-native';
-import React, {useContext} from 'react';
+import React, {FC, useContext} from 'react';
 import BaseText from '../../atoms/Text/Basetext';
 import {AppPadding} from '../../../styles';
 import {AppStrings} from '../../../constants';
@@ -13,7 +13,7 @@ import {
 import AddTaskActionButtons from '../../molecules/Task/AddTaskActionButtons';
 import {AddTaskContext} from '../../../context/task/addTaskContext';
 
-const AddTaskForm = () => {
+const AddTaskForm: FC = () => {
   const {setIsCalendarModalVisible, setIsPriorityModalVisible} =
     useContext(AddTaskContext);
 

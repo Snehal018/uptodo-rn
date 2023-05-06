@@ -4,20 +4,24 @@ import VectorIcon from '../../atoms/Icons/VectorIcon';
 import {AppColors, fontSize} from '../../../themes';
 import {moderateVerticalScale, scale} from 'react-native-size-matters';
 import BaseText from '../../atoms/Text/Basetext';
+import {TouchableOpacityProps} from 'react-native';
 
 interface ComponentProps {
   title: string;
   containerStyle?: ViewStyle;
   isSelected?: boolean;
+  onPress: TouchableOpacityProps['onPress'];
 }
 
 const PriorityItem: FC<ComponentProps> = ({
   title = '',
   containerStyle = {},
-  isSelected = false
+  isSelected = false,
+  onPress = () => {}
 }) => {
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={[
         styles.container,
         containerStyle,

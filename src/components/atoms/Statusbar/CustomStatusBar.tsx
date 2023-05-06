@@ -1,8 +1,12 @@
 import {StatusBar} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 import {AppColors} from '../../../themes';
 
-const CustomStatusBar = ({barType}: {barType: 'dark' | 'light'}) => {
+interface ComponentProps {
+  barType: 'dark' | 'light';
+}
+
+const CustomStatusBar: FC<ComponentProps> = ({barType}) => {
   if (barType === 'dark') {
     return (
       <StatusBar

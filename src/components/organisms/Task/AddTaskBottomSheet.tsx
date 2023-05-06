@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import React, {useContext} from 'react';
+import React, {FC, useContext} from 'react';
 import {useAppDispatch, useAppSelector} from '../../../hooks/reduxHooks';
 import {updateAddTaskSheetVisibleStatus} from '../../../redux/features/task/taskSlice';
 import AppBottomsheet from '../../atoms/BottomSheet/AppBottomsheet';
@@ -8,7 +8,7 @@ import CalendarModal from '../Calendar/CalendarModal';
 import {AddTaskContext} from '../../../context/task/addTaskContext';
 import PriorityModal from '../Priority/PriorityModal';
 
-const AddTaskBottomSheet = () => {
+const AddTaskBottomSheet: FC = () => {
   const dispatch = useAppDispatch();
   const {isAddTaskSheetOpen} = useAppSelector(state => state.task);
   const {

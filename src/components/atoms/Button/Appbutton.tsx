@@ -2,6 +2,7 @@ import {
   Image,
   ImageProps,
   Pressable,
+  PressableProps,
   StyleSheet,
   TextStyle,
   TouchableOpacityProps
@@ -13,7 +14,7 @@ import {scale, moderateVerticalScale} from 'react-native-size-matters';
 
 interface ComponentProps {
   title: string;
-  onPress?: () => void;
+  onPress?: PressableProps['onPress'];
   buttonType?: 'solid' | 'outline' | 'none';
   style?: TouchableOpacityProps['style'];
   titleStyle?: TextStyle;

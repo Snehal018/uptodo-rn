@@ -19,7 +19,8 @@ import {
   AddTaskActionButtons,
   PriorityItem,
   TabItem,
-  TaskIndexHeader
+  TaskIndexHeader,
+  RowButtons
 } from './molecules';
 import {
   AddTaskBottomSheet,
@@ -53,6 +54,7 @@ export {
   AddTaskActionButtons,
   PriorityItem,
   TabItem,
+  RowButtons,
 
   // Organisms
   EmptyTaskIndex,
