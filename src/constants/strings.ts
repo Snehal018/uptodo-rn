@@ -50,6 +50,10 @@ const AppStrings = {
   success: 'Success',
   somethingWentWrong: 'Something Went Wrong',
   passwordsDoNotMatch: 'Passwords do not match.',
+  clientNetworkError:
+    'Unable to connect to the server. Please check your internet connection and try again. If the issue persists, please contact your network provider.',
+  serverNetworkError:
+    "Sorry, we're experiencing server issues. Please try again in a few minutes.",
 
   // Tab
   index: 'Index',

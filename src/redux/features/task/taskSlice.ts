@@ -73,8 +73,4 @@ const taskSlice = createSlice({
 });
 
 export default taskSlice.reducer;
-export const {
-  updateAddTaskSheetVisibleStatus,
-  updateCreateTaskDetails,
-  resetCreateTaskDetails
-} = taskSlice.actions;
+export const taskSliceActions = taskSlice.actions;

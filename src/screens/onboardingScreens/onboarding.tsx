@@ -14,7 +14,7 @@ import {fontSize, fontWeight} from '../../themes';
 import {useCustomNavigation} from '../../hooks';
 import {scale, verticalScale} from 'react-native-size-matters';
 import {useAppDispatch} from '../../hooks/reduxHooks';
-import {authSliceActions} from '../../redux/features/auth/authSlice';
+import {authSliceActions} from '../../redux';
 
 const onboardingContentHandler = (currentIndex: number) => {
   let image, title, subTitle;

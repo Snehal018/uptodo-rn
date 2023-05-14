@@ -1,10 +1,6 @@
 import React, {FC, useContext} from 'react';
 import {useAppDispatch, useAppSelector} from '../../../hooks/reduxHooks';
-import {
-  resetCreateTaskDetails,
-  updateAddTaskSheetVisibleStatus,
-  updateCreateTaskDetails
-} from '../../../redux/features/task/taskSlice';
+import {taskSliceActions} from '../../../redux';
 import AppBottomsheet from '../../atoms/BottomSheet/AppBottomsheet';
 import AddTaskForm from './AddTaskForm';
 import CalendarModal from '../Calendar/CalendarModal';
@@ -28,13 +24,15 @@ const AddTaskBottomSheet: FC = () => {
   } = useContext(AddTaskContext);
 
   const onBackdropPressHandler = () => {
-    dispatch(resetCreateTaskDetails());
-    dispatch(updateAddTaskSheetVisibleStatus(false));
+    dispatch(taskSliceActions.resetCreateTaskDetails());
+    dispatch(taskSliceActions.updateAddTaskSheetVisibleStatus(false));
   };
 
   const onTaskSelectDateHandler = (date: DateData) => {
     dispatch(
-      updateCreateTaskDetails({date: new Date(date.dateString).toString()})
+      taskSliceActions.updateCreateTaskDetails({
+        date: new Date(date.dateString).toString()
+      })
     );
   };
 
@@ -43,7 +41,7 @@ const AddTaskBottomSheet: FC = () => {
     selectedDateTime?: Date
   ) => {
     dispatch(
-      updateCreateTaskDetails({
+      taskSliceActions.updateCreateTaskDetails({
         date: moment(date)
           .set('hours', moment(selectedDateTime).hours())
           .set('minutes', moment(selectedDateTime).minutes())
@@ -53,7 +51,7 @@ const AddTaskBottomSheet: FC = () => {
   };
 
   const onPrioritySelectHandler = (priority: number | null) => {
-    dispatch(updateCreateTaskDetails({priority}));
+    dispatch(taskSliceActions.updateCreateTaskDetails({priority}));
   };
 
   return (

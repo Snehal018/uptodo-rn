@@ -1,7 +1,6 @@
 import {Alert} from 'react-native';
 import {AppStrings} from '../../constants';
-import {login, signupUser} from '../../redux/features/auth/thunks';
-import store from '../../redux/store';
+import {login, signupUser, store} from '../../redux';
 import {navigate} from '../../navigation/helper/navigationService';
 import {LoginFormType, RegisterFormType} from '../../utils/types';
 

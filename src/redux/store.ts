@@ -5,6 +5,7 @@ import {combineReducers} from 'redux';
 import {persistReducer, persistStore} from 'redux-persist';
 import taskSlice from './features/task/taskSlice';
 import {reduxMmkvStorage} from '../utils/storage/reduxMmkvStorage';
+import appSlice from './features/app/appSlice';
 
 const persistConfig = {
   key: 'root',
@@ -12,7 +13,11 @@ const persistConfig = {
   whitelist: ['auth']
 };
 
-const rootReducer = combineReducers({auth: authSlice, task: taskSlice});
+const rootReducer = combineReducers({
+  auth: authSlice,
+  task: taskSlice,
+  app: appSlice
+});
 
 const persistRootReducer = persistReducer(persistConfig, rootReducer);
 

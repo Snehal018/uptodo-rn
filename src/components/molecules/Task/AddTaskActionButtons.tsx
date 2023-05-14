@@ -4,6 +4,7 @@ import {globalStyles} from '../../../styles';
 import VectorIcon from '../../atoms/Icons/VectorIcon';
 import {AppColors} from '../../../themes';
 import {scale} from 'react-native-size-matters';
+import {useAppSelector} from '../../../hooks';
 
 interface ComponentProps {
   containerStyle?: ViewStyle;
@@ -20,6 +21,10 @@ const AddTaskActionButtons: FC<ComponentProps> = ({
   onPressClock = () => {},
   onPressPriority = () => {}
 }) => {
+  const {title} = useAppSelector(state => state.task.createTaskDetails);
+
+  const isAddTaskAllowed = !!title;
+
   return (
     <View style={[globalStyles.rowSpaceBetweenCenter, containerStyle]}>
       <VectorIcon
@@ -51,7 +56,8 @@ const AddTaskActionButtons: FC<ComponentProps> = ({
         iconType="Ionicons"
         name="md-create-outline"
         style={{marginLeft: 'auto'}}
-        color={AppColors.primary}
+        color={isAddTaskAllowed ? AppColors.primary : AppColors.gray}
+        disabled={!isAddTaskAllowed}
         size={scale(20)}
         onPress={onPressAddTodo}
       />

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import store from '../redux/store';
+import {store} from '../redux';
 
 const axiosClient = axios.create();
 
@@ -9,8 +9,6 @@ axiosClient.interceptors.request.use(req => {
   if (authToken) {
     req.headers.Authorization = 'Bearer ' + authToken;
   }
-
-  console.log('API PARAM====>', JSON.stringify(req.data));
 
   return req;
 });

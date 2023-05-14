@@ -9,7 +9,7 @@ import VectorIcon from '../../atoms/Icons/VectorIcon';
 import {AppColors} from '../../../themes';
 import {globalStyles} from '../../../styles';
 import {useAppDispatch} from '../../../hooks/reduxHooks';
-import {updateAddTaskSheetVisibleStatus} from '../../../redux/features/task/taskSlice';
+import {taskSliceActions} from '../../../redux';
 import {scale} from 'react-native-size-matters';
 
 const BottomTab: FC<BottomTabBarProps> = props => {
@@ -65,7 +65,7 @@ const BottomTab: FC<BottomTabBarProps> = props => {
   };
 
   const onAddTaskHandler = () => {
-    dispatch(updateAddTaskSheetVisibleStatus(true));
+    dispatch(taskSliceActions.updateAddTaskSheetVisibleStatus(true));
   };
 
   return (

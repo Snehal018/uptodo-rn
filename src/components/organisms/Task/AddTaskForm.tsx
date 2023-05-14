@@ -13,12 +13,8 @@ import {
 import AddTaskActionButtons from '../../molecules/Task/AddTaskActionButtons';
 import {AddTaskContext} from '../../../context/task/addTaskContext';
 import {useAppDispatch, useAppSelector} from '../../../hooks';
-import {
-  resetCreateTaskDetails,
-  updateAddTaskSheetVisibleStatus,
-  updateCreateTaskDetails
-} from '../../../redux/features/task/taskSlice';
-import {addTask} from '../../../redux/features/task/thunks';
+import {taskSliceActions, addTask} from '../../../redux';
+import {parseThunkError} from '../../../utils/helperfunctions';
 
 const AddTaskForm: FC = () => {
   const {setIsCalendarModalVisible, setIsPriorityModalVisible} =
@@ -39,33 +35,33 @@ const AddTaskForm: FC = () => {
   };
 
   const onPressAddTodoHandler = () => {
-    dispatch(
-      addTask({
-        params: {
-          title,
-          description,
-          time: date,
-          category: undefined,
-          priority: priority ?? 1
-        }
-      })
-    )
+    const params = {
+      title,
+      description,
+      time: date,
+      category: undefined,
+      priority: priority ?? 4
+    };
+
+    dispatch(addTask({params}))
       .unwrap()
       .then(res => {
         if (res.status === 201) {
           Alert.alert(AppStrings.success, res.data?.message);
-          dispatch(resetCreateTaskDetails());
-          updateAddTaskSheetVisibleStatus(false);
+          dispatch(taskSliceActions.resetCreateTaskDetails());
+          dispatch(taskSliceActions.updateAddTaskSheetVisibleStatus(false));
         }
       });
   };
 
   const onChangeTitle = (titleValue: string) => {
-    dispatch(updateCreateTaskDetails({title: titleValue}));
+    dispatch(taskSliceActions.updateCreateTaskDetails({title: titleValue}));
   };
 
   const onChangeDescription = (descriptionValue: string) => {
-    dispatch(updateCreateTaskDetails({description: descriptionValue}));
+    dispatch(
+      taskSliceActions.updateCreateTaskDetails({description: descriptionValue})
+    );
   };
 
   return (
