@@ -13,7 +13,9 @@ import {
   Header,
   ImageView,
   Separator,
-  VectorIcon
+  VectorIcon,
+  SearchInput,
+  ScreenContainer
 } from './atoms';
 import {
   AddTaskActionButtons,
@@ -28,7 +30,8 @@ import {
   BottomTab,
   CalendarModal,
   EmptyTaskIndex,
-  PriorityModal
+  PriorityModal,
+  TasksDashboard
 } from './organisms';
 
 export {
@@ -48,6 +51,8 @@ export {
   AppBottomsheet,
   AppKeyboardScrollWrapper,
   BottomSheetInput,
+  SearchInput,
+  ScreenContainer,
 
   // Molecules
   TaskIndexHeader,
@@ -62,5 +67,6 @@ export {
   BottomTab,
   CalendarModal,
   AddTaskForm,
-  PriorityModal
+  PriorityModal,
+  TasksDashboard
 };

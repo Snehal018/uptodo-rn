@@ -87,7 +87,7 @@ const Onboarding = () => {
         globalStyles.darkContainerPadding,
         globalStyles.horizontalCenter
       ]}>
-      <CustomStatusBar barType="dark" />
+      <CustomStatusBar />
       <AppButton
         onPress={onSkipPressHandler}
         title={AppStrings.skip}

@@ -1,8 +1,13 @@
-import {View, ViewStyle} from 'react-native';
+import {ViewStyle} from 'react-native';
 import React from 'react';
 import {globalStyles} from '../../styles';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {EmptyTaskIndex, TaskIndexHeader} from '../../components';
+import {
+  EmptyTaskIndex,
+  ScreenContainer,
+  TaskIndexHeader,
+  TasksDashboard
+} from '../../components';
 import {AppImages} from '../../assets/images';
 import {AppStrings} from '../../constants';
 import styles from './styles';
@@ -12,20 +17,26 @@ const TaskIndexScreen = () => {
   const {top} = useSafeAreaInsets();
 
   const rootContainerStyle: ViewStyle = {
-    ...globalStyles.darkContainerPadding,
+    ...globalStyles.horizontalPaddding,
     paddingTop: top + verticalScale(16)
   };
 
+  const hasTasks = true;
+
   return (
-    <View style={rootContainerStyle}>
+    <ScreenContainer containerStyle={rootContainerStyle}>
       <TaskIndexHeader />
-      <EmptyTaskIndex
-        image={AppImages.emptyTaskIndex}
-        title={AppStrings.whatYouWantToDoToday}
-        subTitle={AppStrings.tapToAddTasks}
-        containerStyle={styles.emptyIndexContainerStyle}
-      />
-    </View>
+      {hasTasks ? (
+        <TasksDashboard />
+      ) : (
+        <EmptyTaskIndex
+          image={AppImages.emptyTaskIndex}
+          title={AppStrings.whatYouWantToDoToday}
+          subTitle={AppStrings.tapToAddTasks}
+          containerStyle={styles.emptyIndexContainerStyle}
+        />
+      )}
+    </ScreenContainer>
   );
 };
 

@@ -8,10 +8,11 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {globalStyles} from './src/styles';
 import {AddTaskBottomSheet} from './src/components';
 import AddTaskContextProvider from './src/context/task/addTaskContext';
+import {Provider as PaperProvider} from 'react-native-paper';
 
 const App = () => {
   return (
-    <>
+    <PaperProvider>
       <StatusBar barStyle={'light-content'} />
       <Provider store={store}>
         <PersistGate persistor={persistor} loading={null}>
@@ -23,7 +24,7 @@ const App = () => {
           </GestureHandlerRootView>
         </PersistGate>
       </Provider>
-    </>
+    </PaperProvider>
   );
 };
 

@@ -1,24 +1,26 @@
-import {StatusBar} from 'react-native';
+import {StatusBar, StatusBarProps} from 'react-native';
 import React, {FC} from 'react';
-import {AppColors} from '../../../themes';
 
-interface ComponentProps {
-  barType: 'dark' | 'light';
+interface ComponentProps extends StatusBarProps {
+  barType?: 'dark' | 'light';
 }
 
-const CustomStatusBar: FC<ComponentProps> = ({barType}) => {
+const CustomStatusBar: FC<ComponentProps> = ({
+  barType = 'dark',
+  ...statusbarProps
+}) => {
+  let statusBarStyle: StatusBarProps['barStyle'] = 'dark-content';
   if (barType === 'dark') {
-    return (
-      <StatusBar
-        barStyle={'light-content'}
-        backgroundColor={AppColors.primaryDark}
-      />
-    );
-  } else {
-    return (
-      <StatusBar barStyle={'dark-content'} backgroundColor={AppColors.white} />
-    );
+    statusBarStyle = 'light-content';
   }
+  return (
+    <StatusBar
+      backgroundColor={'transparent'}
+      translucent
+      barStyle={statusBarStyle}
+      {...statusbarProps}
+    />
+  );
 };
 
 export default CustomStatusBar;

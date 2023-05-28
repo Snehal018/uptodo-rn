@@ -3,10 +3,10 @@ import {globalStyles} from '../../../styles';
 import {
   AppButton,
   AppKeyboardScrollWrapper,
-  AppLoader,
   BackHeader,
   BaseText,
   CustomInput,
+  ScreenContainer,
   Separator
 } from '../../../components';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -44,75 +44,78 @@ const Registration = () => {
   };
 
   return (
-    <SafeAreaView style={globalStyles.darkContainerPadding}>
-      {isLoading && <AppLoader />}
-      <BackHeader headerContainerStyle={{marginTop: verticalScale(16)}} />
-      <AppKeyboardScrollWrapper>
-        <BaseText style={styles.registerTitle}>{AppStrings.register}</BaseText>
-        <CustomInput
-          title={AppStrings.username}
-          inputContainerStyle={styles.inputContainerStyle}
-          value={userName}
-          onChangeText={handleChange('userName')}
-          onBlur={handleBlur('userName')}
-          error={normalizeFormikError(errors.userName, touched.userName)}
-          placeholder={AppStrings.enterUsername}
-        />
-        <CustomInput
-          title={AppStrings.password}
-          inputContainerStyle={styles.inputContainerStyle}
-          value={password}
-          onChangeText={handleChange('password')}
-          onBlur={handleBlur('password')}
-          error={normalizeFormikError(errors.password, touched.password)}
-          secureTextEntry={true}
-          placeholder={AppStrings.enterPassword}
-        />
-        <CustomInput
-          title={AppStrings.confirmPassword}
-          inputContainerStyle={styles.inputContainerStyle}
-          value={confirmPassword}
-          onChangeText={handleChange('confirmPassword')}
-          onBlur={handleBlur('confirmPassword')}
-          error={
-            normalizeFormikError(
-              errors.confirmPassword,
-              touched.confirmPassword
-            ) || confirmPasswordError
-          }
-          secureTextEntry={true}
-          placeholder={AppStrings.reEnterPassword}
-        />
-        <AppButton
-          title={AppStrings.register}
-          style={{marginTop: verticalScale(16)}}
-          onPress={handleSubmit}
-        />
-
-        <Separator
-          centerText={AppStrings.or}
-          lineStyle={{marginVertical: verticalScale(32)}}
-        />
-        <AppButton
-          buttonType="outline"
-          title={AppStrings.loginWithGoogle}
-          leadingIcon={AppImages.imgGoogle}
-        />
-        <AppButton
-          buttonType="outline"
-          title={AppStrings.loginWithApple}
-          leadingIcon={AppImages.imgApple}
-          style={{marginTop: verticalScale(16)}}
-        />
-        <BaseText style={styles.loginText}>
-          {AppStrings.alreadyHaveAccount}{' '}
-          <BaseText onPress={onPressLoginHandler}>
-            {' '}
-            {AppStrings.loginSmall}
+    <ScreenContainer isLoading={isLoading}>
+      <SafeAreaView style={globalStyles.darkContainerPadding}>
+        <BackHeader headerContainerStyle={{marginTop: verticalScale(16)}} />
+        <AppKeyboardScrollWrapper>
+          <BaseText style={styles.registerTitle}>
+            {AppStrings.register}
           </BaseText>
-        </BaseText>
-      </AppKeyboardScrollWrapper>
-    </SafeAreaView>
+          <CustomInput
+            title={AppStrings.username}
+            inputContainerStyle={styles.inputContainerStyle}
+            value={userName}
+            onChangeText={handleChange('userName')}
+            onBlur={handleBlur('userName')}
+            error={normalizeFormikError(errors.userName, touched.userName)}
+            placeholder={AppStrings.enterUsername}
+          />
+          <CustomInput
+            title={AppStrings.password}
+            inputContainerStyle={styles.inputContainerStyle}
+            value={password}
+            onChangeText={handleChange('password')}
+            onBlur={handleBlur('password')}
+            error={normalizeFormikError(errors.password, touched.password)}
+            secureTextEntry={true}
+            placeholder={AppStrings.enterPassword}
+          />
+          <CustomInput
+            title={AppStrings.confirmPassword}
+            inputContainerStyle={styles.inputContainerStyle}
+            value={confirmPassword}
+            onChangeText={handleChange('confirmPassword')}
+            onBlur={handleBlur('confirmPassword')}
+            error={
+              normalizeFormikError(
+                errors.confirmPassword,
+                touched.confirmPassword
+              ) || confirmPasswordError
+            }
+            secureTextEntry={true}
+            placeholder={AppStrings.reEnterPassword}
+          />
+          <AppButton
+            title={AppStrings.register}
+            style={{marginTop: verticalScale(16)}}
+            onPress={handleSubmit}
+          />
+
+          <Separator
+            centerText={AppStrings.or}
+            lineStyle={{marginVertical: verticalScale(32)}}
+          />
+          <AppButton
+            buttonType="outline"
+            title={AppStrings.loginWithGoogle}
+            leadingIcon={AppImages.imgGoogle}
+          />
+          <AppButton
+            buttonType="outline"
+            title={AppStrings.loginWithApple}
+            leadingIcon={AppImages.imgApple}
+            style={{marginTop: verticalScale(16)}}
+          />
+          <BaseText style={styles.loginText}>
+            {AppStrings.alreadyHaveAccount}{' '}
+            <BaseText onPress={onPressLoginHandler}>
+              {' '}
+              {AppStrings.loginSmall}
+            </BaseText>
+          </BaseText>
+        </AppKeyboardScrollWrapper>
+      </SafeAreaView>
+    </ScreenContainer>
   );
 };
 

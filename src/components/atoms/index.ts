@@ -13,6 +13,8 @@ import CustomStatusBar from './Statusbar/CustomStatusBar';
 import BaseText from './Text/Basetext';
 import ActiveIndicator from './UI/ActiveIndicator';
 import Separator from './UI/Separator';
+import SearchInput from './Input/SearchInput';
+import ScreenContainer from './Container/ScreenContainer';
 
 export {
   ActiveIndicator,
@@ -29,5 +31,7 @@ export {
   Header,
   ImageView,
   Separator,
-  VectorIcon
+  VectorIcon,
+  SearchInput,
+  ScreenContainer
 };

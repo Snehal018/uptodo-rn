@@ -2,7 +2,11 @@ import {StyleSheet} from 'react-native';
 import {AppColors} from '../../../themes';
 import {globalStyles} from '../../../styles';
 import {screenWidth} from '../../../themes';
-import {scale, verticalScale} from 'react-native-size-matters';
+import {
+  moderateVerticalScale,
+  scale,
+  verticalScale
+} from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
   tabContainer: {
@@ -17,7 +21,7 @@ const styles = StyleSheet.create({
     height: scale(56),
     width: scale(56),
     borderRadius: scale(28),
-    top: -verticalScale(28),
+    top: -moderateVerticalScale(30, 0),
     left: (screenWidth - scale(56)) / 2,
     backgroundColor: AppColors.primary
   },

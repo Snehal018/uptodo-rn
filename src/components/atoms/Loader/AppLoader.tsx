@@ -1,12 +1,14 @@
-import {ActivityIndicator, StyleSheet, View} from 'react-native';
+import {ActivityIndicator, StyleSheet} from 'react-native';
 import React, {FC} from 'react';
 import {AppColors} from '../../../themes';
 
 const AppLoader: FC = () => {
   return (
-    <View style={styles.loaderStyle}>
-      <ActivityIndicator color={AppColors.primary} size={'large'} />
-    </View>
+    <ActivityIndicator
+      color={AppColors.primary}
+      size={'large'}
+      style={styles.loaderStyle}
+    />
   );
 };
 
@@ -14,13 +16,11 @@ export default AppLoader;
 
 const styles = StyleSheet.create({
   loaderStyle: {
+    position: 'absolute',
     top: 0,
     bottom: 0,
     right: 0,
     left: 0,
-    position: 'absolute',
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#00000080',
     zIndex: 999999
   }

@@ -4,6 +4,7 @@ import BottomTab from './Tab/BottomTab';
 import AddTaskBottomSheet from './Task/AddTaskBottomSheet';
 import AddTaskForm from './Task/AddTaskForm';
 import EmptyTaskIndex from './Task/EmptyTaskIndex';
+import TasksDashboard from './Task/TasksDashboard';
 
 export {
   AddTaskBottomSheet,
@@ -11,5 +12,6 @@ export {
   BottomTab,
   CalendarModal,
   EmptyTaskIndex,
-  PriorityModal
+  PriorityModal,
+  TasksDashboard
 };

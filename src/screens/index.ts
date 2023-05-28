@@ -1,4 +1,3 @@
-import SplashSceen from './onboardingScreens/splashSceen';
 import Onboarding from './onboardingScreens/onboarding';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
@@ -9,7 +8,6 @@ import CalendarScreen from './calendar';
 import ProfileScreen from './profile';
 
 export {
-  SplashSceen,
   Onboarding,
   Login,
   Registration,

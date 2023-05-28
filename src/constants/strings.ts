@@ -64,6 +64,7 @@ const AppStrings = {
   // Task Index
   whatYouWantToDoToday: 'What do you want to do today?',
   tapToAddTasks: 'Tap + to add your tasks',
+  searchTask: 'Search for your task...',
 
   // Add task
   addTask: 'Add Task',

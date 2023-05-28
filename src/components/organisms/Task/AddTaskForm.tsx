@@ -14,7 +14,6 @@ import AddTaskActionButtons from '../../molecules/Task/AddTaskActionButtons';
 import {AddTaskContext} from '../../../context/task/addTaskContext';
 import {useAppDispatch, useAppSelector} from '../../../hooks';
 import {taskSliceActions, addTask} from '../../../redux';
-import {parseThunkError} from '../../../utils/helperfunctions';
 
 const AddTaskForm: FC = () => {
   const {setIsCalendarModalVisible, setIsPriorityModalVisible} =

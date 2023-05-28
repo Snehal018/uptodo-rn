@@ -2,11 +2,12 @@ import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {globalStyles} from '../../styles';
-import {AppButton, BaseText, CustomStatusBar} from '../../components';
+import {AppButton, BaseText} from '../../components';
 import {AppStrings} from '../../constants';
 import {fontSize, fontWeight} from '../../themes';
 import {useCustomNavigation} from '../../hooks';
 import {verticalScale} from 'react-native-size-matters';
+import ScreenContainer from '../../components/atoms/Container/ScreenContainer';
 
 const GetStarted = () => {
   const {navigation} = useCustomNavigation('Login');
@@ -20,30 +21,31 @@ const GetStarted = () => {
   };
 
   return (
-    <SafeAreaView style={globalStyles.darkContainerPadding}>
-      <CustomStatusBar barType="dark" />
-      <View style={[globalStyles.fullSpace, globalStyles.horizontalCenter]}>
-        <BaseText style={styles.welcomeHeader}>
-          {AppStrings.welcomeToUptodo}
-        </BaseText>
-        <BaseText style={styles.welcomeSubText}>
-          {AppStrings.welcomeSubText}
-        </BaseText>
-      </View>
-      <View>
-        <AppButton
-          style={styles.loginButton}
-          title={AppStrings.login}
-          onPress={onLoginPressHandler}
-        />
-        <AppButton
-          buttonType="outline"
-          style={styles.signupButton}
-          title={AppStrings.createAccount}
-          onPress={onCreateAccountPressHandler}
-        />
-      </View>
-    </SafeAreaView>
+    <ScreenContainer>
+      <SafeAreaView style={globalStyles.darkContainerPadding}>
+        <View style={[globalStyles.fullSpace, globalStyles.horizontalCenter]}>
+          <BaseText style={styles.welcomeHeader}>
+            {AppStrings.welcomeToUptodo}
+          </BaseText>
+          <BaseText style={styles.welcomeSubText}>
+            {AppStrings.welcomeSubText}
+          </BaseText>
+        </View>
+        <View>
+          <AppButton
+            style={styles.loginButton}
+            title={AppStrings.login}
+            onPress={onLoginPressHandler}
+          />
+          <AppButton
+            buttonType="outline"
+            style={styles.signupButton}
+            title={AppStrings.createAccount}
+            onPress={onCreateAccountPressHandler}
+          />
+        </View>
+      </SafeAreaView>
+    </ScreenContainer>
   );
 };
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* uptodoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* uptodoTests.m */; };
+		046935192A23174C0015F4C4 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046935182A23174C0015F4C4 /* BootSplash.storyboard */; };
 		04921FF629FE7C5600AA820E /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04921FE629FE7C5600AA820E /* Ionicons.ttf */; };
 		04921FF729FE7C5600AA820E /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04921FE729FE7C5600AA820E /* FontAwesome5_Solid.ttf */; };
 		04921FF829FE7C5600AA820E /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04921FE829FE7C5600AA820E /* Feather.ttf */; };
@@ -51,6 +52,7 @@
 		00E356EE1AD99517003FC87E /* uptodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uptodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* uptodoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uptodoTests.m; sourceTree = "<group>"; };
+		046935182A23174C0015F4C4 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = uptodo/BootSplash.storyboard; sourceTree = "<group>"; };
 		04921FE629FE7C5600AA820E /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		04921FE729FE7C5600AA820E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		04921FE829FE7C5600AA820E /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				046935182A23174C0015F4C4 /* BootSplash.storyboard */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -324,6 +327,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				04921FF929FE7C5600AA820E /* Entypo.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				046935192A23174C0015F4C4 /* BootSplash.storyboard in Resources */,
 				04921FF829FE7C5600AA820E /* Feather.ttf in Resources */,
 				04921FFB29FE7C5600AA820E /* MaterialIcons.ttf in Resources */,
 				04921FF629FE7C5600AA820E /* Ionicons.ttf in Resources */,

@@ -6,6 +6,7 @@ import {navigationRef} from './helper/navigationService';
 import NetInfo from '@react-native-community/netinfo';
 import {useAppDispatch} from '../hooks';
 import {appSliceActions} from '../redux';
+import {hide} from 'react-native-bootsplash';
 
 const AppNavigation = () => {
   const dispatch = useAppDispatch();
@@ -17,8 +18,12 @@ const AppNavigation = () => {
     return unsubscribe();
   }, []);
 
+  const hideSplashScreenHandler = () => {
+    hide({fade: true});
+  };
+
   return (
-    <NavigationContainer ref={navigationRef}>
+    <NavigationContainer ref={navigationRef} onReady={hideSplashScreenHandler}>
       <AppContextProvider>
         <StackNavigator />
       </AppContextProvider>

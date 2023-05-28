@@ -1,12 +1,6 @@
 import React, {useCallback} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {
-  GetStarted,
-  Login,
-  Onboarding,
-  Registration,
-  SplashSceen
-} from '../../screens';
+import {GetStarted, Login, Onboarding, Registration} from '../../screens';
 import RootStackParams from '../../utils/types/navigationType';
 import BottomTabNavigator from '../bottomTab';
 import {useAppSelector} from '../../hooks/reduxHooks';
@@ -32,7 +26,6 @@ const StackNavigator = () => {
     <Stack.Navigator
       screenOptions={{headerShown: false}}
       initialRouteName={getInitialRouteName()}>
-      <Stack.Screen name="Splash" component={SplashSceen} />
       <Stack.Screen name="Onboarding" component={Onboarding} />
       <Stack.Screen name="GetStarted" component={GetStarted} />
       <Stack.Screen name="Login" component={Login} />
