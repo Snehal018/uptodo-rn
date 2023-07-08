@@ -1,16 +1,15 @@
-import {Alert, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {FC, useContext} from 'react';
-import BaseText from '../../atoms/Text/Basetext';
 import {AppPadding} from '../../../styles';
 import {AppStrings} from '../../../constants';
 import {fontSize, fontTypes} from '../../../themes';
-import BottomSheetInput from '../../atoms/BottomSheet/BottomSheetInput';
+import {BottomSheetInput, BaseText} from '../../atoms';
 import {
   moderateVerticalScale,
   scale,
   verticalScale
 } from 'react-native-size-matters';
-import AddTaskActionButtons from '../../molecules/Task/AddTaskActionButtons';
+import {AddTaskActionButtons} from '../../molecules';
 import {AddTaskContext} from '../../../context/task/addTaskContext';
 import {useAppDispatch, useAppSelector} from '../../../hooks';
 import {taskSliceActions, addTask} from '../../../redux';
@@ -46,7 +45,6 @@ const AddTaskForm: FC = () => {
       .unwrap()
       .then(res => {
         if (res.status === 201) {
-          Alert.alert(AppStrings.success, res.data?.message);
           dispatch(taskSliceActions.resetCreateTaskDetails());
           dispatch(taskSliceActions.updateAddTaskSheetVisibleStatus(false));
         }

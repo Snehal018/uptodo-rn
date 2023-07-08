@@ -1,15 +1,14 @@
 import {StyleSheet, View} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {globalStyles} from '../../styles';
-import {AppButton, BaseText} from '../../components';
+import {AppButton, BaseText, ScreenContainer} from '../../components';
 import {AppStrings} from '../../constants';
 import {fontSize, fontWeight} from '../../themes';
 import {useCustomNavigation} from '../../hooks';
 import {verticalScale} from 'react-native-size-matters';
-import ScreenContainer from '../../components/atoms/Container/ScreenContainer';
 
-const GetStarted = () => {
+const GetStarted: FC = () => {
   const {navigation} = useCustomNavigation('Login');
 
   const onLoginPressHandler = () => {

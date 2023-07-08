@@ -1,5 +1,5 @@
 import {ViewStyle} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 import {globalStyles} from '../../styles';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {
@@ -13,7 +13,7 @@ import {AppStrings} from '../../constants';
 import styles from './styles';
 import {verticalScale} from 'react-native-size-matters';
 
-const TaskIndexScreen = () => {
+const TaskIndexScreen: FC = () => {
   const {top} = useSafeAreaInsets();
 
   const rootContainerStyle: ViewStyle = {

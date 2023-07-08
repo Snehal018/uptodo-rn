@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 
-const FocusScreen = () => {
+const FocusScreen: FC = () => {
   return (
     <View>
       <Text>index</Text>

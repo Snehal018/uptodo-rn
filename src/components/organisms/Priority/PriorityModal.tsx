@@ -6,19 +6,16 @@ import React, {
   useCallback,
   useState
 } from 'react';
-import BaseModal from '../../atoms/Modal/BaseModal';
+import {BaseModal, BaseText, Separator} from '../../atoms';
 import {AppColors} from '../../../themes';
 import {
   moderateVerticalScale,
   scale,
   verticalScale
 } from 'react-native-size-matters';
-import BaseText from '../../atoms/Text/Basetext';
 import {globalStyles} from '../../../styles';
-import Separator from '../../atoms/UI/Separator';
-import PriorityItem from '../../molecules/Priority/PriorityItem';
 import {AppStrings} from '../../../constants';
-import {RowButtons} from '../../molecules';
+import {RowButtons, PriorityItem} from '../../molecules';
 
 interface ComponentProps {
   visible: boolean;

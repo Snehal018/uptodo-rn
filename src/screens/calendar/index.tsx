@@ -1,7 +1,7 @@
 import {Text, View} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 
-const CalendarScreen = () => {
+const CalendarScreen: FC = () => {
   return (
     <View>
       <Text>index</Text>

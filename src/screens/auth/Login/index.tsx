@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {FC, useContext} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {globalStyles} from '../../../styles';
 import {
@@ -18,7 +18,7 @@ import {useCustomNavigation} from '../../../hooks';
 import {useAppSelector} from '../../../hooks/reduxHooks';
 import {moderateVerticalScale} from 'react-native-size-matters';
 
-const Login = () => {
+const Login: FC = () => {
   const {formik: loginFormik} = useContext(AuthContext).login;
   const {navigation} = useCustomNavigation('Login');
   const {userName, password} = loginFormik.values;

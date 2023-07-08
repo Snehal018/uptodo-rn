@@ -26,7 +26,7 @@ const onRegisterPressHandler = ({
     .then(res => {
       if (res?.status === 201) {
         Alert.alert(AppStrings.success, AppStrings.userCreateSuccess, [
-          {onPress: navigate.bind(this, 'Login')}
+          {onPress: () => navigate('Login')}
         ]);
       }
     });

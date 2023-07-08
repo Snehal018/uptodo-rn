@@ -5,7 +5,7 @@ import styles from './styles';
 import {AppImages} from '../../../assets/images';
 import TabItem, {TabItemProps} from '../../molecules/Tab/TabItem';
 import {AppStrings} from '../../../constants';
-import VectorIcon from '../../atoms/Icons/VectorIcon';
+import {VectorIcon} from '../../atoms';
 import {AppColors} from '../../../themes';
 import {globalStyles} from '../../../styles';
 import {useAppDispatch} from '../../../hooks/reduxHooks';

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {FC, useContext, useEffect, useState} from 'react';
 import {globalStyles} from '../../../styles';
 import {
   AppButton,
@@ -19,7 +19,7 @@ import {useCustomNavigation} from '../../../hooks';
 import {useAppSelector} from '../../../hooks/reduxHooks';
 import {verticalScale} from 'react-native-size-matters';
 
-const Registration = () => {
+const Registration: FC = () => {
   const {formik: registerFormik} = useContext(AuthContext).register;
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const {navigation} = useCustomNavigation('Registration');

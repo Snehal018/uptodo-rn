@@ -1,5 +1,5 @@
 import {Image, StyleSheet, View} from 'react-native';
-import React, {useMemo, useState} from 'react';
+import React, {FC, useMemo, useState} from 'react';
 import {globalStyles} from '../../styles';
 import {
   ActiveIndicator,
@@ -41,7 +41,7 @@ const onboardingContentHandler = (currentIndex: number) => {
   return {image, title, subTitle};
 };
 
-const Onboarding = () => {
+const Onboarding: FC = () => {
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
   const {image, subTitle, title} = onboardingContentHandler(currentPageIndex);
   const {navigation} = useCustomNavigation('Onboarding');
