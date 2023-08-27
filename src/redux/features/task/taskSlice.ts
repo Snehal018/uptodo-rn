@@ -1,7 +1,7 @@
-import {PayloadAction, createSlice} from '@reduxjs/toolkit';
-import {addTask} from './thunks';
-import {Alert} from 'react-native';
-import {AppStrings} from '../../../constants';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { addTask } from './thunks';
+import { Alert } from 'react-native';
+import { AppStrings } from '../../../constants';
 
 interface TaskType {
   title: string;

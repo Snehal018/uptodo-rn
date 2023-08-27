@@ -7,10 +7,10 @@ import {
   View,
   ViewStyle
 } from 'react-native';
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import BaseText from '../../atoms/Text/Basetext';
-import {AppColors, fontSize} from '../../../themes';
-import {scale, verticalScale} from 'react-native-size-matters';
+import { AppColors, fontSize } from '../../../themes';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 interface ComponentProps {
   image: ImageSourcePropType;

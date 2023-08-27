@@ -1,15 +1,15 @@
-import {StyleSheet, View} from 'react-native';
-import React, {FC} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {globalStyles} from '../../styles';
-import {AppButton, BaseText, ScreenContainer} from '../../components';
-import {AppStrings} from '../../constants';
-import {fontSize, fontWeight} from '../../themes';
-import {useCustomNavigation} from '../../hooks';
-import {verticalScale} from 'react-native-size-matters';
+import { StyleSheet, View } from 'react-native';
+import React, { FC } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { globalStyles } from '../../styles';
+import { AppButton, BaseText, ScreenContainer } from '../../components';
+import { AppStrings } from '../../constants';
+import { fontSize, fontWeight } from '../../themes';
+import { useCustomNavigation } from '../../hooks';
+import { verticalScale } from 'react-native-size-matters';
 
 const GetStarted: FC = () => {
-  const {navigation} = useCustomNavigation('Login');
+  const { navigation } = useCustomNavigation('Login');
 
   const onLoginPressHandler = () => {
     navigation.navigate('Login');
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     opacity: 0.67,
     marginTop: verticalScale(30)
   },
-  loginButton: {marginBottom: verticalScale(20)},
+  loginButton: { marginBottom: verticalScale(20) },
   signupButton: {
     marginBottom: verticalScale(35)
   }

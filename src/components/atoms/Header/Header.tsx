@@ -1,9 +1,9 @@
-import {StyleSheet, TextStyle, View} from 'react-native';
-import React, {FC} from 'react';
+import { StyleSheet, TextStyle, View } from 'react-native';
+import React, { FC } from 'react';
 import BaseText from '../Text/Basetext';
-import {globalStyles} from '../../../styles';
-import {AppColors, fontSize} from '../../../themes';
-import {verticalScale} from 'react-native-size-matters';
+import { globalStyles } from '../../../styles';
+import { AppColors, fontSize } from '../../../themes';
+import { verticalScale } from 'react-native-size-matters';
 
 interface ComponentProps {
   rightContent?: () => JSX.Element;
@@ -22,8 +22,8 @@ const Header: FC<ComponentProps> = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={{width: '30%'}}>{leftContent && leftContent()}</View>
-      <View style={{width: '30%', flex: 1}}>
+      <View style={{ width: '30%' }}>{leftContent && leftContent()}</View>
+      <View style={{ width: '30%', flex: 1 }}>
         {title ? (
           <BaseText style={[styles.baseTitleStyle, titleStyle]}>
             {title}
@@ -32,7 +32,7 @@ const Header: FC<ComponentProps> = ({
           centerContent()
         ) : null}
       </View>
-      <View style={{width: '30%'}}>{rightContent && rightContent()}</View>
+      <View style={{ width: '30%' }}>{rightContent && rightContent()}</View>
     </View>
   );
 };

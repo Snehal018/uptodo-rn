@@ -22,7 +22,10 @@ import {
   PriorityItem,
   TabItem,
   TaskIndexHeader,
-  RowButtons
+  RowButtons,
+  TaskItem,
+  PriorityViewItem,
+  CategoryViewItem
 } from './molecules';
 import {
   AddTaskBottomSheet,
@@ -31,7 +34,8 @@ import {
   CalendarModal,
   EmptyTaskIndex,
   PriorityModal,
-  TasksDashboard
+  TasksDashboard,
+  TasksList
 } from './organisms';
 
 export {
@@ -60,6 +64,9 @@ export {
   PriorityItem,
   TabItem,
   RowButtons,
+  TaskItem,
+  PriorityViewItem,
+  CategoryViewItem,
 
   // Organisms
   EmptyTaskIndex,
@@ -68,5 +75,6 @@ export {
   CalendarModal,
   AddTaskForm,
   PriorityModal,
-  TasksDashboard
+  TasksDashboard,
+  TasksList
 };

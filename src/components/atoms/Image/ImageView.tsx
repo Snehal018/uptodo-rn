@@ -1,8 +1,8 @@
-import {Image, View, ViewStyle} from 'react-native';
-import React, {FC} from 'react';
-import FastImage, {FastImageProps} from 'react-native-fast-image';
-import {globalStyles} from '../../../styles';
-import {verticalScale} from 'react-native-size-matters';
+import { Image, View, ViewStyle } from 'react-native';
+import React, { FC } from 'react';
+import FastImage, { FastImageProps } from 'react-native-fast-image';
+import { globalStyles } from '../../../styles';
+import { verticalScale } from 'react-native-size-matters';
 
 interface ComponentProps extends FastImageProps {
   containerSize?: number;

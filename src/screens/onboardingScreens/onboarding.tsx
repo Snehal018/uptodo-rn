@@ -1,20 +1,20 @@
-import {Image, StyleSheet, View} from 'react-native';
-import React, {FC, useMemo, useState} from 'react';
-import {globalStyles} from '../../styles';
+import { Image, StyleSheet, View } from 'react-native';
+import React, { FC, useMemo, useState } from 'react';
+import { globalStyles } from '../../styles';
 import {
   ActiveIndicator,
   AppButton,
   BaseText,
   CustomStatusBar
 } from '../../components';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {AppStrings} from '../../constants';
-import {AppImages} from '../../assets/images';
-import {fontSize, fontWeight} from '../../themes';
-import {useCustomNavigation} from '../../hooks';
-import {scale, verticalScale} from 'react-native-size-matters';
-import {useAppDispatch} from '../../hooks/reduxHooks';
-import {authSliceActions} from '../../redux';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { AppStrings } from '../../constants';
+import { AppImages } from '../../assets/images';
+import { fontSize, fontWeight } from '../../themes';
+import { useCustomNavigation } from '../../hooks';
+import { scale, verticalScale } from 'react-native-size-matters';
+import { useAppDispatch } from '../../hooks/reduxHooks';
+import { authSliceActions } from '../../redux';
 
 const onboardingContentHandler = (currentIndex: number) => {
   let image, title, subTitle;
@@ -38,13 +38,13 @@ const onboardingContentHandler = (currentIndex: number) => {
     default:
       break;
   }
-  return {image, title, subTitle};
+  return { image, title, subTitle };
 };
 
 const Onboarding: FC = () => {
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
-  const {image, subTitle, title} = onboardingContentHandler(currentPageIndex);
-  const {navigation} = useCustomNavigation('Onboarding');
+  const { image, subTitle, title } = onboardingContentHandler(currentPageIndex);
+  const { navigation } = useCustomNavigation('Onboarding');
   const dispatch = useAppDispatch();
 
   const onBackPressHandler = () => {
@@ -57,7 +57,7 @@ const Onboarding: FC = () => {
 
   const onSkipPressHandler = () => {
     dispatch(authSliceActions.visitedOnboarding());
-    navigation.reset({index: 0, routes: [{name: 'GetStarted'}]});
+    navigation.reset({ index: 0, routes: [{ name: 'GetStarted' }] });
   };
 
   const onNextPressHandler = () => {
@@ -95,7 +95,7 @@ const Onboarding: FC = () => {
         style={styles.skipButtonStyle}
       />
       <View style={styles.mainContentContainer}>
-        <View style={{height: verticalScale(325)}}>
+        <View style={{ height: verticalScale(325) }}>
           <Image
             source={image}
             style={styles.imageStyle}
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     opacity: 0.87
   },
-  textContainer: {alignItems: 'center', maxWidth: '95%'},
+  textContainer: { alignItems: 'center', maxWidth: '95%' },
   footerButtonContainer: {
     flexDirection: 'row',
     marginTop: 'auto',
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%'
   },
-  backButtonTitle: {opacity: 0.44},
+  backButtonTitle: { opacity: 0.44 },
   nextButtonStyle: {
     marginTop: 'auto',
     marginBottom: verticalScale(28),

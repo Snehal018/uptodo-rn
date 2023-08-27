@@ -1,6 +1,6 @@
-import {StyleSheet, View, ViewStyle} from 'react-native';
-import React, {FC} from 'react';
-import {AppColors} from '../../../themes';
+import { StyleSheet, View, ViewStyle } from 'react-native';
+import React, { FC } from 'react';
+import { AppColors } from '../../../themes';
 import BaseText from '../Text/Basetext';
 import {
   moderateVerticalScale,
@@ -13,7 +13,7 @@ interface ComponentProps {
   centerText?: string;
 }
 
-const Separator: FC<ComponentProps> = ({centerText, lineStyle}) => {
+const Separator: FC<ComponentProps> = ({ centerText, lineStyle }) => {
   return (
     <View>
       <View style={[styles.breakLine, lineStyle]} />

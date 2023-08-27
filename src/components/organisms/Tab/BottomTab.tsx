@@ -1,19 +1,19 @@
-import {Pressable, View} from 'react-native';
-import React, {FC} from 'react';
-import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
+import { Pressable, View } from 'react-native';
+import React, { FC } from 'react';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import styles from './styles';
-import {AppImages} from '../../../assets/images';
-import TabItem, {TabItemProps} from '../../molecules/Tab/TabItem';
-import {AppStrings} from '../../../constants';
-import {VectorIcon} from '../../atoms';
-import {AppColors} from '../../../themes';
-import {globalStyles} from '../../../styles';
-import {useAppDispatch} from '../../../hooks/reduxHooks';
-import {taskSliceActions} from '../../../redux';
-import {scale} from 'react-native-size-matters';
+import { AppImages } from '../../../assets/images';
+import TabItem, { TabItemProps } from '../../molecules/Tab/TabItem';
+import { AppStrings } from '../../../constants';
+import { VectorIcon } from '../../atoms';
+import { AppColors } from '../../../themes';
+import { globalStyles } from '../../../styles';
+import { useAppDispatch } from '../../../hooks/reduxHooks';
+import { taskSliceActions } from '../../../redux';
+import { scale } from 'react-native-size-matters';
 
 const BottomTab: FC<BottomTabBarProps> = props => {
-  const {navigation, state} = props;
+  const { navigation, state } = props;
   const dispatch = useAppDispatch();
 
   const getTabItemProps = (tabIndex: number): TabItemProps => {
@@ -80,7 +80,7 @@ const BottomTab: FC<BottomTabBarProps> = props => {
       </View>
       <Pressable
         onPress={onAddTaskHandler}
-        style={({pressed}) => [
+        style={({ pressed }) => [
           styles.tabAddTaskButton,
           pressed && globalStyles.pressed
         ]}>

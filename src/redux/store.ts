@@ -1,10 +1,10 @@
-import {configureStore} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import authSlice from './features/auth/authSlice';
 import logger from 'redux-logger';
-import {combineReducers} from 'redux';
-import {persistReducer, persistStore} from 'redux-persist';
+import { combineReducers } from 'redux';
+import { persistReducer, persistStore } from 'redux-persist';
 import taskSlice from './features/task/taskSlice';
-import {reduxMmkvStorage} from '../utils/storage/reduxMmkvStorage';
+import { reduxMmkvStorage } from '../utils/storage/reduxMmkvStorage';
 import appSlice from './features/app/appSlice';
 
 const persistConfig = {

@@ -1,5 +1,5 @@
-import React, {FC, useContext, useEffect, useState} from 'react';
-import {globalStyles} from '../../../styles';
+import React, { FC, useContext, useEffect, useState } from 'react';
+import { globalStyles } from '../../../styles';
 import {
   AppButton,
   AppKeyboardScrollWrapper,
@@ -9,24 +9,24 @@ import {
   ScreenContainer,
   Separator
 } from '../../../components';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {AppStrings} from '../../../constants';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { AppStrings } from '../../../constants';
 import styles from './styles';
-import {AppImages} from '../../../assets/images';
-import {AuthContext} from '../../../context/auth/authContext';
-import {normalizeFormikError} from '../../../utils/helperfunctions';
-import {useCustomNavigation} from '../../../hooks';
-import {useAppSelector} from '../../../hooks/reduxHooks';
-import {verticalScale} from 'react-native-size-matters';
+import { AppImages } from '../../../assets/images';
+import { AuthContext } from '../../../context/auth/authContext';
+import { normalizeFormikError } from '../../../utils/helperfunctions';
+import { useCustomNavigation } from '../../../hooks';
+import { useAppSelector } from '../../../hooks/reduxHooks';
+import { verticalScale } from 'react-native-size-matters';
 
 const Registration: FC = () => {
-  const {formik: registerFormik} = useContext(AuthContext).register;
+  const { formik: registerFormik } = useContext(AuthContext).register;
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
-  const {navigation} = useCustomNavigation('Registration');
-  const {isLoading} = useAppSelector(state => state.auth);
+  const { navigation } = useCustomNavigation('Registration');
+  const { isLoading } = useAppSelector(state => state.auth);
 
-  const {userName, password, confirmPassword} = registerFormik.values;
-  const {errors, handleBlur, handleChange, handleSubmit, touched} =
+  const { userName, password, confirmPassword } = registerFormik.values;
+  const { errors, handleBlur, handleChange, handleSubmit, touched } =
     registerFormik;
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const Registration: FC = () => {
   return (
     <ScreenContainer isLoading={isLoading}>
       <SafeAreaView style={globalStyles.darkContainerPadding}>
-        <BackHeader headerContainerStyle={{marginTop: verticalScale(16)}} />
+        <BackHeader headerContainerStyle={{ marginTop: verticalScale(16) }} />
         <AppKeyboardScrollWrapper>
           <BaseText style={styles.registerTitle}>
             {AppStrings.register}
@@ -87,13 +87,13 @@ const Registration: FC = () => {
           />
           <AppButton
             title={AppStrings.register}
-            style={{marginTop: verticalScale(16)}}
-            onPress={handleSubmit}
+            style={{ marginTop: verticalScale(16) }}
+            onPress={() => handleSubmit()}
           />
 
           <Separator
             centerText={AppStrings.or}
-            lineStyle={{marginVertical: verticalScale(32)}}
+            lineStyle={{ marginVertical: verticalScale(32) }}
           />
           <AppButton
             buttonType="outline"
@@ -104,7 +104,7 @@ const Registration: FC = () => {
             buttonType="outline"
             title={AppStrings.loginWithApple}
             leadingIcon={AppImages.imgApple}
-            style={{marginTop: verticalScale(16)}}
+            style={{ marginTop: verticalScale(16) }}
           />
           <BaseText style={styles.loginText}>
             {AppStrings.alreadyHaveAccount}{' '}

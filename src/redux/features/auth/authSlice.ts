@@ -1,8 +1,8 @@
-import {PayloadAction, createSlice} from '@reduxjs/toolkit';
-import {UserProfile} from '../../../utils/types/user';
-import {login, signupUser} from './thunks';
-import {Alert} from 'react-native';
-import {AppStrings} from '../../../constants';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { UserProfile } from '../../../utils/types/user';
+import { login, signupUser } from './thunks';
+import { Alert } from 'react-native';
+import { AppStrings } from '../../../constants';
 
 interface InitialStateType {
   isLoading: boolean;

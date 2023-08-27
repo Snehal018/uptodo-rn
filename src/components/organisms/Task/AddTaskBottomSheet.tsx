@@ -1,20 +1,20 @@
-import React, {FC, useContext} from 'react';
-import {useAppDispatch, useAppSelector} from '../../../hooks/reduxHooks';
-import {taskSliceActions} from '../../../redux';
+import React, { FC, useContext } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
+import { taskSliceActions } from '../../../redux';
 import AppBottomsheet from '../../atoms/BottomSheet/AppBottomsheet';
 import AddTaskForm from './AddTaskForm';
 import CalendarModal from '../Calendar/CalendarModal';
-import {AddTaskContext} from '../../../context/task/addTaskContext';
+import { AddTaskContext } from '../../../context/task/addTaskContext';
 import PriorityModal from '../Priority/PriorityModal';
-import {DateData} from 'react-native-calendars';
+import { DateData } from 'react-native-calendars';
 import moment from 'moment';
-import {DateTimePickerEvent} from '@react-native-community/datetimepicker';
+import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 
 const AddTaskBottomSheet: FC = () => {
   const dispatch = useAppDispatch();
   const {
     isAddTaskSheetOpen,
-    createTaskDetails: {date}
+    createTaskDetails: { date }
   } = useAppSelector(state => state.task);
   const {
     isCalendarModalVisible,
@@ -51,7 +51,7 @@ const AddTaskBottomSheet: FC = () => {
   };
 
   const onPrioritySelectHandler = (priority: number | null) => {
-    dispatch(taskSliceActions.updateCreateTaskDetails({priority}));
+    dispatch(taskSliceActions.updateCreateTaskDetails({ priority }));
   };
 
   return (

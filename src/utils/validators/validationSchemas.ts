@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import {AppStrings} from '../../constants';
+import { AppStrings } from '../../constants';
 
 const loginValidationSchema = Yup.object().shape({
   userName: Yup.string().required(AppStrings.pleaseEnterPassword).trim(),
@@ -22,4 +22,4 @@ const registrationValidationSchema = Yup.object().shape({
     .trim()
 });
 
-export {loginValidationSchema, registrationValidationSchema};
+export { loginValidationSchema, registrationValidationSchema };

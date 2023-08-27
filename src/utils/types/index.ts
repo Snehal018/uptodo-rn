@@ -1,5 +1,5 @@
-import {FormikProps} from 'formik';
-import {Dispatch, SetStateAction} from 'react';
+import { FormikProps } from 'formik';
+import { Dispatch, SetStateAction } from 'react';
 
 interface LoginFormType {
   userName: string;
@@ -28,9 +28,39 @@ interface AddTaskContextType {
   setIsPriorityModalVisible: Dispatch<SetStateAction<boolean>>;
 }
 
+interface CategoryItemType {
+  _id: string;
+  name: string;
+  color: string;
+}
+
+interface TaskItemType {
+  _id: string;
+  title: string;
+  description: string;
+  time: string;
+  priority: number;
+  isDone: boolean;
+  category: CategoryItemType | null;
+  subTasks: Array<{
+    _id: string;
+    title: string;
+    description: string;
+    time: string;
+    priority: number;
+    isDone: boolean;
+  }>;
+  user: {
+    _id: string;
+    username: string;
+    profileImage: string | null;
+  };
+}
+
 export type {
   LoginFormType,
   RegisterFormType,
   AuthContextType,
-  AddTaskContextType
+  AddTaskContextType,
+  TaskItemType
 };

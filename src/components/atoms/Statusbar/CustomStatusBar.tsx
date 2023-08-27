@@ -1,5 +1,5 @@
-import {StatusBar, StatusBarProps} from 'react-native';
-import React, {FC} from 'react';
+import { StatusBar, StatusBarProps } from 'react-native';
+import React, { FC } from 'react';
 
 interface ComponentProps extends StatusBarProps {
   barType?: 'dark' | 'light';

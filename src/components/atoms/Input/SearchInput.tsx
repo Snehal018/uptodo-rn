@@ -1,12 +1,12 @@
-import {StyleSheet, TextInput, TextInputProps, View} from 'react-native';
-import React, {FC} from 'react';
+import { StyleSheet, TextInput, TextInputProps, View } from 'react-native';
+import React, { FC } from 'react';
 import {
   moderateVerticalScale,
   scale,
   verticalScale
 } from 'react-native-size-matters';
-import {AppColors, fontSize} from '../../../themes';
-import {globalStyles} from '../../../styles';
+import { AppColors, fontSize } from '../../../themes';
+import { globalStyles } from '../../../styles';
 import VectorIcon from '../Icons/VectorIcon';
 
 const SearchInput: FC<TextInputProps> = props => {

@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
-import {AppColors, fontSize, fontWeight} from '../../../themes';
-import {isAndroid} from '../../../utils/helperfunctions';
-import {moderateVerticalScale, verticalScale} from 'react-native-size-matters';
+import { StyleSheet } from 'react-native';
+import { AppColors, fontSize, fontWeight } from '../../../themes';
+import { isAndroid } from '../../../utils/helperfunctions';
+import { moderateVerticalScale, verticalScale } from 'react-native-size-matters';
 
 export const styles = StyleSheet.create({
   loginTitle: {
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   loginGoogle: {
     marginBottom: verticalScale(8)
   },
-  loginApple: {marginTop: verticalScale(10)},
+  loginApple: { marginTop: verticalScale(10) },
   registrationText: {
     marginTop: 'auto',
     textAlign: 'center',

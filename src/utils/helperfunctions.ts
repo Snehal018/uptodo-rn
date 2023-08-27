@@ -1,6 +1,6 @@
-import {Platform} from 'react-native';
-import {AppStrings} from '../constants';
-import {store} from '../redux';
+import { Platform } from 'react-native';
+import { AppStrings } from '../constants';
+import { store } from '../redux';
 
 const normalizeFormikError = (error?: string, isTouched?: boolean): string => {
   if (error && isTouched) {
@@ -12,7 +12,7 @@ const normalizeFormikError = (error?: string, isTouched?: boolean): string => {
 
 const parseThunkError = (error: any, fallbackErrorString?: string) => {
   if (error?.message === 'Network Error') {
-    const {isNetworkConnected} = store.getState().app;
+    const { isNetworkConnected } = store.getState().app;
     const networkErrorMessage = isNetworkConnected
       ? AppStrings.serverNetworkError
       : AppStrings.clientNetworkError;
@@ -31,4 +31,4 @@ const parseThunkError = (error: any, fallbackErrorString?: string) => {
 
 const isAndroid: boolean = Platform.OS === 'android';
 
-export {normalizeFormikError, isAndroid, parseThunkError};
+export { normalizeFormikError, isAndroid, parseThunkError };

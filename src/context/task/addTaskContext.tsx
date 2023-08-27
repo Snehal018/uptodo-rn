@@ -1,9 +1,9 @@
-import React, {PropsWithChildren, createContext, useState} from 'react';
-import {AddTaskContextType} from '../../utils/types';
+import React, { PropsWithChildren, createContext, useState } from 'react';
+import { AddTaskContextType } from '../../utils/types';
 
 export const AddTaskContext = createContext({} as AddTaskContextType);
 
-const AddTaskContextProvider = ({children}: PropsWithChildren) => {
+const AddTaskContextProvider = ({ children }: PropsWithChildren) => {
   const [isCalendarModalVisible, setIsCalendarModalVisible] = useState(false);
   const [isPriorityModalVisible, setIsPriorityModalVisible] = useState(false);
 

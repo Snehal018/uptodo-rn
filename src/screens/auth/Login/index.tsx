@@ -1,6 +1,6 @@
-import React, {FC, useContext} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {globalStyles} from '../../../styles';
+import React, { FC, useContext } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { globalStyles } from '../../../styles';
 import {
   AppButton,
   BackHeader,
@@ -9,21 +9,21 @@ import {
   ScreenContainer,
   Separator
 } from '../../../components';
-import {AppStrings} from '../../../constants';
-import {AppImages} from '../../../assets/images';
-import {isAndroid, normalizeFormikError} from '../../../utils/helperfunctions';
-import {styles} from './styles';
-import {AuthContext} from '../../../context/auth/authContext';
-import {useCustomNavigation} from '../../../hooks';
-import {useAppSelector} from '../../../hooks/reduxHooks';
-import {moderateVerticalScale} from 'react-native-size-matters';
+import { AppStrings } from '../../../constants';
+import { AppImages } from '../../../assets/images';
+import { isAndroid, normalizeFormikError } from '../../../utils/helperfunctions';
+import { styles } from './styles';
+import { AuthContext } from '../../../context/auth/authContext';
+import { useCustomNavigation } from '../../../hooks';
+import { useAppSelector } from '../../../hooks/reduxHooks';
+import { moderateVerticalScale } from 'react-native-size-matters';
 
 const Login: FC = () => {
-  const {formik: loginFormik} = useContext(AuthContext).login;
-  const {navigation} = useCustomNavigation('Login');
-  const {userName, password} = loginFormik.values;
-  const {errors, handleChange, handleBlur, handleSubmit, touched} = loginFormik;
-  const {isLoading} = useAppSelector(state => state.auth);
+  const { formik: loginFormik } = useContext(AuthContext).login;
+  const { navigation } = useCustomNavigation('Login');
+  const { userName, password } = loginFormik.values;
+  const { errors, handleChange, handleBlur, handleSubmit, touched } = loginFormik;
+  const { isLoading } = useAppSelector(state => state.auth);
   const onPressRegisterHandler = () => {
     navigation.navigate('Registration');
   };
@@ -57,11 +57,11 @@ const Login: FC = () => {
         <AppButton
           title={AppStrings.loginSmall}
           style={styles.loginButtom}
-          onPress={handleSubmit}
+          onPress={() => handleSubmit()}
         />
         <Separator
           centerText={AppStrings.or}
-          lineStyle={{marginVertical: moderateVerticalScale(36, 0.35)}}
+          lineStyle={{ marginVertical: moderateVerticalScale(36, 0.35) }}
         />
 
         <AppButton

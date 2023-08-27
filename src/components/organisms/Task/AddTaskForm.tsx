@@ -1,24 +1,24 @@
-import {StyleSheet, View} from 'react-native';
-import React, {FC, useContext} from 'react';
-import {AppPadding} from '../../../styles';
-import {AppStrings} from '../../../constants';
-import {fontSize, fontTypes} from '../../../themes';
-import {BottomSheetInput, BaseText} from '../../atoms';
+import { StyleSheet, View } from 'react-native';
+import React, { FC, useContext } from 'react';
+import { AppPadding } from '../../../styles';
+import { AppStrings } from '../../../constants';
+import { fontSize, fontTypes } from '../../../themes';
+import { BottomSheetInput, BaseText } from '../../atoms';
 import {
   moderateVerticalScale,
   scale,
   verticalScale
 } from 'react-native-size-matters';
-import {AddTaskActionButtons} from '../../molecules';
-import {AddTaskContext} from '../../../context/task/addTaskContext';
-import {useAppDispatch, useAppSelector} from '../../../hooks';
-import {taskSliceActions, addTask} from '../../../redux';
+import { AddTaskActionButtons } from '../../molecules';
+import { AddTaskContext } from '../../../context/task/addTaskContext';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
+import { taskSliceActions, addTask } from '../../../redux';
 
 const AddTaskForm: FC = () => {
-  const {setIsCalendarModalVisible, setIsPriorityModalVisible} =
+  const { setIsCalendarModalVisible, setIsPriorityModalVisible } =
     useContext(AddTaskContext);
   const dispatch = useAppDispatch();
-  const {title, description, category, date, priority} = useAppSelector(
+  const { title, description, category, date, priority } = useAppSelector(
     state => state.task.createTaskDetails
   );
 
@@ -26,7 +26,7 @@ const AddTaskForm: FC = () => {
     setIsCalendarModalVisible(true);
   };
 
-  const onPressCategoryHandler = () => {};
+  const onPressCategoryHandler = () => { };
 
   const onPressPriorityHandler = () => {
     setIsPriorityModalVisible(true);
@@ -41,7 +41,7 @@ const AddTaskForm: FC = () => {
       priority: priority ?? 4
     };
 
-    dispatch(addTask({params}))
+    dispatch(addTask({ params }))
       .unwrap()
       .then(res => {
         if (res.status === 201) {
@@ -52,12 +52,12 @@ const AddTaskForm: FC = () => {
   };
 
   const onChangeTitle = (titleValue: string) => {
-    dispatch(taskSliceActions.updateCreateTaskDetails({title: titleValue}));
+    dispatch(taskSliceActions.updateCreateTaskDetails({ title: titleValue }));
   };
 
   const onChangeDescription = (descriptionValue: string) => {
     dispatch(
-      taskSliceActions.updateCreateTaskDetails({description: descriptionValue})
+      taskSliceActions.updateCreateTaskDetails({ description: descriptionValue })
     );
   };
 
@@ -77,7 +77,7 @@ const AddTaskForm: FC = () => {
         value={description}
       />
       <AddTaskActionButtons
-        containerStyle={{marginTop: moderateVerticalScale(12, 0)}}
+        containerStyle={{ marginTop: moderateVerticalScale(12, 0) }}
         onPressAddTodo={onPressAddTodoHandler}
         onPressCategory={onPressCategoryHandler}
         onPressClock={onPressSelectTimeHandler}

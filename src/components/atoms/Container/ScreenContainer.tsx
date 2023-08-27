@@ -1,6 +1,6 @@
-import {View, ViewStyle} from 'react-native';
-import React, {FC, PropsWithChildren} from 'react';
-import {globalStyles} from '../../../styles';
+import { View, ViewStyle } from 'react-native';
+import React, { FC, PropsWithChildren } from 'react';
+import { globalStyles } from '../../../styles';
 import AppLoader from '../Loader/AppLoader';
 import CustomStatusBar from '../Statusbar/CustomStatusBar';
 

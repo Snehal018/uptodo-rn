@@ -1,9 +1,9 @@
-import {Image, Pressable, StyleSheet} from 'react-native';
-import React, {FC} from 'react';
+import { Image, Pressable, StyleSheet } from 'react-native';
+import React, { FC } from 'react';
 import BaseText from '../../atoms/Text/Basetext';
-import {AppColors, fontSize} from '../../../themes';
-import {globalStyles} from '../../../styles';
-import {scale, verticalScale} from 'react-native-size-matters';
+import { AppColors, fontSize } from '../../../themes';
+import { globalStyles } from '../../../styles';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 export interface TabItemProps {
   icon: number;
@@ -12,11 +12,11 @@ export interface TabItemProps {
   isFocused: boolean;
 }
 
-const TabItem: FC<TabItemProps> = ({icon, title, onPressTab, isFocused}) => {
+const TabItem: FC<TabItemProps> = ({ icon, title, onPressTab, isFocused }) => {
   return (
     <Pressable style={styles.container} onPress={onPressTab}>
       <Image
-        style={[styles.tabIcon, isFocused && {tintColor: AppColors.primary}]}
+        style={[styles.tabIcon, isFocused && { tintColor: AppColors.primary }]}
         source={icon}
       />
       <BaseText style={styles.tabTitle}>{title}</BaseText>

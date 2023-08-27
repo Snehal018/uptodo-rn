@@ -1,10 +1,10 @@
-import {GestureResponderEvent, StyleSheet, View, ViewStyle} from 'react-native';
-import React, {FC} from 'react';
-import {globalStyles} from '../../../styles';
+import { GestureResponderEvent, StyleSheet, View, ViewStyle } from 'react-native';
+import React, { FC } from 'react';
+import { globalStyles } from '../../../styles';
 import VectorIcon from '../../atoms/Icons/VectorIcon';
-import {AppColors} from '../../../themes';
-import {scale} from 'react-native-size-matters';
-import {useAppSelector} from '../../../hooks';
+import { AppColors } from '../../../themes';
+import { scale } from 'react-native-size-matters';
+import { useAppSelector } from '../../../hooks';
 
 interface ComponentProps {
   containerStyle?: ViewStyle;
@@ -16,12 +16,12 @@ interface ComponentProps {
 
 const AddTaskActionButtons: FC<ComponentProps> = ({
   containerStyle = {},
-  onPressAddTodo = () => {},
-  onPressCategory = () => {},
-  onPressClock = () => {},
-  onPressPriority = () => {}
+  onPressAddTodo = () => { },
+  onPressCategory = () => { },
+  onPressClock = () => { },
+  onPressPriority = () => { }
 }) => {
-  const {title} = useAppSelector(state => state.task.createTaskDetails);
+  const { title } = useAppSelector(state => state.task.createTaskDetails);
 
   const isAddTaskAllowed = !!title;
 
@@ -55,7 +55,7 @@ const AddTaskActionButtons: FC<ComponentProps> = ({
       <VectorIcon
         iconType="Ionicons"
         name="md-create-outline"
-        style={{marginLeft: 'auto'}}
+        style={{ marginLeft: 'auto' }}
         color={isAddTaskAllowed ? AppColors.primary : AppColors.gray}
         disabled={!isAddTaskAllowed}
         size={scale(20)}

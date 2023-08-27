@@ -1,10 +1,10 @@
 // ? This File is Created to Provide the Project With Necessary Details Regarding Device Dimensions
 
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 
-const {height, width} = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
 const screenWidth = width;
 const screenHeight = height;
 
-export {screenHeight, screenWidth};
+export { screenHeight, screenWidth };

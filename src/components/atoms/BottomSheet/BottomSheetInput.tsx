@@ -4,11 +4,11 @@ import {
   TextInputFocusEventData,
   TextInputProps
 } from 'react-native';
-import React, {FC, useState} from 'react';
-import {BottomSheetTextInput} from '@gorhom/bottom-sheet';
-import {BottomSheetTextInputProps} from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheetTextInput';
-import {AppColors, fontSize} from '../../../themes';
-import {scale, verticalScale} from 'react-native-size-matters';
+import React, { FC, useState } from 'react';
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
+import { BottomSheetTextInputProps } from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheetTextInput';
+import { AppColors, fontSize } from '../../../themes';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 const BottomSheetInput: FC<BottomSheetTextInputProps> = props => {
   const [isFocused, setIsFocused] = useState(false);

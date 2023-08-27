@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
@@ -14,29 +14,29 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Zocial from 'react-native-vector-icons/Zocial';
-import {IconProps} from 'react-native-vector-icons/Icon';
-import {VECTOR_ICON_TYPES} from '../../../constants';
+import { IconProps } from 'react-native-vector-icons/Icon';
+import { VECTOR_ICON_TYPES } from '../../../constants';
 
 interface ComponentProps extends IconProps {
   iconType:
-    | 'AntDesign'
-    | 'Entypo'
-    | 'EvilIcons'
-    | 'Feather'
-    | 'FontAwesome'
-    | 'FontAwesome5'
-    | 'FontAwesome5Pro'
-    | 'Fontisto'
-    | 'Foundation'
-    | 'Ionicons'
-    | 'MaterialCommunityIcons'
-    | 'MaterialIcons'
-    | 'Octicons'
-    | 'SimpleLineIcons'
-    | 'Zocial'; // ? Defaults to AntDesign
+  | 'AntDesign'
+  | 'Entypo'
+  | 'EvilIcons'
+  | 'Feather'
+  | 'FontAwesome'
+  | 'FontAwesome5'
+  | 'FontAwesome5Pro'
+  | 'Fontisto'
+  | 'Foundation'
+  | 'Ionicons'
+  | 'MaterialCommunityIcons'
+  | 'MaterialIcons'
+  | 'Octicons'
+  | 'SimpleLineIcons'
+  | 'Zocial'; // ? Defaults to AntDesign
 }
 
-const VectorIcon: FC<ComponentProps> = ({iconType, ...props}) => {
+const VectorIcon: FC<ComponentProps> = ({ iconType, ...props }) => {
   const getCustomVectorIcon = () => {
     switch (iconType) {
       case VECTOR_ICON_TYPES.AntDesign:

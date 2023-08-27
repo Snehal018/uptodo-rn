@@ -1,9 +1,9 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import {
   KeyboardAwareScrollView,
   KeyboardAwareScrollViewProps
 } from 'react-native-keyboard-aware-scroll-view';
-import {verticalScale} from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters';
 
 const AppKeyboardScrollWrapper: FC<KeyboardAwareScrollViewProps> = props => {
   return (

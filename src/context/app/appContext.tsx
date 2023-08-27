@@ -1,7 +1,7 @@
-import React, {PropsWithChildren} from 'react';
+import React, { PropsWithChildren } from 'react';
 import AuthContextProvider from '../auth/authContext';
 
-const AppContextProvider = ({children}: PropsWithChildren) => {
+const AppContextProvider = ({ children }: PropsWithChildren) => {
   return <AuthContextProvider>{children}</AuthContextProvider>;
 };
 

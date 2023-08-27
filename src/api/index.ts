@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {store} from '../redux';
+import { store } from '../redux';
 
 const axiosClient = axios.create();
 

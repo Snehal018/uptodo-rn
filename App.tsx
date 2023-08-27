@@ -1,14 +1,14 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import { StatusBar } from 'react-native';
 import AppNavigation from './src/navigation';
-import {Provider} from 'react-redux';
-import {store, persistor} from './src/redux';
-import {PersistGate} from 'redux-persist/integration/react';
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {globalStyles} from './src/styles';
-import {AddTaskBottomSheet} from './src/components';
+import { Provider } from 'react-redux';
+import { store, persistor } from './src/redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { globalStyles } from './src/styles';
+import { AddTaskBottomSheet } from './src/components';
 import AddTaskContextProvider from './src/context/task/addTaskContext';
-import {Provider as PaperProvider} from 'react-native-paper';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 const App = () => {
   return (

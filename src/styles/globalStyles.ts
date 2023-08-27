@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
-import {AppColors, fontSize, fontWeight} from '../themes';
+import { StyleSheet } from 'react-native';
+import { AppColors, fontSize, fontWeight } from '../themes';
 import AppPadding from './spacing';
-import {scale} from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 
 const globalStyles = StyleSheet.create({
   fullSpace: {
@@ -11,7 +11,7 @@ const globalStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: AppColors.white
   },
-  horizontalPaddding: {paddingHorizontal: scale(AppPadding.baseHorizontal)},
+  horizontalPaddding: { paddingHorizontal: scale(AppPadding.baseHorizontal) },
   containerPadding: {
     flex: 1,
     backgroundColor: AppColors.white,

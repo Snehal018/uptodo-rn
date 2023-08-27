@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
-import {AppColors, fontSize, fontWeight} from '../../../themes';
-import {isAndroid} from '../../../utils/helperfunctions';
-import {moderateVerticalScale, verticalScale} from 'react-native-size-matters';
+import { StyleSheet } from 'react-native';
+import { AppColors, fontSize, fontWeight } from '../../../themes';
+import { isAndroid } from '../../../utils/helperfunctions';
+import { moderateVerticalScale, verticalScale } from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
   registerTitle: {

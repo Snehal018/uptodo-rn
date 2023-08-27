@@ -12,4 +12,4 @@ const AppColors = {
   tabBarDark: '#363636'
 };
 
-export {AppColors};
+export { AppColors };

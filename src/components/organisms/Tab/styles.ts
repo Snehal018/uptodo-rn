@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
-import {AppColors} from '../../../themes';
-import {globalStyles} from '../../../styles';
-import {screenWidth} from '../../../themes';
+import { StyleSheet } from 'react-native';
+import { AppColors } from '../../../themes';
+import { globalStyles } from '../../../styles';
+import { screenWidth } from '../../../themes';
 import {
   moderateVerticalScale,
   scale,

@@ -5,15 +5,15 @@ import {
   View,
   ViewStyle
 } from 'react-native';
-import React, {FC, useState} from 'react';
-import {AppColors, fontSize} from '../../../themes';
+import React, { FC, useState } from 'react';
+import { AppColors, fontSize } from '../../../themes';
 import BaseText from '../Text/Basetext';
 import {
   moderateVerticalScale,
   scale,
   verticalScale
 } from 'react-native-size-matters';
-import {globalStyles} from '../../../styles';
+import { globalStyles } from '../../../styles';
 import VectorIcon from '../Icons/VectorIcon';
 
 interface ComponentProps {

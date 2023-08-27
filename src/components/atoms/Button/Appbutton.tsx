@@ -7,10 +7,10 @@ import {
   TextStyle,
   TouchableOpacityProps
 } from 'react-native';
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import BaseText from '../Text/Basetext';
-import {AppColors, fontSize} from '../../../themes';
-import {scale, moderateVerticalScale} from 'react-native-size-matters';
+import { AppColors, fontSize } from '../../../themes';
+import { scale, moderateVerticalScale } from 'react-native-size-matters';
 
 interface ComponentProps {
   title: string;
@@ -41,7 +41,7 @@ const handleButtonStyle = (type: string) => {
 
 const AppButton: FC<ComponentProps> = ({
   title,
-  onPress = () => {},
+  onPress = () => { },
   buttonType = 'solid',
   style,
   titleStyle,
@@ -54,7 +54,7 @@ const AppButton: FC<ComponentProps> = ({
     <Pressable
       disabled={disabled}
       onPress={onPress}
-      style={({pressed}) => [
+      style={({ pressed }) => [
         styles.basePressable,
         buttonStyle,
         style,

@@ -1,10 +1,10 @@
-import {StyleSheet, TouchableOpacity, ViewStyle} from 'react-native';
-import React, {FC} from 'react';
+import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
+import React, { FC } from 'react';
 import VectorIcon from '../../atoms/Icons/VectorIcon';
-import {AppColors, fontSize} from '../../../themes';
-import {moderateVerticalScale, scale} from 'react-native-size-matters';
+import { AppColors, fontSize } from '../../../themes';
+import { moderateVerticalScale, scale } from 'react-native-size-matters';
 import BaseText from '../../atoms/Text/Basetext';
-import {TouchableOpacityProps} from 'react-native';
+import { TouchableOpacityProps } from 'react-native';
 
 interface ComponentProps {
   title: string;
@@ -17,7 +17,7 @@ const PriorityItem: FC<ComponentProps> = ({
   title = '',
   containerStyle = {},
   isSelected = false,
-  onPress = () => {}
+  onPress = () => { }
 }) => {
   return (
     <TouchableOpacity
@@ -53,5 +53,5 @@ const styles = StyleSheet.create({
     fontSize: fontSize.medium,
     marginTop: moderateVerticalScale(10, 0)
   },
-  selectedItem: {backgroundColor: AppColors.primary}
+  selectedItem: { backgroundColor: AppColors.primary }
 });

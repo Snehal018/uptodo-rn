@@ -1,11 +1,11 @@
-import {Pressable, StyleSheet} from 'react-native';
-import React, {FC, useRef} from 'react';
-import {BottomSheetMethods} from '@gorhom/bottom-sheet/lib/typescript/types';
+import { Pressable, StyleSheet } from 'react-native';
+import React, { FC, useRef } from 'react';
+import { BottomSheetMethods } from '@gorhom/bottom-sheet/lib/typescript/types';
 import BottomSheet, {
   BottomSheetBackdropProps,
   BottomSheetProps
 } from '@gorhom/bottom-sheet';
-import {AppColors} from '../../../themes';
+import { AppColors } from '../../../themes';
 
 interface ComponentProps extends Partial<BottomSheetProps> {
   isVisible?: boolean;
@@ -14,7 +14,7 @@ interface ComponentProps extends Partial<BottomSheetProps> {
 
 const AppBottomsheet: FC<ComponentProps> = ({
   isVisible = false,
-  onBackDropPress = () => {},
+  onBackDropPress = () => { },
   ...bottomSheetProps
 }) => {
   const bottomSheetRef = useRef<BottomSheetMethods | null>(null);
@@ -37,7 +37,7 @@ const AppBottomsheet: FC<ComponentProps> = ({
     <BottomSheet
       index={isVisible ? 0 : -1}
       ref={bottomSheetRef}
-      backgroundStyle={{backgroundColor: AppColors.tabBarDark}}
+      backgroundStyle={{ backgroundColor: AppColors.tabBarDark }}
       backdropComponent={renderBackdrop}
       keyboardBlurBehavior="restore"
       {...bottomSheetProps}

@@ -1,14 +1,14 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosClient from '../../../api';
-import {ApiConstants} from '../../../api/apiConstants';
-import {parseThunkError} from '../../../utils/helperfunctions';
-import {LoginFormType, RegisterFormType} from '../../../utils/types';
+import { ApiConstants } from '../../../api/apiConstants';
+import { parseThunkError } from '../../../utils/helperfunctions';
+import { LoginFormType, RegisterFormType } from '../../../utils/types';
 
 const signupUser = createAsyncThunk(
   'auth/signup',
   async (
-    {userName, password, confirmPassword}: RegisterFormType,
-    {rejectWithValue}
+    { userName, password, confirmPassword }: RegisterFormType,
+    { rejectWithValue }
   ) => {
     try {
       const response = await axiosClient.post(ApiConstants.signup, {
@@ -25,7 +25,7 @@ const signupUser = createAsyncThunk(
 
 const login = createAsyncThunk(
   'auth/login',
-  async ({userName, password}: LoginFormType, {rejectWithValue}) => {
+  async ({ userName, password }: LoginFormType, { rejectWithValue }) => {
     try {
       const response = await axiosClient.post(ApiConstants.login, {
         username: userName,
@@ -38,4 +38,4 @@ const login = createAsyncThunk(
   }
 );
 
-export {signupUser, login};
+export { signupUser, login };

@@ -1,5 +1,5 @@
-import {TextStyle} from 'react-native';
-import {RFValue} from 'react-native-responsive-fontsize';
+import { TextStyle } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 interface FontWeightType {
   full: TextStyle['fontWeight'];
@@ -38,4 +38,4 @@ const fontWeight: FontWeightType = {
   normal: 'normal',
 };
 
-export {fontTypes, fontSize, fontWeight};
+export { fontTypes, fontSize, fontWeight };

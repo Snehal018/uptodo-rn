@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, {
   Dispatch,
   FC,
@@ -6,16 +6,16 @@ import React, {
   useCallback,
   useState
 } from 'react';
-import {BaseModal, BaseText, Separator} from '../../atoms';
-import {AppColors} from '../../../themes';
+import { BaseModal, BaseText, Separator } from '../../atoms';
+import { AppColors } from '../../../themes';
 import {
   moderateVerticalScale,
   scale,
   verticalScale
 } from 'react-native-size-matters';
-import {globalStyles} from '../../../styles';
-import {AppStrings} from '../../../constants';
-import {RowButtons, PriorityItem} from '../../molecules';
+import { globalStyles } from '../../../styles';
+import { AppStrings } from '../../../constants';
+import { RowButtons, PriorityItem } from '../../molecules';
 
 interface ComponentProps {
   visible: boolean;
@@ -46,7 +46,7 @@ const PriorityModal: FC<ComponentProps> = ({
   };
 
   const RenderPriorityItem = useCallback(
-    ({item}: {item: number}) => (
+    ({ item }: { item: number }) => (
       <PriorityItem
         title={item.toString()}
         containerStyle={styles.priorityItemContainer}
@@ -65,14 +65,11 @@ const PriorityModal: FC<ComponentProps> = ({
       <View style={styles.container}>
         <BaseText style={styles.title}>{AppStrings.taskPriority}</BaseText>
         <Separator />
-        <FlatList
-          numColumns={4}
-          data={priorityData}
-          renderItem={({item}) => <RenderPriorityItem item={item} />}
-          keyExtractor={(_, index) => index.toString()}
-          bounces={false}
-          contentContainerStyle={styles.priorityListContentContainer}
-        />
+        <View style={styles.itemsContainer}>
+          {priorityData.map((item, index) => (
+            <RenderPriorityItem item={item} key={index} />
+          ))}
+        </View>
         <RowButtons
           acceptButtonTitle={AppStrings.save}
           declineButtonTitle={AppStrings.cancel}
@@ -102,9 +99,9 @@ const styles = StyleSheet.create({
     marginTop: moderateVerticalScale(16, 0),
     marginHorizontal: scale(5)
   },
-  priorityListContentContainer: {alignItems: 'center'},
   footerButtonsContainer: {
     marginHorizontal: scale(8),
     marginTop: moderateVerticalScale(32, 0)
-  }
+  },
+  itemsContainer: { flexDirection: 'row', flexWrap: 'wrap' }
 });

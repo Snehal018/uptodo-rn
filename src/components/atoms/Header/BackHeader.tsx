@@ -5,18 +5,18 @@ import {
   View,
   ViewStyle
 } from 'react-native';
-import React, {FC} from 'react';
-import {globalStyles} from '../../../styles';
-import {AppImages} from '../../../assets/images';
-import {useNavigation} from '@react-navigation/native';
-import {isAndroid} from '../../../utils/helperfunctions';
-import {scale, verticalScale} from 'react-native-size-matters';
+import React, { FC } from 'react';
+import { globalStyles } from '../../../styles';
+import { AppImages } from '../../../assets/images';
+import { useNavigation } from '@react-navigation/native';
+import { isAndroid } from '../../../utils/helperfunctions';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 interface ComponentProps {
   headerContainerStyle?: ViewStyle;
 }
 
-const BackHeader: FC<ComponentProps> = ({headerContainerStyle}) => {
+const BackHeader: FC<ComponentProps> = ({ headerContainerStyle }) => {
   const navigation = useNavigation();
 
   const onBackPressHandler = () => {

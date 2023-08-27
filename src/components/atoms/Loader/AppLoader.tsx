@@ -1,6 +1,6 @@
-import {ActivityIndicator, StyleSheet} from 'react-native';
-import React, {FC} from 'react';
-import {AppColors} from '../../../themes';
+import { ActivityIndicator, StyleSheet } from 'react-native';
+import React, { FC } from 'react';
+import { AppColors } from '../../../themes';
 
 const AppLoader: FC = () => {
   return (

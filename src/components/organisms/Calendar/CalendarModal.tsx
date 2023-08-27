@@ -1,15 +1,15 @@
-import {StyleSheet, View} from 'react-native';
-import React, {Dispatch, FC, SetStateAction} from 'react';
-import {AppColors} from '../../../themes';
-import {Calendar, CalendarProps} from 'react-native-calendars';
-import {scale, verticalScale} from 'react-native-size-matters';
+import { StyleSheet, View } from 'react-native';
+import React, { Dispatch, FC, SetStateAction } from 'react';
+import { AppColors } from '../../../themes';
+import { Calendar, CalendarProps } from 'react-native-calendars';
+import { scale, verticalScale } from 'react-native-size-matters';
 import {
   DateTimePickerAndroid,
   DateTimePickerEvent
 } from '@react-native-community/datetimepicker';
-import {AppStrings} from '../../../constants';
+import { AppStrings } from '../../../constants';
 import BaseModal from '../../atoms/Modal/BaseModal';
-import {RowButtons} from '../../molecules';
+import { RowButtons } from '../../molecules';
 
 const calendarTheme: CalendarProps['theme'] = {
   backgroundColor: AppColors.tabBarDark,
@@ -32,7 +32,7 @@ interface ComponentProps {
 
 const CalendarModal: FC<ComponentProps> = ({
   visible = false,
-  setVisible = () => {},
+  setVisible = () => { },
   onSelectDate,
   selectedDate,
   onSelectTime
@@ -56,7 +56,7 @@ const CalendarModal: FC<ComponentProps> = ({
           onDayPress={onSelectDate}
           style={styles.calendar}
           markedDates={{
-            [selectedDate]: {selected: true}
+            [selectedDate]: { selected: true }
           }}
         />
         <RowButtons
