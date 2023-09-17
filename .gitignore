@@ -251,3 +251,6 @@ google-services.json
 ios/Pods
 
 *.lock
+
+# testing
+/coverage
