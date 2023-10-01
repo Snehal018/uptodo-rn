@@ -1,4 +1,9 @@
-import { GestureResponderEvent, StyleSheet, View, ViewStyle } from 'react-native';
+import {
+  GestureResponderEvent,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
 import React, { FC } from 'react';
 import { globalStyles } from '../../../styles';
 import VectorIcon from '../../atoms/Icons/VectorIcon';
@@ -16,10 +21,10 @@ interface ComponentProps {
 
 const AddTaskActionButtons: FC<ComponentProps> = ({
   containerStyle = {},
-  onPressAddTodo = () => { },
-  onPressCategory = () => { },
-  onPressClock = () => { },
-  onPressPriority = () => { }
+  onPressAddTodo = () => {},
+  onPressCategory = () => {},
+  onPressClock = () => {},
+  onPressPriority = () => {},
 }) => {
   const { title } = useAppSelector(state => state.task.createTaskDetails);
 
@@ -54,7 +59,7 @@ const AddTaskActionButtons: FC<ComponentProps> = ({
 
       <VectorIcon
         iconType="Ionicons"
-        name="md-create-outline"
+        name="create-outline"
         style={{ marginLeft: 'auto' }}
         color={isAddTaskAllowed ? AppColors.primary : AppColors.gray}
         disabled={!isAddTaskAllowed}
@@ -69,6 +74,6 @@ export default AddTaskActionButtons;
 
 const styles = StyleSheet.create({
   icon: {
-    marginRight: scale(16)
-  }
+    marginRight: scale(16),
+  },
 });

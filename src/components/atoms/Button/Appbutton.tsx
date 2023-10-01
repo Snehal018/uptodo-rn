@@ -5,7 +5,7 @@ import {
   PressableProps,
   StyleSheet,
   TextStyle,
-  TouchableOpacityProps
+  TouchableOpacityProps,
 } from 'react-native';
 import React, { FC } from 'react';
 import BaseText from '../Text/Basetext';
@@ -41,12 +41,12 @@ const handleButtonStyle = (type: string) => {
 
 const AppButton: FC<ComponentProps> = ({
   title,
-  onPress = () => { },
+  onPress = () => {},
   buttonType = 'solid',
   style,
   titleStyle,
   disabled,
-  leadingIcon
+  leadingIcon,
 }) => {
   const buttonStyle = handleButtonStyle(buttonType);
 
@@ -59,7 +59,7 @@ const AppButton: FC<ComponentProps> = ({
         buttonStyle,
         style,
         pressed && styles.pressed,
-        disabled && styles.buttonDisabled
+        disabled && styles.buttonDisabled,
       ]}>
       {leadingIcon ? (
         <Image
@@ -82,33 +82,33 @@ const styles = StyleSheet.create({
     borderRadius: scale(4),
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   baseTitle: {
     fontSize: fontSize.medium,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   pressed: {
-    opacity: 0.35
+    opacity: 0.35,
   },
   baseOutline: {
     borderWidth: 2,
-    borderColor: AppColors.primary
+    borderColor: AppColors.primary,
   },
   baseSolid: {
-    backgroundColor: AppColors.primary
+    backgroundColor: AppColors.primary,
   },
   baseNone: {
     paddingHorizontal: 0,
-    borderRadius: 0
+    borderRadius: 0,
   },
   buttonDisabled: {
     backgroundColor: AppColors.primaryDisabled,
-    opacity: 0.5
+    opacity: 0.5,
   },
   leadingIcon: {
     height: scale(24),
     width: scale(24),
-    marginRight: scale(8)
-  }
+    marginRight: scale(8),
+  },
 });

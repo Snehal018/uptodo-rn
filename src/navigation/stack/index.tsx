@@ -8,7 +8,9 @@ import { useAppSelector } from '../../hooks/reduxHooks';
 const Stack = createNativeStackNavigator<RootStackParams>();
 
 const StackNavigator = () => {
-  const { authToken, isVisitedOnboarding } = useAppSelector(state => state.auth);
+  const { authToken, isVisitedOnboarding } = useAppSelector(
+    state => state.auth
+  );
 
   const isUserAuthenticated = !!authToken;
 
@@ -20,7 +22,7 @@ const StackNavigator = () => {
     } else {
       return 'Onboarding';
     }
-  }, []);
+  }, [isUserAuthenticated, isVisitedOnboarding]);
 
   return (
     <Stack.Navigator

@@ -15,7 +15,7 @@ const initialState: InitialStateType = {
   isLoading: false,
   authToken: null,
   userprofile: null,
-  isVisitedOnboarding: false
+  isVisitedOnboarding: false,
 };
 
 const authSlice = createSlice({
@@ -24,7 +24,7 @@ const authSlice = createSlice({
   reducers: {
     visitedOnboarding: state => {
       state.isVisitedOnboarding = true;
-    }
+    },
   },
   extraReducers: builder => {
     builder.addCase(signupUser.pending, state => {
@@ -52,7 +52,7 @@ const authSlice = createSlice({
       state.isLoading = false;
       Alert.alert(AppStrings.error, action.payload?.error);
     });
-  }
+  },
 });
 
 export const authSliceActions = authSlice.actions;

@@ -23,7 +23,10 @@ const GetStarted: FC = () => {
     <ScreenContainer>
       <SafeAreaView style={globalStyles.darkContainerPadding}>
         <View style={[globalStyles.fullSpace, globalStyles.horizontalCenter]}>
-          <BaseText style={styles.welcomeHeader}>
+          <BaseText
+            style={styles.welcomeHeader}
+            numberOfLines={1}
+            adjustsFontSizeToFit>
             {AppStrings.welcomeToUptodo}
           </BaseText>
           <BaseText style={styles.welcomeSubText}>
@@ -54,16 +57,16 @@ const styles = StyleSheet.create({
   welcomeHeader: {
     fontSize: fontSize.header,
     fontWeight: fontWeight.bold,
-    marginTop: verticalScale(80)
+    marginTop: verticalScale(80),
   },
   welcomeSubText: {
     fontSize: fontSize.medium,
     textAlign: 'center',
     opacity: 0.67,
-    marginTop: verticalScale(30)
+    marginTop: verticalScale(30),
   },
   loginButton: { marginBottom: verticalScale(20) },
   signupButton: {
-    marginBottom: verticalScale(35)
-  }
+    marginBottom: verticalScale(35),
+  },
 });

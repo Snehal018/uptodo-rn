@@ -16,7 +16,7 @@ const AppNavigation = () => {
       dispatch(appSliceActions.updateNetworkStatus(!!state.isConnected));
     });
     return unsubscribe();
-  }, []);
+  }, [dispatch]);
 
   const hideSplashScreenHandler = () => {
     hide({ fade: true });

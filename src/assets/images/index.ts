@@ -1,11 +1,17 @@
 export const AppImages = {
   logo: require('./logo.png'),
-  imgManageTask: require('./manageTask.png'),
-  imgDailyRoutine: require('./dailyRoutine.png'),
-  imgOrganizeTask: require('./organizeTask.png'),
-  imgBack: require('./back.png'),
-  imgGoogle: require('./google.png'),
-  imgApple: require('./apple.png'),
+
+  // Onboarding
+  imgManageTask: require('./onboarding/manageTask.png'),
+  imgDailyRoutine: require('./onboarding/dailyRoutine.png'),
+  imgOrganizeTask: require('./onboarding/organizeTask.png'),
+
+  // Icons
+  imgBack: require('./icons/back.png'),
+
+  // Social Auth
+  imgGoogle: require('./socialAuth/google.png'),
+  imgApple: require('./socialAuth/apple.png'),
 
   // Tab-Bar
   imgTabHome: require('./tabImages/home.png'),
@@ -14,5 +20,5 @@ export const AppImages = {
   imgTabProfile: require('./tabImages/user.png'),
 
   // Task Index Screen
-  emptyTaskIndex: require('./emptyTaskIndex.png')
+  emptyTaskIndex: require('./task/emptyTaskIndex.png'),
 };
