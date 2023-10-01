@@ -4,5 +4,5 @@ export const ApiConstants = {
   signup: BASE_URL + '/auth/signup',
   login: BASE_URL + '/auth/login',
   user: BASE_URL + '/users',
-  task: BASE_URL + '/tasks'
+  task: BASE_URL + '/tasks',
 };

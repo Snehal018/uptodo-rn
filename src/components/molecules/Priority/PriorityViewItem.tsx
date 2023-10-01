@@ -12,7 +12,7 @@ interface ComponentProps {
 
 const PriorityViewItem: FC<ComponentProps> = ({
   priority = 4,
-  containerStyle = {}
+  containerStyle = {},
 }) => {
   return (
     <View style={[styles.container, containerStyle]}>
@@ -36,9 +36,9 @@ const styles = StyleSheet.create({
     paddingVertical: verticalScale(4),
     borderRadius: scale(4),
     borderColor: AppColors.primaryDisabled,
-    borderWidth: scale(1)
+    borderWidth: scale(1),
   },
   priorityText: {
-    marginLeft: scale(6)
-  }
+    marginLeft: scale(6),
+  },
 });

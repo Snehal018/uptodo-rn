@@ -1,5 +1,6 @@
 import { TextStyle } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { STANDARD_HEIGHT } from './metrics';
 
 interface FontWeightType {
   full: TextStyle['fontWeight'];
@@ -18,16 +19,16 @@ const fontTypes = {
 };
 
 const fontSize = {
-  tiny: RFValue(8),
-  small: RFValue(10),
-  regular: RFValue(12),
-  medium: RFValue(14),
-  medium_extra: RFValue(16),
-  large: RFValue(18),
-  large_extra: RFValue(20),
-  big: RFValue(22),
-  header: RFValue(30),
-  title: RFValue(38),
+  tiny: RFValue(10, STANDARD_HEIGHT),
+  small: RFValue(12, STANDARD_HEIGHT),
+  regular: RFValue(14, STANDARD_HEIGHT),
+  medium: RFValue(16, STANDARD_HEIGHT),
+  medium_extra: RFValue(18, STANDARD_HEIGHT),
+  large: RFValue(20, STANDARD_HEIGHT),
+  large_extra: RFValue(22, STANDARD_HEIGHT),
+  big: RFValue(24, STANDARD_HEIGHT),
+  header: RFValue(32, STANDARD_HEIGHT),
+  title: RFValue(40, STANDARD_HEIGHT),
 };
 
 const fontWeight: FontWeightType = {

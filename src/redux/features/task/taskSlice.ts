@@ -25,8 +25,8 @@ const initialState: InitialStateType = {
     description: '',
     category: null,
     priority: null,
-    date: new Date().toString()
-  }
+    date: new Date().toString(),
+  },
 };
 
 const taskSlice = createSlice({
@@ -45,7 +45,7 @@ const taskSlice = createSlice({
     ) => {
       state.createTaskDetails = {
         ...state.createTaskDetails,
-        ...action.payload
+        ...action.payload,
       };
     },
     resetCreateTaskDetails: state => {
@@ -54,9 +54,9 @@ const taskSlice = createSlice({
         description: '',
         category: null,
         priority: null,
-        date: new Date().toString()
+        date: new Date().toString(),
       };
-    }
+    },
   },
   extraReducers: builder => {
     builder.addCase(addTask.pending, state => {
@@ -69,7 +69,7 @@ const taskSlice = createSlice({
       state.isLoading = false;
       Alert.alert(AppStrings.error, action.payload.error);
     });
-  }
+  },
 });
 
 export default taskSlice.reducer;

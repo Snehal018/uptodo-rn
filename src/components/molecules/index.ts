@@ -15,5 +15,5 @@ export {
   RowButtons,
   TaskItem,
   PriorityViewItem,
-  CategoryViewItem
+  CategoryViewItem,
 };

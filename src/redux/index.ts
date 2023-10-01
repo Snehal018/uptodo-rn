@@ -31,5 +31,5 @@ export {
   // Thunks
   addTask,
   login,
-  signupUser
+  signupUser,
 };

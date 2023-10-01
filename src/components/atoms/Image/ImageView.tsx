@@ -18,7 +18,7 @@ const ImageView: FC<ComponentProps> = ({
     height: containerSize,
     width: containerSize,
     borderRadius: containerSize / 2,
-    overflow: 'hidden'
+    overflow: 'hidden',
   };
 
   return (

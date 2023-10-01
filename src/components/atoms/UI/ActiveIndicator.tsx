@@ -17,7 +17,7 @@ const renderIndicatorItem = (
     <View
       style={[
         styles.baseIndicator,
-        indicatorItem.index === activeIndex && styles.activeIndicator
+        indicatorItem.index === activeIndex && styles.activeIndicator,
       ]}
     />
   );
@@ -26,7 +26,7 @@ const renderIndicatorItem = (
 const ActiveIndicator: FC<ComponentProps> = ({
   activeIndex = 0,
   numberOfItems = 3,
-  style
+  style,
 }) => {
   return (
     <FlatList
@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
     width: scale(26),
     backgroundColor: AppColors.lightGray,
     borderRadius: scale(20),
-    marginHorizontal: scale(4)
+    marginHorizontal: scale(4),
   },
   activeIndicator: {
-    backgroundColor: AppColors.white
+    backgroundColor: AppColors.white,
   },
   baseFlatlist: {
-    flexGrow: 0
-  }
+    flexGrow: 0,
+  },
 });

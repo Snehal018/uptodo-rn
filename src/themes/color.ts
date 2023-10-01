@@ -9,7 +9,7 @@ const AppColors = {
   gray: '#979797',
   lightDark: '#1D1D1D',
   placeholder: '#535353',
-  tabBarDark: '#363636'
+  tabBarDark: '#363636',
 };
 
 export { AppColors };

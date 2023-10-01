@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import {
   moderateVerticalScale,
   scale,
-  verticalScale
+  verticalScale,
 } from 'react-native-size-matters';
 import { AppColors, fontSize } from '../../../themes';
 import { globalStyles } from '../../../styles';
@@ -36,7 +36,7 @@ export default SearchInput;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: verticalScale(16)
+    marginTop: verticalScale(16),
   },
   inputContainer: {
     ...globalStyles.rowSpaceBetweenCenter,
@@ -45,13 +45,13 @@ const styles = StyleSheet.create({
     borderRadius: scale(4),
     height: moderateVerticalScale(42, 0.35),
     paddingHorizontal: '3%',
-    backgroundColor: AppColors.lightDark
+    backgroundColor: AppColors.lightDark,
   },
   inputStyle: {
     ...globalStyles.fullSpace,
     paddingVertical: 0,
     fontSize: fontSize.medium,
     color: AppColors.white,
-    paddingLeft: scale(8)
-  }
+    paddingLeft: scale(8),
+  },
 });

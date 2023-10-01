@@ -3,7 +3,7 @@ import {
   FlatListProps,
   StyleSheet,
   View,
-  ViewStyle
+  ViewStyle,
 } from 'react-native';
 import React, { FC } from 'react';
 import { TaskItem } from '../../molecules';
@@ -27,22 +27,22 @@ const dummyObject: TaskItemType = {
   priority: 2,
   category: {
     color: '#F75410',
-    name: 'University'
+    name: 'University',
   },
   isDone: false,
   subTasks: [],
   user: {
     _id: '644e38ba9a8270261a1ce774',
     username: 'Snehal',
-    profileImage: null
-  }
+    profileImage: null,
+  },
 };
 
 const TasksList: FC<ComponentProps> = ({
   tasks = [dummyObject],
   flatlistProps = {},
   listTitle,
-  containerStyle = {}
+  containerStyle = {},
 }) => {
   return (
     <View style={containerStyle}>
@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
   listTitle: {
     fontSize: fontSize.large,
     fontWeight: fontWeight.semi,
-    marginBottom: verticalScale(16)
-  }
+    marginBottom: verticalScale(16),
+  },
 });

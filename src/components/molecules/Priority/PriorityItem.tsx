@@ -17,7 +17,7 @@ const PriorityItem: FC<ComponentProps> = ({
   title = '',
   containerStyle = {},
   isSelected = false,
-  onPress = () => { }
+  onPress = () => {},
 }) => {
   return (
     <TouchableOpacity
@@ -25,7 +25,7 @@ const PriorityItem: FC<ComponentProps> = ({
       style={[
         styles.container,
         containerStyle,
-        isSelected && styles.selectedItem
+        isSelected && styles.selectedItem,
       ]}>
       <VectorIcon
         iconType="Feather"
@@ -47,11 +47,11 @@ const styles = StyleSheet.create({
     backgroundColor: AppColors.primaryDark,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: scale(4)
+    borderRadius: scale(4),
   },
   title: {
     fontSize: fontSize.medium,
-    marginTop: moderateVerticalScale(10, 0)
+    marginTop: moderateVerticalScale(10, 0),
   },
-  selectedItem: { backgroundColor: AppColors.primary }
+  selectedItem: { backgroundColor: AppColors.primary },
 });

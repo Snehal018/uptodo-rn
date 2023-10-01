@@ -2,7 +2,7 @@ import {
   NativeSyntheticEvent,
   StyleSheet,
   TextInputFocusEventData,
-  TextInputProps
+  TextInputProps,
 } from 'react-native';
 import React, { FC, useState } from 'react';
 import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
@@ -16,7 +16,7 @@ const BottomSheetInput: FC<BottomSheetTextInputProps> = props => {
   const inputBorderWidth = !isFocused ? 0 : scale(0.8);
 
   const extraInputStyle: TextInputProps['style'] = {
-    borderWidth: inputBorderWidth
+    borderWidth: inputBorderWidth,
   };
 
   const onFocusHandler = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
@@ -51,6 +51,6 @@ const styles = StyleSheet.create({
     height: verticalScale(40),
     backgroundColor: AppColors.tabBarDark,
     paddingHorizontal: '3%',
-    color: AppColors.white
-  }
+    color: AppColors.white,
+  },
 });

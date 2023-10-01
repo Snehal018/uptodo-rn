@@ -7,7 +7,7 @@ import { BottomSheetInput, BaseText } from '../../atoms';
 import {
   moderateVerticalScale,
   scale,
-  verticalScale
+  verticalScale,
 } from 'react-native-size-matters';
 import { AddTaskActionButtons } from '../../molecules';
 import { AddTaskContext } from '../../../context/task/addTaskContext';
@@ -26,7 +26,7 @@ const AddTaskForm: FC = () => {
     setIsCalendarModalVisible(true);
   };
 
-  const onPressCategoryHandler = () => { };
+  const onPressCategoryHandler = () => {};
 
   const onPressPriorityHandler = () => {
     setIsPriorityModalVisible(true);
@@ -38,7 +38,7 @@ const AddTaskForm: FC = () => {
       description,
       time: date,
       category: undefined,
-      priority: priority ?? 4
+      priority: priority ?? 4,
     };
 
     dispatch(addTask({ params }))
@@ -57,7 +57,9 @@ const AddTaskForm: FC = () => {
 
   const onChangeDescription = (descriptionValue: string) => {
     dispatch(
-      taskSliceActions.updateCreateTaskDetails({ description: descriptionValue })
+      taskSliceActions.updateCreateTaskDetails({
+        description: descriptionValue,
+      })
     );
   };
 
@@ -92,13 +94,13 @@ export default AddTaskForm;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: scale(AppPadding.baseHorizontal),
-    paddingVertical: verticalScale(12)
+    paddingVertical: verticalScale(12),
   },
   addTaskHeader: {
     fontSize: fontSize.large,
-    fontFamily: fontTypes.bold
+    fontFamily: fontTypes.bold,
   },
   inputStyle: {
-    marginTop: verticalScale(8)
-  }
+    marginTop: verticalScale(8),
+  },
 });

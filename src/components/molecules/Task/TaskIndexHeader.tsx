@@ -14,7 +14,7 @@ const TaskIndexHeader: FC = () => {
         <ImageView
           containerStyle={{ alignSelf: 'flex-end' }}
           source={{
-            uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvjOkn2Ef2RE4zKQP8vnVAKQ2pNQBi2mhN2A&usqp=CAU'
+            uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvjOkn2Ef2RE4zKQP8vnVAKQ2pNQBi2mhN2A&usqp=CAU',
           }}
         />
       )}

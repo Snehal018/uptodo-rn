@@ -14,7 +14,7 @@ const signupUser = createAsyncThunk(
       const response = await axiosClient.post(ApiConstants.signup, {
         username: userName,
         password,
-        confirmPassword
+        confirmPassword,
       });
       return response;
     } catch (error) {
@@ -29,7 +29,7 @@ const login = createAsyncThunk(
     try {
       const response = await axiosClient.post(ApiConstants.login, {
         username: userName,
-        password
+        password,
       });
       return response;
     } catch (error: any) {

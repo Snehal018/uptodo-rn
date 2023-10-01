@@ -53,25 +53,25 @@ const styles = StyleSheet.create({
     borderRadius: scale(4),
     padding: scale(8),
     paddingLeft: scale(4),
-    paddingTop: verticalScale(12)
+    paddingTop: verticalScale(12),
   },
   body: {
     ...globalStyles.fullSpace,
-    marginLeft: scale(4)
+    marginLeft: scale(4),
   },
   title: {
     fontSize: fontSize.medium,
     marginBottom: verticalScale(8),
-    lineHeight: verticalScale(18)
+    lineHeight: verticalScale(18),
   },
   description: {
     color: AppColors.lightGray,
-    marginRight: scale(12)
+    marginRight: scale(12),
   },
   categoryContainer: {
-    marginRight: scale(8)
+    marginRight: scale(8),
   },
   categoryPriorityContainer: {
-    ...globalStyles.rowContainer
-  }
+    ...globalStyles.rowContainer,
+  },
 });

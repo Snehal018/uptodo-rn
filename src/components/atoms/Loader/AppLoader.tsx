@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     right: 0,
     left: 0,
     backgroundColor: '#00000080',
-    zIndex: 999999
-  }
+    zIndex: 999999,
+  },
 });

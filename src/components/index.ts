@@ -15,7 +15,7 @@ import {
   Separator,
   VectorIcon,
   SearchInput,
-  ScreenContainer
+  ScreenContainer,
 } from './atoms';
 import {
   AddTaskActionButtons,
@@ -25,7 +25,7 @@ import {
   RowButtons,
   TaskItem,
   PriorityViewItem,
-  CategoryViewItem
+  CategoryViewItem,
 } from './molecules';
 import {
   AddTaskBottomSheet,
@@ -35,7 +35,7 @@ import {
   EmptyTaskIndex,
   PriorityModal,
   TasksDashboard,
-  TasksList
+  TasksList,
 } from './organisms';
 
 export {
@@ -76,5 +76,5 @@ export {
   AddTaskForm,
   PriorityModal,
   TasksDashboard,
-  TasksList
+  TasksList,
 };

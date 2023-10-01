@@ -16,6 +16,6 @@ const styles = StyleSheet.create({
   baseText: {
     fontFamily: fontTypes.regular,
     color: AppColors.white,
-    fontSize: fontSize.regular
-  }
+    fontSize: fontSize.regular,
+  },
 });

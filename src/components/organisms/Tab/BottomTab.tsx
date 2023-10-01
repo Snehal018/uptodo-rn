@@ -50,7 +50,7 @@ const BottomTab: FC<BottomTabBarProps> = props => {
       navigation.emit({
         type: 'tabPress',
         target: route.key,
-        canPreventDefault: true
+        canPreventDefault: true,
       });
 
       navigation.navigate(route.name);
@@ -60,7 +60,7 @@ const BottomTab: FC<BottomTabBarProps> = props => {
       icon,
       title,
       onPressTab: onPress,
-      isFocused
+      isFocused,
     };
   };
 
@@ -82,7 +82,7 @@ const BottomTab: FC<BottomTabBarProps> = props => {
         onPress={onAddTaskHandler}
         style={({ pressed }) => [
           styles.tabAddTaskButton,
-          pressed && globalStyles.pressed
+          pressed && globalStyles.pressed,
         ]}>
         <VectorIcon
           iconType="AntDesign"

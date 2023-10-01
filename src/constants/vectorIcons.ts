@@ -13,5 +13,5 @@ export const VECTOR_ICON_TYPES = {
   MaterialIcons: 'MaterialIcons',
   Octicons: 'Octicons',
   SimpleLineIcons: 'SimpleLineIcons',
-  Zocial: 'Zocial'
+  Zocial: 'Zocial',
 };

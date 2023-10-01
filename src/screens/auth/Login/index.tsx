@@ -7,11 +7,14 @@ import {
   BaseText,
   CustomInput,
   ScreenContainer,
-  Separator
+  Separator,
 } from '../../../components';
 import { AppStrings } from '../../../constants';
 import { AppImages } from '../../../assets/images';
-import { isAndroid, normalizeFormikError } from '../../../utils/helperfunctions';
+import {
+  isAndroid,
+  normalizeFormikError,
+} from '../../../utils/helperfunctions';
 import { styles } from './styles';
 import { AuthContext } from '../../../context/auth/authContext';
 import { useCustomNavigation } from '../../../hooks';
@@ -22,7 +25,8 @@ const Login: FC = () => {
   const { formik: loginFormik } = useContext(AuthContext).login;
   const { navigation } = useCustomNavigation('Login');
   const { userName, password } = loginFormik.values;
-  const { errors, handleChange, handleBlur, handleSubmit, touched } = loginFormik;
+  const { errors, handleChange, handleBlur, handleSubmit, touched } =
+    loginFormik;
   const { isLoading } = useAppSelector(state => state.auth);
   const onPressRegisterHandler = () => {
     navigation.navigate('Registration');
@@ -33,7 +37,7 @@ const Login: FC = () => {
       <SafeAreaView style={globalStyles.darkContainerPadding}>
         <BackHeader
           headerContainerStyle={{
-            marginTop: moderateVerticalScale(isAndroid ? 16 : 0, 0.35)
+            marginTop: moderateVerticalScale(isAndroid ? 16 : 0, 0.35),
           }}
         />
         <BaseText style={styles.loginTitle}>{AppStrings.loginSmall}</BaseText>

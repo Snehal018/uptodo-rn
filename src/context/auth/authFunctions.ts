@@ -18,7 +18,7 @@ const onLoginPressHandler = ({ userName, password }: LoginFormType) => {
 const onRegisterPressHandler = ({
   userName,
   password,
-  confirmPassword
+  confirmPassword,
 }: RegisterFormType) => {
   store
     .dispatch(signupUser({ userName, password, confirmPassword }))
@@ -26,7 +26,7 @@ const onRegisterPressHandler = ({
     .then(res => {
       if (res?.status === 201) {
         Alert.alert(AppStrings.success, AppStrings.userCreateSuccess, [
-          { onPress: () => navigate('Login') }
+          { onPress: () => navigate('Login') },
         ]);
       }
     });

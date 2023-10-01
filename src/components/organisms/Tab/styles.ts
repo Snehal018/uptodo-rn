@@ -5,7 +5,7 @@ import { screenWidth } from '../../../themes';
 import {
   moderateVerticalScale,
   scale,
-  verticalScale
+  verticalScale,
 } from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     ...globalStyles.rowSpaceBetweenCenter,
     height: verticalScale(80),
     backgroundColor: AppColors.tabBarDark,
-    paddingVertical: verticalScale(12)
+    paddingVertical: verticalScale(12),
   },
   tabAddTaskButton: {
     ...globalStyles.centerContainer,
@@ -23,16 +23,16 @@ const styles = StyleSheet.create({
     borderRadius: scale(28),
     top: -moderateVerticalScale(30, 0),
     left: (screenWidth - scale(56)) / 2,
-    backgroundColor: AppColors.primary
+    backgroundColor: AppColors.primary,
   },
   taskAddIcon: {
     height: scale(24),
-    width: scale(24)
+    width: scale(24),
   },
   tabItemsContainer: {
     flexDirection: 'row',
     width: '40%',
-    justifyContent: 'space-around'
-  }
+    justifyContent: 'space-around',
+  },
 });
 export default styles;

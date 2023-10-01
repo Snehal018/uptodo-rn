@@ -5,7 +5,7 @@ import {
   StyleSheet,
   TextStyle,
   View,
-  ViewStyle
+  ViewStyle,
 } from 'react-native';
 import React, { FC } from 'react';
 import BaseText from '../../atoms/Text/Basetext';
@@ -29,7 +29,7 @@ const EmptyTaskIndex: FC<ComponentProps> = ({
   containerStyle,
   imageStyle,
   titleStyle,
-  subTitleStyle
+  subTitleStyle,
 }) => {
   return (
     <View style={containerStyle}>
@@ -50,17 +50,17 @@ const styles = StyleSheet.create({
   baseImage: {
     height: scale(227),
     width: scale(227),
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   baseText: {
     color: AppColors.white,
     textAlign: 'center',
-    marginTop: verticalScale(16)
+    marginTop: verticalScale(16),
   },
   baseTitle: {
-    fontSize: fontSize.large
+    fontSize: fontSize.large,
   },
   baseSubTitle: {
-    fontSize: fontSize.medium
-  }
+    fontSize: fontSize.medium,
+  },
 });

@@ -19,21 +19,21 @@ import { VECTOR_ICON_TYPES } from '../../../constants';
 
 interface ComponentProps extends IconProps {
   iconType:
-  | 'AntDesign'
-  | 'Entypo'
-  | 'EvilIcons'
-  | 'Feather'
-  | 'FontAwesome'
-  | 'FontAwesome5'
-  | 'FontAwesome5Pro'
-  | 'Fontisto'
-  | 'Foundation'
-  | 'Ionicons'
-  | 'MaterialCommunityIcons'
-  | 'MaterialIcons'
-  | 'Octicons'
-  | 'SimpleLineIcons'
-  | 'Zocial'; // ? Defaults to AntDesign
+    | 'AntDesign'
+    | 'Entypo'
+    | 'EvilIcons'
+    | 'Feather'
+    | 'FontAwesome'
+    | 'FontAwesome5'
+    | 'FontAwesome5Pro'
+    | 'Fontisto'
+    | 'Foundation'
+    | 'Ionicons'
+    | 'MaterialCommunityIcons'
+    | 'MaterialIcons'
+    | 'Octicons'
+    | 'SimpleLineIcons'
+    | 'Zocial'; // ? Defaults to AntDesign
 }
 
 const VectorIcon: FC<ComponentProps> = ({ iconType, ...props }) => {

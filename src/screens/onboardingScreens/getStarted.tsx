@@ -23,10 +23,7 @@ const GetStarted: FC = () => {
     <ScreenContainer>
       <SafeAreaView style={globalStyles.darkContainerPadding}>
         <View style={[globalStyles.fullSpace, globalStyles.horizontalCenter]}>
-          <BaseText
-            style={styles.welcomeHeader}
-            numberOfLines={1}
-            adjustsFontSizeToFit>
+          <BaseText style={styles.welcomeHeader}>
             {AppStrings.welcomeToUptodo}
           </BaseText>
           <BaseText style={styles.welcomeSubText}>

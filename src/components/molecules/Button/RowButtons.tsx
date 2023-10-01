@@ -17,7 +17,7 @@ const RowButtons: FC<ComponentProps> = ({
   declineButtonTitle,
   onPressAcceptButton,
   onPressDeclineButton,
-  containerStyle
+  containerStyle,
 }) => {
   return (
     <View style={[globalStyles.rowContainer, containerStyle]}>

@@ -5,7 +5,7 @@ import { Calendar, CalendarProps } from 'react-native-calendars';
 import { scale, verticalScale } from 'react-native-size-matters';
 import {
   DateTimePickerAndroid,
-  DateTimePickerEvent
+  DateTimePickerEvent,
 } from '@react-native-community/datetimepicker';
 import { AppStrings } from '../../../constants';
 import BaseModal from '../../atoms/Modal/BaseModal';
@@ -19,7 +19,7 @@ const calendarTheme: CalendarProps['theme'] = {
   selectedDayTextColor: AppColors.white,
   arrowColor: AppColors.primary,
   selectedDayBackgroundColor: AppColors.primary,
-  todayTextColor: AppColors.primary
+  todayTextColor: AppColors.primary,
 };
 
 interface ComponentProps {
@@ -32,10 +32,10 @@ interface ComponentProps {
 
 const CalendarModal: FC<ComponentProps> = ({
   visible = false,
-  setVisible = () => { },
+  setVisible = () => {},
   onSelectDate,
   selectedDate,
-  onSelectTime
+  onSelectTime,
 }) => {
   const onPressChooseTimeHandler = () => {
     DateTimePickerAndroid.open({
@@ -44,7 +44,7 @@ const CalendarModal: FC<ComponentProps> = ({
       onChange: (e, date) => {
         onSelectTime(e, date);
         setVisible(false);
-      }
+      },
     });
   };
 
@@ -56,7 +56,7 @@ const CalendarModal: FC<ComponentProps> = ({
           onDayPress={onSelectDate}
           style={styles.calendar}
           markedDates={{
-            [selectedDate]: { selected: true }
+            [selectedDate]: { selected: true },
           }}
         />
         <RowButtons
@@ -78,16 +78,16 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: AppColors.tabBarDark,
     borderRadius: scale(8),
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   calendar: {
     width: '95%',
     alignSelf: 'center',
     borderRadius: scale(8),
-    backgroundColor: AppColors.tabBarDark
+    backgroundColor: AppColors.tabBarDark,
   },
   rowButtonsContainer: {
     marginVertical: verticalScale(16),
-    marginHorizontal: scale(8)
-  }
+    marginHorizontal: scale(8),
+  },
 });

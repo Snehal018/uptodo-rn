@@ -3,7 +3,7 @@ import React, { FC, useRef } from 'react';
 import { BottomSheetMethods } from '@gorhom/bottom-sheet/lib/typescript/types';
 import BottomSheet, {
   BottomSheetBackdropProps,
-  BottomSheetProps
+  BottomSheetProps,
 } from '@gorhom/bottom-sheet';
 import { AppColors } from '../../../themes';
 
@@ -14,7 +14,7 @@ interface ComponentProps extends Partial<BottomSheetProps> {
 
 const AppBottomsheet: FC<ComponentProps> = ({
   isVisible = false,
-  onBackDropPress = () => { },
+  onBackDropPress = () => {},
   ...bottomSheetProps
 }) => {
   const bottomSheetRef = useRef<BottomSheetMethods | null>(null);
@@ -55,6 +55,6 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0
-  }
+    right: 0,
+  },
 });

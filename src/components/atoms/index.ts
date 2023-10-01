@@ -33,5 +33,5 @@ export {
   Separator,
   VectorIcon,
   SearchInput,
-  ScreenContainer
+  ScreenContainer,
 };

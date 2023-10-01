@@ -30,15 +30,15 @@ const styles = StyleSheet.create({
   container: {
     ...globalStyles.horizontalCenter,
     paddingTop: verticalScale(4),
-    width: '45%'
+    width: '45%',
   },
   tabIcon: {
     height: scale(24),
-    width: scale(24)
+    width: scale(24),
   },
   tabTitle: {
     fontSize: fontSize.small,
     color: AppColors.white,
-    marginTop: verticalScale(8)
-  }
+    marginTop: verticalScale(8),
+  },
 });

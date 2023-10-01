@@ -15,5 +15,5 @@ export {
   EmptyTaskIndex,
   PriorityModal,
   TasksDashboard,
-  TasksList
+  TasksList,
 };

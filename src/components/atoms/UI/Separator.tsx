@@ -5,7 +5,7 @@ import BaseText from '../Text/Basetext';
 import {
   moderateVerticalScale,
   scale,
-  verticalScale
+  verticalScale,
 } from 'react-native-size-matters';
 
 interface ComponentProps {
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   breakLine: {
     height: verticalScale(1),
     backgroundColor: AppColors.gray,
-    marginVertical: moderateVerticalScale(14, 0)
+    marginVertical: moderateVerticalScale(14, 0),
   },
   centerTextStyle: {
     marginTop: 'auto',
@@ -40,13 +40,13 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     paddingHorizontal: scale(5),
-    backgroundColor: AppColors.primaryDark
+    backgroundColor: AppColors.primaryDark,
   },
   centerTextContainer: {
     position: 'absolute',
     top: 0,
     bottom: 0,
     right: 0,
-    left: 0
-  }
+    left: 0,
+  },
 });

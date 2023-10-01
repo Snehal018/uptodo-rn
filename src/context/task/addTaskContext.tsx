@@ -11,7 +11,7 @@ const AddTaskContextProvider = ({ children }: PropsWithChildren) => {
     isCalendarModalVisible,
     setIsCalendarModalVisible,
     isPriorityModalVisible,
-    setIsPriorityModalVisible
+    setIsPriorityModalVisible,
   };
 
   return (

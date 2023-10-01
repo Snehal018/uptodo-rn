@@ -5,7 +5,10 @@ interface ComponentProps extends Partial<ModalProps> {
   setIsVisible: Dispatch<SetStateAction<boolean>>;
 }
 
-const BaseModal: FC<ComponentProps> = ({ setIsVisible = () => { }, ...props }) => {
+const BaseModal: FC<ComponentProps> = ({
+  setIsVisible = () => {},
+  ...props
+}) => {
   return (
     <ReactNativeModal
       {...props}

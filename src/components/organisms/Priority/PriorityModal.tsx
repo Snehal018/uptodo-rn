@@ -4,14 +4,14 @@ import React, {
   FC,
   SetStateAction,
   useCallback,
-  useState
+  useState,
 } from 'react';
 import { BaseModal, BaseText, Separator } from '../../atoms';
 import { AppColors } from '../../../themes';
 import {
   moderateVerticalScale,
   scale,
-  verticalScale
+  verticalScale,
 } from 'react-native-size-matters';
 import { globalStyles } from '../../../styles';
 import { AppStrings } from '../../../constants';
@@ -28,7 +28,7 @@ const priorityData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const PriorityModal: FC<ComponentProps> = ({
   visible = false,
   setVisible = () => {},
-  onConfirmPriority = () => {}
+  onConfirmPriority = () => {},
 }) => {
   const [selectedPriority, setSelectedPriority] = useState<number | null>(null);
 
@@ -89,19 +89,19 @@ const styles = StyleSheet.create({
     backgroundColor: AppColors.tabBarDark,
     borderRadius: scale(8),
     paddingVertical: verticalScale(12),
-    paddingHorizontal: scale(8)
+    paddingHorizontal: scale(8),
   },
   title: {
     ...globalStyles.mediumWhiteBoldText,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   priorityItemContainer: {
     marginTop: moderateVerticalScale(16, 0),
-    marginHorizontal: scale(5)
+    marginHorizontal: scale(5),
   },
   footerButtonsContainer: {
     marginHorizontal: scale(8),
-    marginTop: moderateVerticalScale(32, 0)
+    marginTop: moderateVerticalScale(32, 0),
   },
-  itemsContainer: { flexDirection: 'row', flexWrap: 'wrap' }
+  itemsContainer: { flexDirection: 'row', flexWrap: 'wrap' },
 });

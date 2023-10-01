@@ -12,7 +12,7 @@ interface ComponentProps extends PropsWithChildren {
 const ScreenContainer: FC<ComponentProps> = ({
   children,
   isLoading = false,
-  containerStyle
+  containerStyle,
 }) => {
   return (
     <View style={[globalStyles.darkContainer, containerStyle]}>

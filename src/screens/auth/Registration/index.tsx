@@ -7,7 +7,7 @@ import {
   BaseText,
   CustomInput,
   ScreenContainer,
-  Separator
+  Separator,
 } from '../../../components';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppStrings } from '../../../constants';

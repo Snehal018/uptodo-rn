@@ -3,7 +3,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   View,
-  ViewStyle
+  ViewStyle,
 } from 'react-native';
 import React, { FC } from 'react';
 import { globalStyles } from '../../../styles';
@@ -28,13 +28,13 @@ const BackHeader: FC<ComponentProps> = ({ headerContainerStyle }) => {
       style={[
         globalStyles.rowContainer,
         styles.baseContainerStyle,
-        headerContainerStyle
+        headerContainerStyle,
       ]}>
       <TouchableOpacity
         onPress={onBackPressHandler}
         hitSlop={{
           left: 18,
-          right: 18
+          right: 18,
         }}>
         <Image
           resizeMode="contain"
@@ -51,9 +51,9 @@ export default BackHeader;
 const styles = StyleSheet.create({
   backStyle: {
     height: verticalScale(17.34),
-    width: scale(8.59)
+    width: scale(8.59),
   },
   baseContainerStyle: {
-    paddingVertical: verticalScale(isAndroid ? 4 : 17)
-  }
+    paddingVertical: verticalScale(isAndroid ? 4 : 17),
+  },
 });

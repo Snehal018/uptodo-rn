@@ -15,5 +15,5 @@ export {
   CalendarScreen,
   FocusScreen,
   ProfileScreen,
-  TaskIndexScreen
+  TaskIndexScreen,
 };

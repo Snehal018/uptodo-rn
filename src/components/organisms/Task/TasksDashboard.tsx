@@ -19,6 +19,6 @@ export default TasksDashboard;
 
 const styles = StyleSheet.create({
   tasksListContainer: {
-    marginTop: verticalScale(16)
-  }
+    marginTop: verticalScale(16),
+  },
 });

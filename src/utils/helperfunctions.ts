@@ -18,13 +18,13 @@ const parseThunkError = (error: any, fallbackErrorString?: string) => {
       : AppStrings.clientNetworkError;
     return {
       error: networkErrorMessage,
-      status: 408
+      status: 408,
     };
   }
   return (
     error?.response?.data ?? {
       error: fallbackErrorString ?? AppStrings.somethingWentWrong,
-      status: 500
+      status: 500,
     }
   );
 };

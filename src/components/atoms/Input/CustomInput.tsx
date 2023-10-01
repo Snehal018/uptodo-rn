@@ -3,7 +3,7 @@ import {
   TextInput,
   TextInputProps,
   View,
-  ViewStyle
+  ViewStyle,
 } from 'react-native';
 import React, { FC, useState } from 'react';
 import { AppColors, fontSize } from '../../../themes';
@@ -11,7 +11,7 @@ import BaseText from '../Text/Basetext';
 import {
   moderateVerticalScale,
   scale,
-  verticalScale
+  verticalScale,
 } from 'react-native-size-matters';
 import { globalStyles } from '../../../styles';
 import VectorIcon from '../Icons/VectorIcon';
@@ -65,12 +65,12 @@ export default CustomInput;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: verticalScale(16)
+    marginTop: verticalScale(16),
   },
   inputTitle: {
     opacity: 0.87,
     fontSize: fontSize.medium,
-    marginBottom: moderateVerticalScale(10, 0.35)
+    marginBottom: moderateVerticalScale(10, 0.35),
   },
   inputContainer: {
     ...globalStyles.rowSpaceBetweenCenter,
@@ -79,21 +79,21 @@ const styles = StyleSheet.create({
     borderRadius: scale(4),
     height: moderateVerticalScale(42, 0.35),
     paddingHorizontal: '3%',
-    backgroundColor: AppColors.lightDark
+    backgroundColor: AppColors.lightDark,
   },
   inputStyle: {
     ...globalStyles.fullSpace,
     paddingVertical: 0,
     fontSize: fontSize.medium,
-    color: AppColors.white
+    color: AppColors.white,
   },
   errorText: {
     marginTop: verticalScale(8),
     marginLeft: scale(2),
-    color: AppColors.red
+    color: AppColors.red,
   },
   errorBorder: {
     borderColor: AppColors.red,
-    borderWidth: 1.5
-  }
+    borderWidth: 1.5,
+  },
 });

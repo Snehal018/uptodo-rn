@@ -73,7 +73,7 @@ const AppStrings = {
   cancel: 'Cancel',
   chooseTime: 'Choose Time',
   save: 'Save',
-  taskPriority: 'Task Priority'
+  taskPriority: 'Task Priority',
 };
 
 export default AppStrings;

@@ -18,7 +18,7 @@ const Header: FC<ComponentProps> = ({
   leftContent,
   rightContent,
   title,
-  titleStyle
+  titleStyle,
 }) => {
   return (
     <View style={styles.container}>
@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
   container: {
     ...globalStyles.rowContainer,
     paddingVertical: verticalScale(8),
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   baseTitleStyle: {
     fontSize: fontSize.large,
     textAlign: 'center',
-    color: AppColors.white
-  }
+    color: AppColors.white,
+  },
 });

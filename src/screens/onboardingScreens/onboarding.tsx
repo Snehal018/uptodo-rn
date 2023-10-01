@@ -5,7 +5,7 @@ import {
   ActiveIndicator,
   AppButton,
   BaseText,
-  CustomStatusBar
+  CustomStatusBar,
 } from '../../components';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppStrings } from '../../constants';
@@ -85,7 +85,7 @@ const Onboarding: FC = () => {
     <SafeAreaView
       style={[
         globalStyles.darkContainerPadding,
-        globalStyles.horizontalCenter
+        globalStyles.horizontalCenter,
       ]}>
       <CustomStatusBar />
       <AppButton
@@ -135,22 +135,22 @@ const styles = StyleSheet.create({
   skipButtonStyle: {
     opacity: 0.44,
     alignSelf: 'flex-start',
-    marginTop: verticalScale(8)
+    marginTop: verticalScale(8),
   },
   imageStyle: {
     height: verticalScale(277),
-    width: scale(211)
+    width: scale(211),
   },
   manageTaskText: {
     fontSize: fontSize.header,
     marginTop: verticalScale(32),
     marginBottom: verticalScale(24),
-    fontWeight: fontWeight.semi
+    fontWeight: fontWeight.semi,
   },
   manageTaskSubText: {
     fontSize: fontSize.medium,
     textAlign: 'center',
-    opacity: 0.87
+    opacity: 0.87,
   },
   textContainer: { alignItems: 'center', maxWidth: '95%' },
   footerButtonContainer: {
@@ -158,16 +158,16 @@ const styles = StyleSheet.create({
     marginTop: 'auto',
     marginBottom: verticalScale(28),
     justifyContent: 'space-between',
-    width: '100%'
+    width: '100%',
   },
   backButtonTitle: { opacity: 0.44 },
   nextButtonStyle: {
     marginTop: 'auto',
     marginBottom: verticalScale(28),
-    alignSelf: 'flex-end'
+    alignSelf: 'flex-end',
   },
   mainContentContainer: {
     alignItems: 'center',
-    marginTop: 'auto'
-  }
+    marginTop: 'auto',
+  },
 });

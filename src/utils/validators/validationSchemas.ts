@@ -6,7 +6,7 @@ const loginValidationSchema = Yup.object().shape({
   password: Yup.string()
     .required(AppStrings.pleaseEnterPassword)
     .min(6, AppStrings.passwordLongError)
-    .trim()
+    .trim(),
 });
 
 const registrationValidationSchema = Yup.object().shape({
@@ -19,7 +19,7 @@ const registrationValidationSchema = Yup.object().shape({
     .required(AppStrings.pleaseEnterPassword)
     .oneOf([Yup.ref('password')], AppStrings.passwordsDoNotMatch)
     .min(6, AppStrings.passwordLongError)
-    .trim()
+    .trim(),
 });
 
 export { loginValidationSchema, registrationValidationSchema };

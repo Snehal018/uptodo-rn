@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import {
   KeyboardAwareScrollView,
-  KeyboardAwareScrollViewProps
+  KeyboardAwareScrollViewProps,
 } from 'react-native-keyboard-aware-scroll-view';
 import { verticalScale } from 'react-native-size-matters';
 

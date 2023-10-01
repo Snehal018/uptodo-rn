@@ -5,7 +5,7 @@ interface InitialStateType {
 }
 
 const initialState: InitialStateType = {
-  isNetworkConnected: false
+  isNetworkConnected: false,
 };
 
 const appSlice = createSlice({
@@ -14,8 +14,8 @@ const appSlice = createSlice({
   reducers: {
     updateNetworkStatus: (state, action: PayloadAction<boolean>) => {
       state.isNetworkConnected = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const appSliceActions = appSlice.actions;

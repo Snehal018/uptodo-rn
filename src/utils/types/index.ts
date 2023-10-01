@@ -62,5 +62,5 @@ export type {
   RegisterFormType,
   AuthContextType,
   AddTaskContextType,
-  TaskItemType
+  TaskItemType,
 };

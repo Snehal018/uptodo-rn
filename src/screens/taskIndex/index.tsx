@@ -6,7 +6,7 @@ import {
   EmptyTaskIndex,
   ScreenContainer,
   TaskIndexHeader,
-  TasksDashboard
+  TasksDashboard,
 } from '../../components';
 import { AppImages } from '../../assets/images';
 import { AppStrings } from '../../constants';
@@ -18,7 +18,7 @@ const TaskIndexScreen: FC = () => {
 
   const rootContainerStyle: ViewStyle = {
     ...globalStyles.horizontalPaddding,
-    paddingTop: top + verticalScale(16)
+    paddingTop: top + verticalScale(16),
   };
 
   const hasTasks = true;

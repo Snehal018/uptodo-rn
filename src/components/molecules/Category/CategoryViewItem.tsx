@@ -16,11 +16,11 @@ const CategoryViewItem: FC<ComponentProps> = ({
   color = AppColors.primary,
   name = '',
   containerStyle = {},
-  textStyle = {}
+  textStyle = {},
 }) => {
   const extraContainerStyle: ViewStyle = {
     ...containerStyle,
-    backgroundColor: color
+    backgroundColor: color,
   };
 
   return (
@@ -39,6 +39,6 @@ const styles = StyleSheet.create({
     ...globalStyles.rowContainer,
     paddingHorizontal: scale(8),
     paddingVertical: verticalScale(4),
-    borderRadius: scale(4)
-  }
+    borderRadius: scale(4),
+  },
 });

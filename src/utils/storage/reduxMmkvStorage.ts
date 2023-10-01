@@ -15,5 +15,5 @@ export const reduxMmkvStorage: Storage = {
   removeItem: key => {
     storage.delete(key);
     return Promise.resolve();
-  }
+  },
 };

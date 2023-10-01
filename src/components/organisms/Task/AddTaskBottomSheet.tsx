@@ -14,13 +14,13 @@ const AddTaskBottomSheet: FC = () => {
   const dispatch = useAppDispatch();
   const {
     isAddTaskSheetOpen,
-    createTaskDetails: { date }
+    createTaskDetails: { date },
   } = useAppSelector(state => state.task);
   const {
     isCalendarModalVisible,
     setIsCalendarModalVisible,
     isPriorityModalVisible,
-    setIsPriorityModalVisible
+    setIsPriorityModalVisible,
   } = useContext(AddTaskContext);
 
   const onBackdropPressHandler = () => {
@@ -31,7 +31,7 @@ const AddTaskBottomSheet: FC = () => {
   const onTaskSelectDateHandler = (date: DateData) => {
     dispatch(
       taskSliceActions.updateCreateTaskDetails({
-        date: new Date(date.dateString).toString()
+        date: new Date(date.dateString).toString(),
       })
     );
   };
@@ -45,7 +45,7 @@ const AddTaskBottomSheet: FC = () => {
         date: moment(date)
           .set('hours', moment(selectedDateTime).hours())
           .set('minutes', moment(selectedDateTime).minutes())
-          .toString()
+          .toString(),
       })
     );
   };

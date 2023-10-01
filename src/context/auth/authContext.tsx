@@ -2,12 +2,12 @@ import React, { PropsWithChildren, createContext } from 'react';
 import { useFormik } from 'formik';
 import {
   loginValidationSchema,
-  registrationValidationSchema
+  registrationValidationSchema,
 } from '../../utils/validators/validationSchemas';
 import {
   AuthContextType,
   LoginFormType,
-  RegisterFormType
+  RegisterFormType,
 } from '../../utils/types';
 import { onLoginPressHandler, onRegisterPressHandler } from './authFunctions';
 
@@ -17,31 +17,31 @@ const AuthContextProvider = ({ children }: PropsWithChildren) => {
   const loginFormik = useFormik<LoginFormType>({
     initialValues: {
       userName: '',
-      password: ''
+      password: '',
     },
     validationSchema: loginValidationSchema,
     onSubmit: values => onLoginPressHandler(values),
-    validateOnMount: true
+    validateOnMount: true,
   });
 
   const registerFormik = useFormik<RegisterFormType>({
     initialValues: {
       userName: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
     },
     validationSchema: registrationValidationSchema,
     onSubmit: values => onRegisterPressHandler(values),
-    validateOnMount: true
+    validateOnMount: true,
   });
 
   const contextValue: AuthContextType = {
     register: {
-      formik: registerFormik
+      formik: registerFormik,
     },
     login: {
-      formik: loginFormik
-    }
+      formik: loginFormik,
+    },
   };
 
   return (

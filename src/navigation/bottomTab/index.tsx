@@ -4,7 +4,7 @@ import {
   CalendarScreen,
   FocusScreen,
   ProfileScreen,
-  TaskIndexScreen
+  TaskIndexScreen,
 } from '../../screens';
 import { BottomTab } from '../../components';
 
