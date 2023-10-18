@@ -4,7 +4,7 @@ import { SearchInput } from '../../atoms';
 import { globalStyles } from '../../../styles';
 import { AppStrings } from '../../../constants';
 import TasksList from './TasksList';
-import { verticalScale } from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters/extend';
 
 const TasksDashboard: FC = () => {
   return (

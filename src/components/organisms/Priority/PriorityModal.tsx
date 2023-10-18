@@ -12,7 +12,7 @@ import {
   moderateVerticalScale,
   scale,
   verticalScale,
-} from 'react-native-size-matters';
+} from 'react-native-size-matters/extend';
 import { globalStyles } from '../../../styles';
 import { AppStrings } from '../../../constants';
 import { RowButtons, PriorityItem } from '../../molecules';

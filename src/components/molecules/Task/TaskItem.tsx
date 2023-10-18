@@ -5,7 +5,7 @@ import { BaseText } from '../../atoms';
 import { globalStyles } from '../../../styles';
 import { RadioButton } from 'react-native-paper';
 import { AppColors, fontSize } from '../../../themes';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters/extend';
 import PriorityViewItem from '../Priority/PriorityViewItem';
 import CategoryViewItem from '../Category/CategoryViewItem';
 import moment from 'moment';

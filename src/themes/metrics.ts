@@ -2,12 +2,21 @@
 
 import { Dimensions } from 'react-native';
 
-export const STANDARD_HEIGHT = 812;
-export const STANDARD_WIDTH = 375;
+const STANDARD_HEIGHT = 812;
+const STANDARD_WIDTH = 375;
 
 const { height, width } = Dimensions.get('window');
 
-const screenWidth = width;
-const screenHeight = height;
+const SCREEN_WIDTH = width;
+const SCREEN_HEIGHT = height;
 
-export { screenHeight, screenWidth };
+// This is standard scale value to be used in combination of moderateVerticalScale method for styling
+const VERTICAL_BASE_SCALE = 0.35;
+
+export {
+  SCREEN_HEIGHT,
+  SCREEN_WIDTH,
+  STANDARD_HEIGHT,
+  STANDARD_WIDTH,
+  VERTICAL_BASE_SCALE,
+};

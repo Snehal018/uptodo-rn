@@ -10,7 +10,7 @@ import { TaskItem } from '../../molecules';
 import { TaskItemType } from '../../../utils/types';
 import { BaseText } from '../../atoms';
 import { fontSize, fontWeight } from '../../../themes';
-import { verticalScale } from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters/extend';
 
 interface ComponentProps {
   tasks: TaskItemType[];

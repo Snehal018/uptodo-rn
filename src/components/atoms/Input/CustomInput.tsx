@@ -5,14 +5,14 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import React, { FC, useState } from 'react';
-import { AppColors, fontSize } from '../../../themes';
+import React, { FC, memo, useCallback, useState } from 'react';
+import { AppColors, VERTICAL_BASE_SCALE, fontSize } from '../../../themes';
 import BaseText from '../Text/Basetext';
 import {
   moderateVerticalScale,
   scale,
   verticalScale,
-} from 'react-native-size-matters';
+} from 'react-native-size-matters/extend';
 import { globalStyles } from '../../../styles';
 import VectorIcon from '../Icons/VectorIcon';
 
@@ -30,9 +30,9 @@ const CustomInput: FC<TextInputProps & ComponentProps> = ({
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const onEyeIconPressHandler = () => {
+  const onEyeIconPressHandler = useCallback(() => {
     setShowPassword(prevValue => !prevValue);
-  };
+  }, []);
 
   return (
     <View style={[styles.container, inputContainerStyle]}>
@@ -61,7 +61,7 @@ const CustomInput: FC<TextInputProps & ComponentProps> = ({
   );
 };
 
-export default CustomInput;
+export default memo(CustomInput);
 
 const styles = StyleSheet.create({
   container: {
@@ -70,14 +70,14 @@ const styles = StyleSheet.create({
   inputTitle: {
     opacity: 0.87,
     fontSize: fontSize.medium,
-    marginBottom: moderateVerticalScale(10, 0.35),
+    marginBottom: moderateVerticalScale(10, VERTICAL_BASE_SCALE),
   },
   inputContainer: {
     ...globalStyles.rowSpaceBetweenCenter,
     borderWidth: scale(0.8),
     borderColor: AppColors.gray,
     borderRadius: scale(4),
-    height: moderateVerticalScale(42, 0.35),
+    height: moderateVerticalScale(42, VERTICAL_BASE_SCALE),
     paddingHorizontal: '3%',
     backgroundColor: AppColors.lightDark,
   },

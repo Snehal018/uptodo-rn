@@ -2,7 +2,7 @@ import { StyleSheet, View, ViewStyle } from 'react-native';
 import React, { FC } from 'react';
 import { BaseText, VectorIcon } from '../../atoms';
 import { AppColors } from '../../../themes';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters/extend';
 import { globalStyles } from '../../../styles';
 
 interface ComponentProps {

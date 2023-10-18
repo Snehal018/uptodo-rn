@@ -1,6 +1,6 @@
 import { StyleSheet, TextStyle, View, ViewStyle } from 'react-native';
 import React, { FC } from 'react';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters/extend';
 import { globalStyles } from '../../../styles';
 import { BaseText } from '../../atoms';
 import { AppColors } from '../../../themes';

@@ -4,8 +4,8 @@ import {
   moderateVerticalScale,
   scale,
   verticalScale,
-} from 'react-native-size-matters';
-import { AppColors, fontSize } from '../../../themes';
+} from 'react-native-size-matters/extend';
+import { AppColors, VERTICAL_BASE_SCALE, fontSize } from '../../../themes';
 import { globalStyles } from '../../../styles';
 import VectorIcon from '../Icons/VectorIcon';
 
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     borderWidth: scale(0.8),
     borderColor: AppColors.gray,
     borderRadius: scale(4),
-    height: moderateVerticalScale(42, 0.35),
+    height: moderateVerticalScale(42, VERTICAL_BASE_SCALE),
     paddingHorizontal: '3%',
     backgroundColor: AppColors.lightDark,
   },

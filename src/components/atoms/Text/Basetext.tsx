@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TextProps } from 'react-native';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { AppColors, fontSize, fontTypes } from '../../../themes';
 
 const BaseText: FC<TextProps> = props => {
@@ -10,7 +10,7 @@ const BaseText: FC<TextProps> = props => {
   );
 };
 
-export default BaseText;
+export default memo(BaseText);
 
 const styles = StyleSheet.create({
   baseText: {

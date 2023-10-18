@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { globalStyles } from '../../../styles';
 import {
   AppButton,
@@ -13,14 +13,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppStrings } from '../../../constants';
 import styles from './styles';
 import { AppImages } from '../../../assets/images';
-import { AuthContext } from '../../../context/auth/authContext';
 import { normalizeFormikError } from '../../../utils/helperfunctions';
 import { useCustomNavigation } from '../../../hooks';
 import { useAppSelector } from '../../../hooks/reduxHooks';
-import { verticalScale } from 'react-native-size-matters';
+import useRegister from '../../../hooks/auth/useRegister';
 
 const Registration: FC = () => {
-  const { formik: registerFormik } = useContext(AuthContext).register;
+  const registerFormik = useRegister();
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const { navigation } = useCustomNavigation('Registration');
   const { isLoading } = useAppSelector(state => state.auth);
@@ -46,7 +45,7 @@ const Registration: FC = () => {
   return (
     <ScreenContainer isLoading={isLoading}>
       <SafeAreaView style={globalStyles.darkContainerPadding}>
-        <BackHeader headerContainerStyle={{ marginTop: verticalScale(16) }} />
+        <BackHeader headerContainerStyle={styles.backHeader} />
         <AppKeyboardScrollWrapper>
           <BaseText style={styles.registerTitle}>
             {AppStrings.register}
@@ -87,14 +86,10 @@ const Registration: FC = () => {
           />
           <AppButton
             title={AppStrings.register}
-            style={{ marginTop: verticalScale(16) }}
+            style={styles.registerButton}
             onPress={() => handleSubmit()}
           />
-
-          <Separator
-            centerText={AppStrings.or}
-            lineStyle={{ marginVertical: verticalScale(32) }}
-          />
+          <Separator centerText={AppStrings.or} lineStyle={styles.separator} />
           <AppButton
             buttonType="outline"
             title={AppStrings.loginWithGoogle}
@@ -104,7 +99,7 @@ const Registration: FC = () => {
             buttonType="outline"
             title={AppStrings.loginWithApple}
             leadingIcon={AppImages.imgApple}
-            style={{ marginTop: verticalScale(16) }}
+            style={styles.loginWithApple}
           />
           <BaseText style={styles.loginText}>
             {AppStrings.alreadyHaveAccount}{' '}

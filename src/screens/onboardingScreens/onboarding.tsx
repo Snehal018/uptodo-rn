@@ -12,7 +12,7 @@ import { AppStrings } from '../../constants';
 import { AppImages } from '../../assets/images';
 import { fontSize, fontWeight } from '../../themes';
 import { useCustomNavigation } from '../../hooks';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters/extend';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 import { authSliceActions } from '../../redux';
 

@@ -4,7 +4,7 @@ import { AppStrings } from '../../../constants';
 import ImageView from '../../atoms/Image/ImageView';
 import VectorIcon from '../../atoms/Icons/VectorIcon';
 import { AppColors } from '../../../themes';
-import { scale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters/extend';
 
 const TaskIndexHeader: FC = () => {
   return (

@@ -8,7 +8,7 @@ import {
   moderateVerticalScale,
   scale,
   verticalScale,
-} from 'react-native-size-matters';
+} from 'react-native-size-matters/extend';
 import { AddTaskActionButtons } from '../../molecules';
 import { AddTaskContext } from '../../../context/task/addTaskContext';
 import { useAppDispatch, useAppSelector } from '../../../hooks';

@@ -10,7 +10,7 @@ import {
 import React, { FC } from 'react';
 import BaseText from '../../atoms/Text/Basetext';
 import { AppColors, fontSize } from '../../../themes';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters/extend';
 
 interface ComponentProps {
   image: ImageSourcePropType;

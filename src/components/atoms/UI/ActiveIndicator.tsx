@@ -1,7 +1,7 @@
 import { FlatList, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import React, { FC } from 'react';
 import { AppColors } from '../../../themes';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters/extend';
 
 interface ComponentProps {
   numberOfItems?: number;

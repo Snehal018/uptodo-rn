@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { globalStyles } from '../../../styles';
 import {
@@ -11,18 +11,15 @@ import {
 } from '../../../components';
 import { AppStrings } from '../../../constants';
 import { AppImages } from '../../../assets/images';
-import {
-  isAndroid,
-  normalizeFormikError,
-} from '../../../utils/helperfunctions';
+import { normalizeFormikError } from '../../../utils/helperfunctions';
 import { styles } from './styles';
-import { AuthContext } from '../../../context/auth/authContext';
 import { useCustomNavigation } from '../../../hooks';
 import { useAppSelector } from '../../../hooks/reduxHooks';
-import { moderateVerticalScale } from 'react-native-size-matters';
+import useLogin from '../../../hooks/auth/useLogin';
 
 const Login: FC = () => {
-  const { formik: loginFormik } = useContext(AuthContext).login;
+  const loginFormik = useLogin();
+
   const { navigation } = useCustomNavigation('Login');
   const { userName, password } = loginFormik.values;
   const { errors, handleChange, handleBlur, handleSubmit, touched } =
@@ -35,11 +32,7 @@ const Login: FC = () => {
   return (
     <ScreenContainer isLoading={isLoading}>
       <SafeAreaView style={globalStyles.darkContainerPadding}>
-        <BackHeader
-          headerContainerStyle={{
-            marginTop: moderateVerticalScale(isAndroid ? 16 : 0, 0.35),
-          }}
-        />
+        <BackHeader headerContainerStyle={styles.backHeaderContainer} />
         <BaseText style={styles.loginTitle}>{AppStrings.loginSmall}</BaseText>
         <CustomInput
           placeholder={AppStrings.enterUsername}
@@ -63,11 +56,7 @@ const Login: FC = () => {
           style={styles.loginButtom}
           onPress={() => handleSubmit()}
         />
-        <Separator
-          centerText={AppStrings.or}
-          lineStyle={{ marginVertical: moderateVerticalScale(36, 0.35) }}
-        />
-
+        <Separator centerText={AppStrings.or} lineStyle={styles.separator} />
         <AppButton
           style={styles.loginGoogle}
           title={AppStrings.loginWithGoogle}
@@ -80,7 +69,6 @@ const Login: FC = () => {
           buttonType="outline"
           leadingIcon={AppImages.imgApple}
         />
-
         <BaseText style={styles.registrationText}>
           {AppStrings.dontHaveAccount}
           <BaseText onPress={onPressRegisterHandler}>

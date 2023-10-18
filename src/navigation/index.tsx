@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from './stack';
-import { AppContextProvider } from '../context';
 import { navigationRef } from './helper/navigationService';
 import NetInfo from '@react-native-community/netinfo';
 import { useAppDispatch } from '../hooks';
@@ -24,9 +23,7 @@ const AppNavigation = () => {
 
   return (
     <NavigationContainer ref={navigationRef} onReady={hideSplashScreenHandler}>
-      <AppContextProvider>
-        <StackNavigator />
-      </AppContextProvider>
+      <StackNavigator />
     </NavigationContainer>
   );
 };

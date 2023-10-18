@@ -8,7 +8,7 @@ import React, { FC } from 'react';
 import { globalStyles } from '../../../styles';
 import VectorIcon from '../../atoms/Icons/VectorIcon';
 import { AppColors } from '../../../themes';
-import { scale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters/extend';
 import { useAppSelector } from '../../../hooks';
 
 interface ComponentProps {

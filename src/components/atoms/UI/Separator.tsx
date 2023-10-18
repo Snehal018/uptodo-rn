@@ -6,7 +6,7 @@ import {
   moderateVerticalScale,
   scale,
   verticalScale,
-} from 'react-native-size-matters';
+} from 'react-native-size-matters/extend';
 
 interface ComponentProps {
   lineStyle?: ViewStyle;

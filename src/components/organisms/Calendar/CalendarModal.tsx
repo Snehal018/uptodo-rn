@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native';
 import React, { Dispatch, FC, SetStateAction } from 'react';
 import { AppColors } from '../../../themes';
 import { Calendar, CalendarProps } from 'react-native-calendars';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters/extend';
 import {
   DateTimePickerAndroid,
   DateTimePickerEvent,

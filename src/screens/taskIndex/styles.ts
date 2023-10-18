@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { verticalScale } from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters/extend';
 
 const styles = StyleSheet.create({
   emptyIndexContainerStyle: {

@@ -6,7 +6,7 @@ import { AppButton, BaseText, ScreenContainer } from '../../components';
 import { AppStrings } from '../../constants';
 import { fontSize, fontWeight } from '../../themes';
 import { useCustomNavigation } from '../../hooks';
-import { verticalScale } from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters/extend';
 
 const GetStarted: FC = () => {
   const { navigation } = useCustomNavigation('Login');

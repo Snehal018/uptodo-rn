@@ -5,12 +5,12 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { globalStyles } from '../../../styles';
 import { AppImages } from '../../../assets/images';
 import { useNavigation } from '@react-navigation/native';
 import { isAndroid } from '../../../utils/helperfunctions';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters/extend';
 
 interface ComponentProps {
   headerContainerStyle?: ViewStyle;
@@ -46,7 +46,7 @@ const BackHeader: FC<ComponentProps> = ({ headerContainerStyle }) => {
   );
 };
 
-export default BackHeader;
+export default memo(BackHeader);
 
 const styles = StyleSheet.create({
   backStyle: {

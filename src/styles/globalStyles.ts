@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { AppColors, fontSize, fontWeight } from '../themes';
 import AppPadding from './spacing';
-import { scale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters/extend';
 
 const globalStyles = StyleSheet.create({
   fullSpace: {

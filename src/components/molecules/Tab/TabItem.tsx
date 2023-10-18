@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import BaseText from '../../atoms/Text/Basetext';
 import { AppColors, fontSize } from '../../../themes';
 import { globalStyles } from '../../../styles';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters/extend';
 
 export interface TabItemProps {
   icon: number;

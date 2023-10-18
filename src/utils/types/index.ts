@@ -1,4 +1,3 @@
-import { FormikProps } from 'formik';
 import { Dispatch, SetStateAction } from 'react';
 
 interface LoginFormType {
@@ -10,15 +9,6 @@ interface RegisterFormType {
   userName: string;
   password: string;
   confirmPassword: string;
-}
-
-interface AuthContextType {
-  login: {
-    formik: FormikProps<LoginFormType>;
-  };
-  register: {
-    formik: FormikProps<RegisterFormType>;
-  };
 }
 
 interface AddTaskContextType {
@@ -60,7 +50,6 @@ interface TaskItemType {
 export type {
   LoginFormType,
   RegisterFormType,
-  AuthContextType,
   AddTaskContextType,
   TaskItemType,
 };

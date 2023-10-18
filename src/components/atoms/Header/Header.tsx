@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import BaseText from '../Text/Basetext';
 import { globalStyles } from '../../../styles';
 import { AppColors, fontSize } from '../../../themes';
-import { verticalScale } from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters/extend';
 
 interface ComponentProps {
   rightContent?: () => JSX.Element;

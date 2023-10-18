@@ -10,7 +10,7 @@ import { AppColors } from '../../../themes';
 import { globalStyles } from '../../../styles';
 import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { taskSliceActions } from '../../../redux';
-import { scale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters/extend';
 
 const BottomTab: FC<BottomTabBarProps> = props => {
   const { navigation, state } = props;

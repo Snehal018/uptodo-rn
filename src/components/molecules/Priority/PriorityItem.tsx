@@ -2,7 +2,7 @@ import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
 import React, { FC } from 'react';
 import VectorIcon from '../../atoms/Icons/VectorIcon';
 import { AppColors, fontSize } from '../../../themes';
-import { moderateVerticalScale, scale } from 'react-native-size-matters';
+import { moderateVerticalScale, scale } from 'react-native-size-matters/extend';
 import BaseText from '../../atoms/Text/Basetext';
 import { TouchableOpacityProps } from 'react-native';
 

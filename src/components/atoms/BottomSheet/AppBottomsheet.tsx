@@ -27,7 +27,7 @@ const AppBottomsheet: FC<ComponentProps> = ({
   const renderBackdrop: FC<BottomSheetBackdropProps> = () => {
     return isVisible ? (
       <Pressable
-        style={styles.backDropStyle}
+        style={StyleSheet.absoluteFill}
         onPress={onBackdropPressHandler}
       />
     ) : null;
@@ -48,13 +48,3 @@ const AppBottomsheet: FC<ComponentProps> = ({
 };
 
 export default AppBottomsheet;
-
-const styles = StyleSheet.create({
-  backDropStyle: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-});

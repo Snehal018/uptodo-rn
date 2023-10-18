@@ -11,7 +11,7 @@ import {
 import { AppImages } from '../../assets/images';
 import { AppStrings } from '../../constants';
 import styles from './styles';
-import { verticalScale } from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters/extend';
 
 const TaskIndexScreen: FC = () => {
   const { top } = useSafeAreaInsets();

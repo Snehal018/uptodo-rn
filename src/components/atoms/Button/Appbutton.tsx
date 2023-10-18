@@ -10,7 +10,7 @@ import {
 import React, { FC } from 'react';
 import BaseText from '../Text/Basetext';
 import { AppColors, fontSize } from '../../../themes';
-import { scale, moderateVerticalScale } from 'react-native-size-matters';
+import { scale, moderateVerticalScale } from 'react-native-size-matters/extend';
 
 interface ComponentProps {
   title: string;
@@ -88,16 +88,12 @@ const styles = StyleSheet.create({
     fontSize: fontSize.medium,
     textAlign: 'center',
   },
-  pressed: {
-    opacity: 0.35,
-  },
+  pressed: { opacity: 0.5 },
   baseOutline: {
     borderWidth: 2,
     borderColor: AppColors.primary,
   },
-  baseSolid: {
-    backgroundColor: AppColors.primary,
-  },
+  baseSolid: { backgroundColor: AppColors.primary },
   baseNone: {
     paddingHorizontal: 0,
     borderRadius: 0,
