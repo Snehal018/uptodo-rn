@@ -63,7 +63,5 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(30),
   },
   loginButton: { marginBottom: verticalScale(20) },
-  signupButton: {
-    marginBottom: verticalScale(35),
-  },
+  signupButton: { marginBottom: verticalScale(35) },
 });

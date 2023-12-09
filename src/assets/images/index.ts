@@ -1,5 +1,5 @@
 export const AppImages = {
-  logo: require('./logo.png'),
+  logo: require('./common/logo.png'),
 
   // Onboarding
   imgManageTask: require('./onboarding/manageTask.png'),
